@@ -10,7 +10,16 @@ import Foundation
 
 class CinemaHomeWireframe: ICinemaHomeWireframe {
     
+    var presenter: ICinemaHomePresenter?
+    weak var view: ICinemaHomeView?
+    
+    init(view: ICinemaHomeView) {
+        self.view = view
+    }
+    
     func goToHome() {
+        
+        self.view?.goToHome()
         
     }
     

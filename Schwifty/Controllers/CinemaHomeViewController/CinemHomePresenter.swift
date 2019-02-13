@@ -10,9 +10,9 @@ import Foundation
 
 class CinemaHomePresenter: ICinemaHomePresenter {
     
-    weak var interactor: ICinemaHomeInteractor?
+    var interactor: ICinemaHomeInteractor?
     weak var view: ICinemaHomeView?
-    weak var wireframe: ICinemaHomeWireframe?
+    var wireframe: ICinemaHomeWireframe?
     
     init(interactor: ICinemaHomeInteractor, view: ICinemaHomeView, wireframe: ICinemaHomeWireframe) {
         self.interactor = interactor
@@ -21,7 +21,12 @@ class CinemaHomePresenter: ICinemaHomePresenter {
     }
     
     func viewDidloaded() {
-        
+        view?.setupView()
+        interactor?.fetchMovies()
+    }
+
+    func fetchMovies() {
+        interactor?.fetchMovies()
     }
     
 }

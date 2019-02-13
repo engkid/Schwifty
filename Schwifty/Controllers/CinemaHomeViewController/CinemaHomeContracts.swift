@@ -10,13 +10,17 @@ import Foundation
 
 protocol ICinemaHomeView: class {
     
+    var presenter: ICinemaHomePresenter? { get set }
+    
     func setupView()
+    
+    func goToHome()
     
 }
 
 protocol ICinemaHomeWireframe: class {
  
-    func goToHome()
+    var presenter: ICinemaHomePresenter? { get set }
     
 }
 
@@ -24,9 +28,13 @@ protocol ICinemaHomePresenter: class {
     
     func viewDidloaded()
     
+    func fetchMovies()
+    
 }
 
 protocol ICinemaHomeInteractor: class {
+    
+    var presenter: ICinemaHomePresenter? { get set }
     
     func fetchMovies()
     

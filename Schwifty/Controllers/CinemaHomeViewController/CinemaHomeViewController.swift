@@ -9,19 +9,21 @@
 import UIKit
 
 class CinemaHomeViewController: UIViewController {
+    
+    var presenter: ICinemaHomePresenter?
 
     @IBOutlet weak var movieCollectionView: UICollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionViewInitialize()
-        setupView()
+        presenter?.viewDidloaded()
+
     }
 
 }
 
-
+//MARK: CollectionView DataSource & Delegates
 extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,17 +60,9 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         
     }
     
-    private func collectionViewInitialize() {
-        
-        movieCollectionView?.register(UINib(nibName: "MoviesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "moviesCollectionViewCell")
-        movieCollectionView?.delegate = self
-        movieCollectionView?.dataSource = self
-        
-    }
-    
-    
 }
 
+//MARK: CollectioViewDelegateFlowLayout
 extension CinemaHomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -78,9 +72,12 @@ extension CinemaHomeViewController: UICollectionViewDelegateFlowLayout {
     
 }
 
-private extension CinemaHomeViewController {
+//MARK: ICinemaHomeView implementations
+extension CinemaHomeViewController: ICinemaHomeView {
     
-    private func setupView() {
+    func setupView() {
+        
+        collectionViewInitialize()
         
         let barButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(goToHome))
         
@@ -88,9 +85,17 @@ private extension CinemaHomeViewController {
         
     }
     
-    @objc private func goToHome() {
-        
+    @objc func goToHome() {
+
         self.navigationController?.popToRootViewController(animated: true)
+        
+    }
+    
+    private func collectionViewInitialize() {
+        
+        movieCollectionView?.register(UINib(nibName: "MoviesCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "moviesCollectionViewCell")
+        movieCollectionView?.delegate = self
+        movieCollectionView?.dataSource = self
         
     }
     

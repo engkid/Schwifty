@@ -15,14 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let cinemaHomeViewController: CinemaHomeViewController = {
-            
-            let homeController = CinemaHomeViewController()
-            
-            return homeController
-        }()
+        let cinemaVc = self.setupDependencies()
         
-        let nav = UINavigationController(rootViewController: cinemaHomeViewController)
+        let nav = UINavigationController(rootViewController: cinemaVc)
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
@@ -31,6 +26,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         return true
+    }
+    
+    
+    func setupDependencies() -> CinemaHomeViewController {
+        
+        //MARK: construct homeview viper components with dependency injection
+//        let cinemaHomeViewController: CinemaHomeViewController = {
+//            
+//            let interactor: ICinemaHomeInteractor = CinemaHomeInteractor()
+//            
+//            let cinemaView: ICinemaHomeView = CinemaHomeViewController()
+//            
+//            let wireframe: ICinemaHomeWireframe = CinemaHomeWireframe(view: cinemaView)
+//            
+//            let presenter: ICinemaHomePresenter = CinemaHomePresenter(interactor: interactor, view: cinemaView, wireframe: wireframe)
+//            
+//            cinemaView.presenter = presenter
+//            
+//            wireframe.presenter = presenter
+//            
+//            return cinemaView as! CinemaHomeViewController
+//        }()
+        
+        let cinemaHome: ICinemaHomeView = CinemaHomeViewController()
+        
+        let cinemaWireframe: ICinemaHomeWireframe = CinemaHomeWireframe(view: cinemaHome)
+        
+        let cinemaInteractor: ICinemaHomeInteractor = CinemaHomeInteractor()
+        
+        let presenter: ICinemaHomePresenter = CinemaHomePresenter(interactor: cinemaInteractor, view: cinemaHome, wireframe: cinemaWireframe)
+        
+        cinemaHome.presenter = presenter
+        
+        return cinemaHome as! CinemaHomeViewController
+        
     }
 
 

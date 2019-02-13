@@ -10,7 +10,11 @@ import Foundation
 
 class CinemaHomeInteractor: ICinemaHomeInteractor {
     
+    var presenter: ICinemaHomePresenter?
+    
     func fetchMovies() {
+        
+        print("interactor called")
         
     }
     

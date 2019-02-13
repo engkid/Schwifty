@@ -26,12 +26,12 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        //TODO: - change it to data width
+        //TODO: - change it to model dataSource width
         return 2
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        //TODO: - change it to data height
+        //TODO: - change it to model dataSource height
         return 10
     }
     
@@ -50,7 +50,8 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let selectedSection: Int = indexPath.section
         
-        //MARK: get item indexPath sequenced
+        //TODO: - change 2 to model dataSource width
+        //MARK: get item model indexPath sequenced
         let itemIndexPath: Int =  2 * selectedSection + selectedItem
         
         print("selected item at indexPath \(indexPath.item) section \(indexPath.section), index row \(indexPath.row) itemIndexPath \(itemIndexPath)")

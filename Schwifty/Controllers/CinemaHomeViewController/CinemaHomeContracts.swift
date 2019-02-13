@@ -28,8 +28,6 @@ protocol ICinemaHomePresenter: class {
     
     func viewDidloaded()
     
-    func fetchMovies()
-    
 }
 
 protocol ICinemaHomeInteractor: class {

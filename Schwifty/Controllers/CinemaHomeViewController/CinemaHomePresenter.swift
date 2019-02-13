@@ -24,9 +24,5 @@ class CinemaHomePresenter: ICinemaHomePresenter {
         view?.setupView()
         interactor?.fetchMovies()
     }
-
-    func fetchMovies() {
-        interactor?.fetchMovies()
-    }
     
 }

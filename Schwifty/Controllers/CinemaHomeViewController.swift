@@ -26,10 +26,12 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
+        //TODO: - change it to data width
         return 2
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        //TODO: - change it to data height
         return 10
     }
     
@@ -40,6 +42,19 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.movieImage?.image = UIImage(named: "searchIcon", in: Bundle.main, compatibleWith: nil)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedItem: Int = indexPath.item
+        
+        let selectedSection: Int = indexPath.section
+        
+        //MARK: get item indexPath sequenced
+        let itemIndexPath: Int =  2 * selectedSection + selectedItem
+        
+        print("selected item at indexPath \(indexPath.item) section \(indexPath.section), index row \(indexPath.row) itemIndexPath \(itemIndexPath)")
+        
     }
     
     private func collectionViewInitialize() {
@@ -57,7 +72,7 @@ extension CinemaHomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: ((self.view.frame.width / 2) - 16), height: (((self.view.frame.width / 2) - 16) * 1.5))
+        return CGSize(width: ((self.view.frame.width / 2) - 8), height: (((self.view.frame.width / 2) - 8) * 1.5))
     }
     
 }

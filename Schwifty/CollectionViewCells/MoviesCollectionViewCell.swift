@@ -11,6 +11,7 @@ import UIKit
 class MoviesCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var movieImage: UIImageView?
+    @IBOutlet weak var titleLabel: UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()

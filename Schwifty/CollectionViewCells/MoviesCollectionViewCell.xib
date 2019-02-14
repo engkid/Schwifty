@@ -91,6 +91,7 @@
             <size key="customSize" width="106" height="190"/>
             <connections>
                 <outlet property="movieImage" destination="sak-mW-i4H" id="mI6-0Q-hJT"/>
+                <outlet property="titleLabel" destination="2Jc-Fp-twc" id="woP-GB-8tx"/>
             </connections>
             <point key="canvasLocation" x="182.40000000000001" y="210.94452773613196"/>
         </collectionViewCell>

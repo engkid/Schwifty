@@ -16,6 +16,8 @@ protocol ICinemaHomeView: class {
     
     func goToHome()
     
+    func populateWithResponses(response: [String:AnyObject])
+    
 }
 
 protocol ICinemaHomeWireframe: class {
@@ -25,6 +27,8 @@ protocol ICinemaHomeWireframe: class {
 }
 
 protocol ICinemaHomePresenter: class {
+    
+    func didReceiveSuccessWhileFetching(model: [String:AnyObject])
     
     func viewDidloaded()
     

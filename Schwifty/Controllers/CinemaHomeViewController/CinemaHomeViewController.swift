@@ -11,6 +11,16 @@ import UIKit
 class CinemaHomeViewController: UIViewController {
     
     var presenter: ICinemaHomePresenter?
+    
+    var response: [String:AnyObject]? {
+        
+        didSet {
+            
+            movieCollectionView?.reloadData()
+            
+        }
+        
+    }
 
     @IBOutlet weak var movieCollectionView: UICollectionView?
     
@@ -42,6 +52,7 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "moviesCollectionViewCell", for: indexPath) as? MoviesCollectionViewCell else { return UICollectionViewCell() }
         
         cell.movieImage?.image = UIImage(named: "searchIcon", in: Bundle.main, compatibleWith: nil)
+        cell.titleLabel?.text = self.response?["first_name"] as? String
         
         return cell
     }
@@ -82,6 +93,12 @@ extension CinemaHomeViewController: ICinemaHomeView {
         let barButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(goToHome))
         
         self.navigationItem.rightBarButtonItem = barButtonItem
+        
+    }
+    
+    func populateWithResponses(response: [String:AnyObject]) {
+        
+        self.response = response
         
     }
     

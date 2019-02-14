@@ -55,6 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let cinemaInteractor: ICinemaHomeInteractor = CinemaHomeInteractor()
         
+        cinemaInteractor.networkRequest = NetworkRequest()
+        
         let presenter: ICinemaHomePresenter = CinemaHomePresenter(interactor: cinemaInteractor, view: cinemaHome, wireframe: cinemaWireframe)
         
         cinemaHome.presenter = presenter

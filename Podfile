@@ -6,5 +6,7 @@ target 'Schwifty' do
   use_frameworks!
 
   # Pods for Schwifty
+  pod 'Alamofire', '~> 4.8.1'
+  pod 'SwiftyJSON', '~> 4.0'
 
 end

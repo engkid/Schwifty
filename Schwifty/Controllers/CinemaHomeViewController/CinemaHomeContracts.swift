@@ -33,6 +33,7 @@ protocol ICinemaHomePresenter: class {
 protocol ICinemaHomeInteractor: class {
     
     var presenter: ICinemaHomePresenter? { get set }
+    var networkRequest: INetworkRequest? { get set }
     
     func fetchMovies()
     

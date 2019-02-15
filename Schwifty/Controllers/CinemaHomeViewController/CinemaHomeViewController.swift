@@ -36,15 +36,22 @@ class CinemaHomeViewController: UIViewController {
 //MARK: CollectionView DataSource & Delegates
 extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    private func collectionViewInitialize() {
         
+        movieCollectionView?.register(UINib(nibName: "MoviesCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "moviesCollectionViewCell")
+        movieCollectionView?.delegate = self
+        movieCollectionView?.dataSource = self
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //TODO: - change it to model dataSource width
         return 2
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         //TODO: - change it to model dataSource height
-        return 10
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -116,14 +123,6 @@ extension CinemaHomeViewController: ICinemaHomeView {
     @objc func goToHome() {
 
         self.navigationController?.popToRootViewController(animated: true)
-        
-    }
-    
-    private func collectionViewInitialize() {
-        
-        movieCollectionView?.register(UINib(nibName: "MoviesCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "moviesCollectionViewCell")
-        movieCollectionView?.delegate = self
-        movieCollectionView?.dataSource = self
         
     }
     

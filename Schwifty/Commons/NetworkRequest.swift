@@ -52,7 +52,7 @@ class NetworkRequest: INetworkRequest {
                     
                     print("json => \(json["data"].count) user last name => \(userLastName) responseData => \(dictionaryArray) pagelimit => \(pageLimit), perPage => \(perPage), total => \(total), totalPages => \(totalPages)")
                     
-                    if let responseUser = dictionaryArray.first?.dictionaryValue as [String:AnyObject]? {
+                    if let responseUser = dictionaryArray[0].dictionaryValue as [String:AnyObject]? {
                         successBlock(responseUser)
                     }
                     

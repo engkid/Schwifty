@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CinemaHomeViewController: UIViewController {
     
@@ -52,7 +53,18 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "moviesCollectionViewCell", for: indexPath) as? MoviesCollectionViewCell else { return UICollectionViewCell() }
         
         cell.movieImage?.image = UIImage(named: "searchIcon", in: Bundle.main, compatibleWith: nil)
-        cell.titleLabel?.text = self.response?["first_name"] as? String
+        
+        if let firstName = self.response?["first_name"], let lastName = self.response?["last_name"], let avatarUrl = self.response?["avatar"] {
+            
+            let firstNameString: String = String(describing: firstName)
+            let lastNameString: String = String(describing: lastName)
+            let avatarUrlString: String = String(describing: avatarUrl)
+            
+            cell.titleLabel?.text = firstNameString
+            cell.ratingLabel?.text = lastNameString
+            cell.movieImage?.sd_setImage(with: URL(string: avatarUrlString))
+            
+        }
         
         return cell
     }

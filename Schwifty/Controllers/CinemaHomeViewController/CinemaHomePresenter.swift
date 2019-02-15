@@ -31,9 +31,9 @@ class CinemaHomePresenter: ICinemaHomePresenter {
         interactor?.fetchMovies()
     }
     
-    func didReceiveSuccessWhileFetching(model: [String:AnyObject]) {
+    func didReceiveSuccessWhileFetching(response: [String:AnyObject]) {
         
-        view?.populateWithResponses(response: model)
+        view?.populateWithResponses(response: response)
         
     }
     

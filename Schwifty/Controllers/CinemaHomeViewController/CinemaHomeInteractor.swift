@@ -21,9 +21,9 @@ class CinemaHomeInteractor: ICinemaHomeInteractor {
         
     
         print("interactor called")
-        networkRequest?.requestWith(URL: url, method: HTTPMethod.get, parameter: [:], successBlock: { (response) in
+        networkRequest?.requestWith(URL: url, method: HTTPMethod.get, parameter: [:], successBlock: { (responses) in
             
-            self.presenter?.didReceiveSuccessWhileFetching(model: response)
+            self.presenter?.didReceiveSuccessWhileFetching(response: responses)
             
         }, failureBlock: { (error) in
             

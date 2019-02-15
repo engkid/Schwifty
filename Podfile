@@ -8,5 +8,8 @@ target 'Schwifty' do
   # Pods for Schwifty
   pod 'Alamofire', '~> 4.8.1'
   pod 'SwiftyJSON', '~> 4.0'
+  
+  platform :ios, '8.0'
+  pod 'SDWebImage', '~> 4.0'
 
 end

@@ -12,6 +12,12 @@ import SwiftyJSON
 
 class NetworkRequest: INetworkRequest {
     
+    func makeRequestWith(URL: String, method: HTTPMethod, parameter: [String:Any], successBlock: @escaping (Data) -> Void, failureBlock:(Error) -> Void) {
+        
+        
+        
+    }
+    
     func requestWith(URL: String, method: HTTPMethod, parameter: [String : Any], successBlock: @escaping ([String : AnyObject]) -> Void, failureBlock: @escaping (NSError) -> Void) {
         
         Alamofire.request(URL).responseJSON { (response) in

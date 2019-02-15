@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SDWebImage
 
 class CinemaHomeViewController: UIViewController {
     
@@ -62,7 +61,7 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
             
             cell.titleLabel?.text = firstNameString
             cell.ratingLabel?.text = lastNameString
-            cell.movieImage?.sd_setImage(with: URL(string: avatarUrlString))
+            cell.movieImage?.setImageWithUrl(url: avatarUrlString)
             
         }
         

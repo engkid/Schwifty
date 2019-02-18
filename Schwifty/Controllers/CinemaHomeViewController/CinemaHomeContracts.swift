@@ -31,10 +31,6 @@ protocol ICinemaHomeWireframe: class {
 
 protocol ICinemaHomePresenter: class {
     
-    func didReceiveSuccessWhileFetching(response: [String:AnyObject])
-    
-    func didReceiveFailedWhileFetching(error: Error)
-    
     func viewDidloaded()
     
 }

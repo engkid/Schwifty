@@ -24,15 +24,7 @@ class CinemaHomeInteractor: ICinemaHomeInteractor {
         print("interactor called")
         networkRequest?.requestWith(URL: url, method: HTTPMethod.get, parameter: [:], successBlock: { (responses) in
             
-            if let response = responses {
-                self.presenter?.didReceiveSuccessWhileFetching(response: response)
-            }
-            
         }, failureBlock: { (error) in
-            
-            if let errors = error {
-                self.presenter?.didReceiveFailedWhileFetching(error: errors)
-            }
             
         })
         
@@ -89,12 +81,12 @@ class CinemaHomeInteractor: ICinemaHomeInteractor {
                 
             }
             
-//            self.presenter?.didReceiveSuccessWhileFetching(response:    )
-            
         }, failureBlock: { (error) in
             
-            if let errorResponse = error {
-                self.presenter?.didReceiveFailedWhileFetching(error: errorResponse as NSError)
+            if let errorRes = error {
+                
+                failureBlock(errorRes)
+                
             }
             
         })

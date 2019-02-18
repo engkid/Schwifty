@@ -7,6 +7,14 @@
 //
 
 import UIKit
+import Foundation
+
+enum TransitionMethod {
+    
+    case push
+    case present
+    
+}
 
 extension UIViewController {
     
@@ -17,6 +25,40 @@ extension UIViewController {
         alert.addAction(alertButton)
         
         self.show(alert, sender: self)
+        
+    }
+    
+    func navigateFrom(sourceViewController: UIViewController, toNextViewController: UIViewController, withTransition: TransitionMethod, animated: Bool, completion: (() -> Void)?) {
+        
+        switch withTransition {
+            
+        case .push:
+            
+            self.removeStackViewControllers(viewController: sourceViewController)
+            
+            self.navigationController?.pushViewController(toNextViewController, animated: animated)
+        case .present:
+            
+            self.removeStackViewControllers(viewController: sourceViewController)
+            
+            self.navigationController?.present(toNextViewController, animated: animated, completion: completion)
+        }
+        
+    }
+    
+    private func removeStackViewControllers(viewController: UIViewController) {
+
+        guard var viewControllers = viewController.navigationController?.viewControllers else { return }
+        
+        for viewController in viewControllers {
+            
+            if !(viewController).isKind(of: viewController.classForCoder) {
+                
+                viewControllers.removeLast()
+                
+            }
+            
+        }
         
     }
     

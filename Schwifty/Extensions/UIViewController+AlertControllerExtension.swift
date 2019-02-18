@@ -48,15 +48,19 @@ extension UIViewController {
             
         case .present:
             
+            let navigationController = UINavigationController(rootViewController: toNextViewController)
+            navigationController.navigationBar.barTintColor = UIColor.white
+            navigationController.navigationBar.backgroundColor = UIColor.white
+            
             if (self.checkPresentdViewController(viewController: sourceViewController)) {
                 
                 self.dismiss(animated: true) {
-                    self.navigationController?.present(toNextViewController, animated: animated, completion: completion)
+                    self.navigationController?.present(navigationController, animated: animated, completion: completion)
                 }
                 
             } else {
                 
-                self.navigationController?.present(toNextViewController, animated: animated, completion: completion)
+                self.navigationController?.present(navigationController, animated: animated, completion: completion)
                 
             }
         }

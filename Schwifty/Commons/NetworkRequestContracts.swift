@@ -9,8 +9,8 @@
 import Foundation
 import Alamofire
 
-typealias networkingSuccessBlock = (_ response: [String:AnyObject]) -> Void
-typealias networkingFailureBlock = (_ error: NSError) -> Void
+typealias networkingSuccessBlock = (_ response: [String:AnyObject]?) -> Void
+typealias networkingFailureBlock = (_ error: NSError?) -> Void
 
 protocol INetworkRequest: class {
     

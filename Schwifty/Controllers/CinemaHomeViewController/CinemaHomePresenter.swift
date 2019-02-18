@@ -37,4 +37,10 @@ class CinemaHomePresenter: ICinemaHomePresenter {
         
     }
     
+    func didReceiveFailedWhileFetching(error: NSError) {
+    
+        
+    
+    }
+    
 }

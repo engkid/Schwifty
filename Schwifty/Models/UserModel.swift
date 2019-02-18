@@ -15,4 +15,11 @@ class UserModel: Codable {
     var lastName: String?
     var avatarUrl: String?
     
+    init(id: Int, firstName: String, lastName: String, avatarUrl: String) {
+        self.id = id
+        self.firstName = firstName
+        self.lastName = lastName
+        self.avatarUrl = avatarUrl
+    }
+    
 }

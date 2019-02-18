@@ -16,16 +16,22 @@ class CinemaHomeInteractor: ICinemaHomeInteractor {
     
     func fetchMovies() {
         
+        let baseURL: String = EngkitCinemaAPI.baseUrl
+        let userPath: String = EngkitCinemaAPI.userPath
+        let url: String = "\(baseURL)\(userPath)"
         
-        let url: String = "https://reqres.in/api/users?page=2"
-        
-    
         print("interactor called")
         networkRequest?.requestWith(URL: url, method: HTTPMethod.get, parameter: [:], successBlock: { (responses) in
             
-            self.presenter?.didReceiveSuccessWhileFetching(response: responses)
+            if let response = responses {
+                self.presenter?.didReceiveSuccessWhileFetching(response: response)
+            }
             
         }, failureBlock: { (error) in
+            
+            if let errors = error {
+                self.presenter?.didReceiveFailedWhileFetching(error: errors)
+            }
             
         })
         

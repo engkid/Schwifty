@@ -30,6 +30,8 @@ protocol ICinemaHomePresenter: class {
     
     func didReceiveSuccessWhileFetching(response: [String:AnyObject])
     
+    func didReceiveFailedWhileFetching(error: NSError)
+    
     func viewDidloaded()
     
 }

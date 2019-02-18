@@ -12,17 +12,19 @@ import SwiftyJSON
 
 class NetworkRequest: INetworkRequest {
     
-    func makeRequestWith(URL: String, method: HTTPMethod, parameter: [String:Any], successBlock: @escaping (Data) -> Void, failureBlock:(Error) -> Void) {
+    func makeRequestWith(URL: String, method: HTTPMethod, parameter: [String:Any], successBlock: @escaping (Data) -> Void, failureBlock:(NSError?) -> Void) {
         
         
         
     }
     
-    func requestWith(URL: String, method: HTTPMethod, parameter: [String : Any], successBlock: @escaping ([String : AnyObject]) -> Void, failureBlock: @escaping (NSError) -> Void) {
+    func requestWith(URL: String, method: HTTPMethod, parameter: [String : Any], successBlock: @escaping ([String : AnyObject]?) -> Void, failureBlock: @escaping (NSError?) -> Void) {
         
         Alamofire.request(URL).responseJSON { (response) in
             
-            guard let data = response.data, let utf8Text = String(data: data, encoding: String.Encoding.utf8) else { return }
+            if (response.result.isSuccess) {
+                
+                guard let data = response.data, let utf8Text = String(data: data, encoding: String.Encoding.utf8) else { return }
                 
                 do {
                     
@@ -63,8 +65,15 @@ class NetworkRequest: INetworkRequest {
                     }
                     
                 }
-        
+                
                 print("Data => \(utf8Text) ")
+                
+            } else {
+                
+                failureBlock(response.result.error as NSError?)
+                
+            }
+            
             
         }
         

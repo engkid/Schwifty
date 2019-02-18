@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol ICinemaHomeView: class {
     
@@ -32,7 +33,7 @@ protocol ICinemaHomePresenter: class {
     
     func didReceiveSuccessWhileFetching(response: [String:AnyObject])
     
-    func didReceiveFailedWhileFetching(error: NSError)
+    func didReceiveFailedWhileFetching(error: Error)
     
     func viewDidloaded()
     
@@ -44,6 +45,8 @@ protocol ICinemaHomeInteractor: class {
     var networkRequest: INetworkRequest? { get set }
     
     func fetchMovies()
+    
+    func getMovies(successBlock: @escaping ([String:AnyObject]) -> Void, failureBlock: @escaping (Error) -> Void)
     
 }
     

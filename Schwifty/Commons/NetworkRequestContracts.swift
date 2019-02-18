@@ -14,6 +14,7 @@ typealias networkingFailureBlock = (_ error: NSError?) -> Void
 
 protocol INetworkRequest: class {
     
+    func makeRequestWith(URL: String, method: HTTPMethod, parameter: [String:Any], successBlock: @escaping (Data) -> Void, failureBlock: @escaping(Error?) -> Void)
     func requestWith(URL: String, method: HTTPMethod, parameter: [String:Any], successBlock:@escaping networkingSuccessBlock, failureBlock:@escaping networkingFailureBlock)
     
 }

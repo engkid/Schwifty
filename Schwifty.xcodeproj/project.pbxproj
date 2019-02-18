@@ -10,6 +10,7 @@
 		1E3EAE7F2203619900E074DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3EAE7E2203619900E074DE /* AppDelegate.swift */; };
 		1E3EAE862203619B00E074DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E3EAE852203619B00E074DE /* Assets.xcassets */; };
 		1E3EAE892203619B00E074DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3EAE872203619B00E074DE /* LaunchScreen.storyboard */; };
+		1E6B0047221A95F80007789F /* ErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B0046221A95F80007789F /* ErrorFactory.swift */; };
 		1EE8F0092213CC52008AC105 /* CinemaHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */; };
 		1EE8F00A2213CC52008AC105 /* CinemaHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */; };
 		1EE8F00F2213DFBC008AC105 /* MoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F00D2213DFBC008AC105 /* MoviesCollectionViewCell.swift */; };
@@ -47,6 +48,7 @@
 		1E3EAE852203619B00E074DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E3EAE882203619B00E074DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E3EAE8A2203619B00E074DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E6B0046221A95F80007789F /* ErrorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFactory.swift; sourceTree = "<group>"; };
 		1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaHomeViewController.swift; sourceTree = "<group>"; };
 		1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CinemaHomeViewController.xib; sourceTree = "<group>"; };
 		1EE8F00D2213DFBC008AC105 /* MoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				1EE8F01B2214FBA0008AC105 /* NetworkRequest.swift */,
 				1EE8F0232214FF48008AC105 /* NetworkRequestContracts.swift */,
 				1EE8F02D22169CCC008AC105 /* AppConstants.swift */,
+				1E6B0046221A95F80007789F /* ErrorFactory.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				1EE8F0132213FDE2008AC105 /* CinemaHomeContracts.swift in Sources */,
 				1EE8F02722151015008AC105 /* UserModel.swift in Sources */,
 				1EE8F0192213FF1D008AC105 /* CinemaHomeInteractor.swift in Sources */,
+				1E6B0047221A95F80007789F /* ErrorFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

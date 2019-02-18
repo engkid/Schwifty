@@ -28,7 +28,14 @@ class CinemaHomePresenter: ICinemaHomePresenter {
     
     func viewDidloaded() {
         view?.setupView()
-        interactor?.fetchMovies()
+//        interactor?.fetchMovies()
+        interactor?.getMovies(successBlock: { (response) in
+            self.didReceiveSuccessWhileFetching(response: response)
+        }, failureBlock: { (error) in
+            
+            self.didReceiveFailedWhileFetching(error: error)
+            
+        })
     }
     
     func didReceiveSuccessWhileFetching(response: [String:AnyObject]) {
@@ -37,7 +44,7 @@ class CinemaHomePresenter: ICinemaHomePresenter {
         
     }
     
-    func didReceiveFailedWhileFetching(error: NSError) {
+    func didReceiveFailedWhileFetching(error: Error) {
         
         view?.showErrorAlert(title: "Error", message: "Failed to get data from server")
     

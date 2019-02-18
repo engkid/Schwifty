@@ -39,7 +39,6 @@ class CinemaHomeInteractor: ICinemaHomeInteractor {
         networkRequest?.makeRequestWith(URL: url, method: HTTPMethod.get, parameter: [:], successBlock: { (responseData) in
             
             let data = responseData
-            let utf8Text = String(data: data, encoding: String.Encoding.utf8)
             
             do {
                 

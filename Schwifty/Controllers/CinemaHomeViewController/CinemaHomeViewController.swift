@@ -62,9 +62,7 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         
         if let firstName = self.response?["first_name"], let lastName = self.response?["last_name"], let avatarUrl = self.response?["avatar"] {
             
-            let firstNameString: String = String(describing: firstName)
-            let lastNameString: String = String(describing: lastName)
-            let avatarUrlString: String = String(describing: avatarUrl)
+            let firstNameString: String = String(describing: firstName), lastNameString: String = String(describing: lastName), avatarUrlString: String = String(describing: avatarUrl)
             
             cell.titleLabel?.text = firstNameString
             cell.ratingLabel?.text = lastNameString

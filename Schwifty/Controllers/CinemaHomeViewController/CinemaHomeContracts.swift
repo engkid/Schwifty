@@ -18,6 +18,8 @@ protocol ICinemaHomeView: class {
     
     func populateWithResponses(response: [String:AnyObject])
     
+    func showErrorAlert(title: String, message: String)
+    
 }
 
 protocol ICinemaHomeWireframe: class {

@@ -120,6 +120,12 @@ extension CinemaHomeViewController: ICinemaHomeView {
         
     }
     
+    func showErrorAlert(title: String, message: String) {
+        
+        self.showAlertWith(title: title, message: message)
+        
+    }
+    
     @objc func goToHome() {
 
         self.navigationController?.popToRootViewController(animated: true)

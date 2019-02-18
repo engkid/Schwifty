@@ -38,8 +38,8 @@ class CinemaHomePresenter: ICinemaHomePresenter {
     }
     
     func didReceiveFailedWhileFetching(error: NSError) {
-    
         
+        view?.showErrorAlert(title: "Error", message: "Failed to get data from server")
     
     }
     

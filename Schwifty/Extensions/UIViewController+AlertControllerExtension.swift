@@ -24,41 +24,60 @@ extension UIViewController {
         let alertButton: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil)
         alert.addAction(alertButton)
         
-        self.show(alert, sender: self)
+        self.present(alert, animated: true, completion: nil)
         
     }
     
-    func navigateFrom(sourceViewController: UIViewController, toNextViewController: UIViewController, withTransition: TransitionMethod, animated: Bool, completion: (() -> Void)?) {
+    func navigateFrom(_ sourceViewController: UIViewController, toNextViewController: UIViewController, transition: TransitionMethod, animated: Bool, completion: (() -> Void)?) {
         
-        switch withTransition {
+        switch transition {
             
         case .push:
             
-            self.removeStackViewControllers(viewController: sourceViewController)
+            if (self.checkPresentdViewController(viewController: sourceViewController)) {
+                
+                self.dismiss(animated: true) {
+                    self.navigationController?.pushViewController(toNextViewController, animated: animated)
+                }
+                
+            } else {
+                
+                self.navigationController?.pushViewController(toNextViewController, animated: animated)
+                
+            }
             
-            self.navigationController?.pushViewController(toNextViewController, animated: animated)
         case .present:
             
-            self.removeStackViewControllers(viewController: sourceViewController)
-            
-            self.navigationController?.present(toNextViewController, animated: animated, completion: completion)
+            if (self.checkPresentdViewController(viewController: sourceViewController)) {
+                
+                self.dismiss(animated: true) {
+                    self.navigationController?.present(toNextViewController, animated: animated, completion: completion)
+                }
+                
+            } else {
+                
+                self.navigationController?.present(toNextViewController, animated: animated, completion: completion)
+                
+            }
         }
         
     }
     
-    private func removeStackViewControllers(viewController: UIViewController) {
+    private func checkPresentdViewController(viewController: UIViewController) -> Bool {
 
-        guard var viewControllers = viewController.navigationController?.viewControllers else { return }
+        guard let _ = viewController.presentedViewController else { return false }
         
-        for viewController in viewControllers {
-            
-            if !(viewController).isKind(of: viewController.classForCoder) {
-                
-                viewControllers.removeLast()
-                
-            }
-            
-        }
+        return true
+        
+//        for viewController in viewControllers {
+//
+//            if !(viewController).isKind(of: viewController.classForCoder) {
+//
+//                viewControllers.removeLast()
+//
+//            }
+//
+//        }
         
     }
     

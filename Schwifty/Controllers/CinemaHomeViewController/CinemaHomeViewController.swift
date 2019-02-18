@@ -126,7 +126,8 @@ extension CinemaHomeViewController: ICinemaHomeView {
     
     @objc func goToHome() {
 
-        self.navigationController?.popToRootViewController(animated: true)
+        let cinemaHome = CinemaHomeViewController()
+        self.navigateFrom(self, toNextViewController: cinemaHome, transition: .push, animated: true, completion: nil)
         
     }
     

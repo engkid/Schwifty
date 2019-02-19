@@ -14,21 +14,6 @@ class CinemaHomeInteractor: ICinemaHomeInteractor {
     
     var networkRequest: INetworkRequest?
     
-    func fetchMovies() {
-        
-        let baseURL: String = EngkitCinemaAPI.baseUrl
-        let userPath: String = EngkitCinemaAPI.userPath
-        let url: String = "\(baseURL)\(userPath)"
-        
-        print("interactor called")
-        networkRequest?.requestWith(URL: url, method: HTTPMethod.get, parameter: [:], successBlock: { (responses) in
-            
-        }, failureBlock: { (error) in
-            
-        })
-        
-    }
-    
     func getMovies(successBlock: @escaping ([String:AnyObject]) -> Void, failureBlock: @escaping (Error) -> Void) {
         
         let baseURL: String = EngkitCinemaAPI.baseUrl

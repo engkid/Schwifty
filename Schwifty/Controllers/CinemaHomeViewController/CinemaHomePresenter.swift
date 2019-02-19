@@ -28,7 +28,7 @@ class CinemaHomePresenter: ICinemaHomePresenter {
     
     func viewDidloaded() {
         view?.setupView()
-//        interactor?.fetchMovies()
+    
         interactor?.getMovies(successBlock: { (response) in
             
             self.view?.populateWithResponses(response: response)

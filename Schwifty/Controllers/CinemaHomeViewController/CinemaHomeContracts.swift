@@ -40,8 +40,6 @@ protocol ICinemaHomeInteractor: class {
     
     var networkRequest: INetworkRequest? { get set }
     
-    func fetchMovies()
-    
     func getMovies(successBlock: @escaping ([String:AnyObject]) -> Void, failureBlock: @escaping (Error) -> Void)
     
 }

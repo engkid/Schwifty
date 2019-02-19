@@ -27,12 +27,17 @@ protocol ICinemaHomeWireframe: class {
  
     var presenter: ICinemaHomePresenter? { get set }
     
+    func createModuleToMapView() -> UIViewController
+    
+    func navigateToMapView(from view: ICinemaHomeView)
+    
 }
 
 protocol ICinemaHomePresenter: class {
     
     func viewDidloaded()
     
+    func navigateToMapView()
 }
 
 protocol ICinemaHomeInteractor: class {

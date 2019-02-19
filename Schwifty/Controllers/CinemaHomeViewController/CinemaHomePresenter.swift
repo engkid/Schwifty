@@ -40,4 +40,11 @@ class CinemaHomePresenter: ICinemaHomePresenter {
         })
     }
     
+    func navigateToMapView() {
+        guard let cinemaView = self.view else { return }
+        
+        wireframe?.navigateToMapView(from: cinemaView)
+        
+    }
+    
 }

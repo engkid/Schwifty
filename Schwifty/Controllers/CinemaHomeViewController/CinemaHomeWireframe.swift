@@ -6,7 +6,7 @@
 //  Copyright © 2019 Engkit Satia Riswara. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class CinemaHomeWireframe: ICinemaHomeWireframe {
     
@@ -17,11 +17,21 @@ class CinemaHomeWireframe: ICinemaHomeWireframe {
         self.view = view
     }
     
-    func goToHome() {
+    func createModuleToMapView() -> UIViewController {
         
-        self.view?.goToHome()
+        let mapViewController = MapViewController()
         
+        return mapViewController
     }
     
+    func navigateToMapView(from view: ICinemaHomeView) {
+        
+        let mapViewController = self.createModuleToMapView()
+        
+        if let sourceView = view as? UIViewController {
+            sourceView.navigationController?.pushViewController(mapViewController, animated: true)
+        }
+        
+    }
     
 }

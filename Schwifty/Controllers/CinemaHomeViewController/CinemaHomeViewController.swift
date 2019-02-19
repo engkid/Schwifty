@@ -106,7 +106,7 @@ extension CinemaHomeViewController: ICinemaHomeView {
         
         collectionViewInitialize()
         
-        let barButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(goToHome))
+        let barButtonItem = UIBarButtonItem(title: "View Map", style: .plain, target: self, action: #selector(goToHome))
         
         self.navigationItem.rightBarButtonItem = barButtonItem
         

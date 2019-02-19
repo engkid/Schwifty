@@ -15,8 +15,6 @@ protocol ICinemaHomeView: class {
     
     func setupView()
     
-    func goToHome()
-    
     func populateWithResponses(response: [String:AnyObject])
     
     func showErrorAlert(title: String, message: String)
@@ -24,8 +22,6 @@ protocol ICinemaHomeView: class {
 }
 
 protocol ICinemaHomeWireframe: class {
- 
-    var presenter: ICinemaHomePresenter? { get set }
     
     func createModuleToMapView() -> UIViewController
     

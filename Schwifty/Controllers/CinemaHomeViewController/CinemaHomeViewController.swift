@@ -124,7 +124,7 @@ extension CinemaHomeViewController: ICinemaHomeView {
         
     }
     
-    @objc func goToHome() {
+    @objc private func goToHome() {
 
         presenter?.navigateToMapView()
         

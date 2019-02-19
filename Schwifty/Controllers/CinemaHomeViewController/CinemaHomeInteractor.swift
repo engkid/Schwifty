@@ -12,7 +12,6 @@ import SwiftyJSON
 
 class CinemaHomeInteractor: ICinemaHomeInteractor {
     
-    var presenter: ICinemaHomePresenter?
     var networkRequest: INetworkRequest?
     
     func fetchMovies() {

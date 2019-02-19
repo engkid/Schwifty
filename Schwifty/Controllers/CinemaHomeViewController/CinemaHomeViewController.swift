@@ -12,7 +12,7 @@ class CinemaHomeViewController: UIViewController {
     
     var presenter: ICinemaHomePresenter?
     
-    var response: [String:AnyObject]? {
+    var response: [UserModel]? {
         
         didSet {
             
@@ -51,7 +51,13 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         //TODO: - change it to model dataSource height
-        return 4
+        if let response = self.response {
+            
+            return response.count / 2
+
+        }
+        
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -59,15 +65,34 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "moviesCollectionViewCell", for: indexPath) as? MoviesCollectionViewCell else { return UICollectionViewCell() }
         
         cell.movieImage?.image = UIImage(named: "searchIcon", in: Bundle.main, compatibleWith: nil)
+        cell.ratingLabel?.textColor = UIColor.white
         
-        if let firstName = self.response?["first_name"], let lastName = self.response?["last_name"], let avatarUrl = self.response?["avatar"] {
+//        if let firstName = self.response?["first_name"], let lastName = self.response?["last_name"], let avatarUrl = self.response?["avatar"] {
+//
+//            let firstNameString: String = String(describing: firstName), lastNameString: String = String(describing: lastName), avatarUrlString: String = String(describing: avatarUrl)
+//
+//            cell.titleLabel?.text = firstNameString
+//            cell.ratingLabel?.text = lastNameString
+//            cell.movieImage?.setImageWithUrl(url: avatarUrlString)
+//
+//        }
+        
+        if let response = self.response {
             
-            let firstNameString: String = String(describing: firstName), lastNameString: String = String(describing: lastName), avatarUrlString: String = String(describing: avatarUrl)
+            let selectedItem: Int = indexPath.item
             
-            cell.titleLabel?.text = firstNameString
-            cell.ratingLabel?.text = lastNameString
-            cell.movieImage?.setImageWithUrl(url: avatarUrlString)
+            let selectedSection: Int = indexPath.section
             
+            //TODO: - change 2 to model dataSource width
+            //MARK: get item model indexPath sequenced
+            let itemIndexPath: Int =  2 * selectedSection + selectedItem
+            
+            guard let avatarUrl = response[itemIndexPath].avatarUrl else { return UICollectionViewCell() }
+            cell.movieImage?.setImageWithUrl(url: avatarUrl)
+            cell.titleLabel?.text = response[itemIndexPath].firstName
+            cell.ratingLabel?.text = response[itemIndexPath].lastName
+            
+
         }
         
         return cell
@@ -106,13 +131,13 @@ extension CinemaHomeViewController: ICinemaHomeView {
         
         collectionViewInitialize()
         
-        let barButtonItem = UIBarButtonItem(title: "View Map", style: .plain, target: self, action: #selector(goToHome))
+        let barButtonItem = UIBarButtonItem(title: "Our Journeys", style: .plain, target: self, action: #selector(goToHome))
         
         self.navigationItem.rightBarButtonItem = barButtonItem
         
     }
     
-    func populateWithResponses(response: [String:AnyObject]) {
+    func populateWithResponses(response: [UserModel]) {
         
         self.response = response
         

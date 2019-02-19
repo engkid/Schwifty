@@ -14,12 +14,16 @@ class UserModel: Codable {
     var firstName: String?
     var lastName: String?
     var avatarUrl: String?
+    var latitude: Float?
+    var longitude: Float?
     
-    init(id: Int, firstName: String, lastName: String, avatarUrl: String) {
+    init(id: Int, firstName: String, lastName: String, avatarUrl: String, latitude: Float, longitude: Float) {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
         self.avatarUrl = avatarUrl
+        self.latitude = latitude
+        self.longitude = longitude
     }
     
 }

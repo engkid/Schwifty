@@ -1,5 +1,12 @@
 PODS:
   - Alamofire (4.8.1)
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.7.0):
+    - GoogleMaps/Base (= 2.7.0)
   - SDWebImage (4.4.4):
     - SDWebImage/Core (= 4.4.4)
   - SDWebImage/Core (4.4.4)
@@ -7,20 +14,26 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.8.1)
+  - GoogleMaps
+  - GooglePlaces
   - SDWebImage (~> 4.0)
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - GoogleMaps
+    - GooglePlaces
     - SDWebImage
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   SDWebImage: c00ec18ab25d10e5ffac109b0f78d1b4341c9691
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 552e78b1dc8f8fe879c928dc26cc3f6b9796cbc1
+PODFILE CHECKSUM: 21c7424b08286177afc720c84118acdbb4f52a5a
 
 COCOAPODS: 1.5.3

@@ -14,11 +14,24 @@ class CinemaHomeInteractor: ICinemaHomeInteractor {
     
     var networkRequest: INetworkRequest?
     
-    func getMovies(successBlock: @escaping ([String:AnyObject]) -> Void, failureBlock: @escaping (Error) -> Void) {
+    func getMovies(successBlock: @escaping ([UserModel]) -> Void, failureBlock: @escaping (Error) -> Void) {
         
         let baseURL: String = EngkitCinemaAPI.baseUrl
         let userPath: String = EngkitCinemaAPI.userPath
         let url: String = "\(baseURL)\(userPath)"
+        
+        var users = [UserModel]()
+        
+        users = [
+            
+            UserModel(id: 1, firstName: "Engkit Satia Riswara", lastName: "Papa", avatarUrl: "https://i.imgur.com/dbucqYG.jpg", latitude: -6.9383029, longitude: 107.6663636),
+            UserModel(id: 2, firstName: "Windy Novita Wulandari", lastName: "Mama", avatarUrl: "https://i.imgur.com/hdtTObG.jpg", latitude: -6.9383029, longitude: 107.6663636),
+            UserModel(id: 3, firstName: "Our Junior", lastName: "Junior", avatarUrl: "https://i.imgur.com/ts5wsXj.jpg", latitude: -6.9383029, longitude: 107.6663636),
+            UserModel(id: 4, firstName: "", lastName: "", avatarUrl: "", latitude: 0.0, longitude: 0.0)
+            
+        ]
+        
+        print("user count => \(users.count)")
         
         networkRequest?.makeRequestWith(URL: url, method: HTTPMethod.get, parameter: [:], successBlock: { (responseData) in
             
@@ -52,9 +65,7 @@ class CinemaHomeInteractor: ICinemaHomeInteractor {
                 
                 print("json => \(json["data"].count) user last name => \(userLastName) responseData => \(dictionaryArray) pagelimit => \(pageLimit), perPage => \(perPage), total => \(total), totalPages => \(totalPages)")
                 
-                if let responseUser = dictionaryArray[0].dictionaryValue as [String:AnyObject]? {
-                    successBlock(responseUser)
-                }
+                successBlock(users)
                 
             } catch let error as NSError? {
                 

@@ -8,6 +8,8 @@ target 'Schwifty' do
   # Pods for Schwifty
   pod 'Alamofire', '~> 4.8.1'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
   
   platform :ios, '8.0'
   pod 'SDWebImage', '~> 4.0'

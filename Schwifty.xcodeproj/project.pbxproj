@@ -13,6 +13,10 @@
 		1E6B0047221A95F80007789F /* ErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B0046221A95F80007789F /* ErrorFactory.swift */; };
 		1E6B004B221B9F5C0007789F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B0049221B9F5C0007789F /* MapViewController.swift */; };
 		1E6B004C221B9F5C0007789F /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E6B004A221B9F5C0007789F /* MapViewController.xib */; };
+		1E6B004E221BAB8C0007789F /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B004D221BAB8C0007789F /* MapInteractor.swift */; };
+		1E6B0050221BAB9A0007789F /* MapContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B004F221BAB9A0007789F /* MapContracts.swift */; };
+		1E6B0052221BABA90007789F /* MapWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B0051221BABA90007789F /* MapWireframe.swift */; };
+		1E6B0054221BABB50007789F /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B0053221BABB50007789F /* MapPresenter.swift */; };
 		1EE8F0092213CC52008AC105 /* CinemaHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */; };
 		1EE8F00A2213CC52008AC105 /* CinemaHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */; };
 		1EE8F00F2213DFBC008AC105 /* MoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F00D2213DFBC008AC105 /* MoviesCollectionViewCell.swift */; };
@@ -53,6 +57,10 @@
 		1E6B0046221A95F80007789F /* ErrorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFactory.swift; sourceTree = "<group>"; };
 		1E6B0049221B9F5C0007789F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1E6B004A221B9F5C0007789F /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		1E6B004D221BAB8C0007789F /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		1E6B004F221BAB9A0007789F /* MapContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContracts.swift; sourceTree = "<group>"; };
+		1E6B0051221BABA90007789F /* MapWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWireframe.swift; sourceTree = "<group>"; };
+		1E6B0053221BABB50007789F /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaHomeViewController.swift; sourceTree = "<group>"; };
 		1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CinemaHomeViewController.xib; sourceTree = "<group>"; };
 		1EE8F00D2213DFBC008AC105 /* MoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -132,6 +140,10 @@
 			children = (
 				1E6B0049221B9F5C0007789F /* MapViewController.swift */,
 				1E6B004A221B9F5C0007789F /* MapViewController.xib */,
+				1E6B004F221BAB9A0007789F /* MapContracts.swift */,
+				1E6B0053221BABB50007789F /* MapPresenter.swift */,
+				1E6B0051221BABA90007789F /* MapWireframe.swift */,
+				1E6B004D221BAB8C0007789F /* MapInteractor.swift */,
 			);
 			path = MapViewController;
 			sourceTree = "<group>";
@@ -348,10 +360,14 @@
 				1EE8F0242214FF48008AC105 /* NetworkRequestContracts.swift in Sources */,
 				1EE8F034221A5C73008AC105 /* UIViewController+AlertControllerExtension.swift in Sources */,
 				1E3EAE7F2203619900E074DE /* AppDelegate.swift in Sources */,
+				1E6B004E221BAB8C0007789F /* MapInteractor.swift in Sources */,
+				1E6B0054221BABB50007789F /* MapPresenter.swift in Sources */,
 				1EE8F0152213FEA5008AC105 /* CinemaHomePresenter.swift in Sources */,
 				1EE8F02E22169CCC008AC105 /* AppConstants.swift in Sources */,
+				1E6B0050221BAB9A0007789F /* MapContracts.swift in Sources */,
 				1EE8F0172213FECF008AC105 /* CinemaHomeWireframe.swift in Sources */,
 				1EE8F0132213FDE2008AC105 /* CinemaHomeContracts.swift in Sources */,
+				1E6B0052221BABA90007789F /* MapWireframe.swift in Sources */,
 				1EE8F02722151015008AC105 /* UserModel.swift in Sources */,
 				1EE8F0192213FF1D008AC105 /* CinemaHomeInteractor.swift in Sources */,
 				1E6B004B221B9F5C0007789F /* MapViewController.swift in Sources */,

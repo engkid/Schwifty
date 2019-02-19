@@ -61,8 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         cinemaHome.presenter = presenter
         
-        cinemaInteractor.presenter = presenter
-        
         return cinemaHome as! CinemaHomeViewController
         
     }

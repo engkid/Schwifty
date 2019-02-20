@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class MapWireframe: IMapWireframe {
+    
+    func createModuleTo() {
+        
+    }
+    
+}

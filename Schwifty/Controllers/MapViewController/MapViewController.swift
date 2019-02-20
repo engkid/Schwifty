@@ -9,11 +9,19 @@
 import UIKit
 import GoogleMaps
 
-class MapViewController: UIViewController {
-
+class MapViewController: UIViewController, IMapView {
+    
+    var presenter: IMapPresenter?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        presenter?.viewDidLoaded()
+        
+    }
+    
+    func setUpView() {
+        
         let camera = GMSCameraPosition.camera(withLatitude: -6.9383029, longitude: 107.6663636, zoom: 17.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         view = mapView
@@ -40,6 +48,7 @@ class MapViewController: UIViewController {
             marker2.icon = imageView.rescaleImage(image: image, scaledToSize: CGSize(width: 90.0, height: 60.0))
             
         }
+        
     }
 
 }

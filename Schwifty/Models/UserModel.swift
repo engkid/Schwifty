@@ -27,3 +27,17 @@ class UserModel: Codable {
     }
     
 }
+
+struct MapModel: Codable {
+    
+    var lat: Double?
+    var long: Double?
+    
+    mutating func initialize(data:[String:AnyObject]) {
+        
+        self.lat = data["latitude"] as? Double
+        self.long = data["longitude"] as? Double
+        
+    }
+    
+}

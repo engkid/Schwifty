@@ -12,9 +12,18 @@ class CinemaHomeWireframe: ICinemaHomeWireframe {
     
     func createModuleToMapView() -> UIViewController {
         
-        let mapViewController = MapViewController()
+        guard let mapViewController: IMapView = MapViewController() as IMapView?,
+            let mapPresenter: IMapPresenter = MapPresenter() as IMapPresenter?,
+            let mapInteractor: IMapInteractor = MapInteractor() as IMapInteractor?,
+            let networkService: INetworkRequest = NetworkRequest() as INetworkRequest?
+            else { return UIViewController() }
         
-        return mapViewController
+        mapInteractor.networkService = networkService
+        mapPresenter.view = mapViewController
+        mapPresenter.interactor = mapInteractor
+        mapViewController.presenter = mapPresenter
+        
+        return mapViewController as! UIViewController
     }
     
     func navigateToMapView(from view: ICinemaHomeView) {

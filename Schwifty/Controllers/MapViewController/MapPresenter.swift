@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+class MapPresenter: IMapPresenter {
+    
+    weak var view: IMapView?
+    var interactor: IMapInteractor?
+    var wireframe: IMapWireframe?
+    
+    func viewDidLoaded() {
+        
+        view?.setUpView()
+        
+    }
+    
+}

@@ -12,9 +12,10 @@ class MapInteractor: IMapInteractor {
     
     var networkService: INetworkRequest?
     
-    let mapUrl: String = "this is a url"
-    
-    func getMapData(successBlock: @escaping (MapModel) -> Void, failureBlock: @escaping (Error?) -> Void) {
+    func getMapData(successBlock: @escaping ([MapModel]?) -> Void, failureBlock: @escaping (Error?) -> Void) {
+        
+        let mapUrl: String = "this is a url"
+        var mapModels: [MapModel] = []
         
         networkService?.makeRequestWith(URL: mapUrl, method: .get, parameter: [:], successBlock: { (response) in
             
@@ -24,15 +25,13 @@ class MapInteractor: IMapInteractor {
                                         "longitude": 107.9283124 as AnyObject
                                         ])
             
-            successBlock(mapModel)
+            mapModels.append(mapModel)
+            
+            successBlock(mapModels)
             
         }, failureBlock: { (error) in
           
-            if let errorRes = error {
-                
-                failureBlock(errorRes)
-                
-            }
+            failureBlock(error as NSError?)
             
         })
         

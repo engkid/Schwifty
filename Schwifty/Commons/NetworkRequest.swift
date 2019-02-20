@@ -16,9 +16,11 @@ class NetworkRequest: INetworkRequest {
         
         Alamofire.request(URL).responseJSON { (response) in
             
-            guard let data = response.data else { return failureBlock(response.error) }
-            
-            successBlock(data)
+            if let data = response.data {
+                successBlock(data)
+            } else {
+                failureBlock(response.error)
+            }
             
         }
         

@@ -16,7 +16,12 @@ class MapPresenter: IMapPresenter {
     
     func viewDidLoaded() {
         
-        view?.setUpView()
+        self.view?.setUpView()
+        interactor?.getMapData(successBlock: { (map) in
+            
+        }, failureBlock: { (error) in
+            
+        })
         
     }
     

@@ -20,6 +20,8 @@ protocol IMapInteractor: class {
     
     var networkService: INetworkRequest? { get set }
     
+    func getMapData(successBlock: @escaping ([MapModel]?) -> Void, failureBlock: @escaping (Error?) -> Void)
+    
 }
 
 protocol IMapPresenter: class {

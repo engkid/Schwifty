@@ -26,7 +26,7 @@ class CinemaHomeInteractor: ICinemaHomeInteractor {
             
             UserModel(id: 1, firstName: "Engkit Satia Riswara", lastName: "Papa", avatarUrl: "https://i.imgur.com/dbucqYG.jpg", latitude: -6.9383029, longitude: 107.6663636),
             UserModel(id: 2, firstName: "Windy Novita Wulandari", lastName: "Mama", avatarUrl: "https://i.imgur.com/hdtTObG.jpg", latitude: -6.9383029, longitude: 107.6663636),
-            UserModel(id: 3, firstName: "Our Junior", lastName: "Junior", avatarUrl: "https://i.imgur.com/ts5wsXj.jpg", latitude: -6.9383029, longitude: 107.6663636),
+            UserModel(id: 3, firstName: "Windy & Engkit Jr", lastName: "Junior", avatarUrl: "https://i.imgur.com/ts5wsXj.jpg", latitude: -6.9383029, longitude: 107.6663636),
             UserModel(id: 4, firstName: "", lastName: "", avatarUrl: "", latitude: 0.0, longitude: 0.0)
             
         ]
@@ -87,5 +87,4 @@ class CinemaHomeInteractor: ICinemaHomeInteractor {
         
     }
 
-    
 }

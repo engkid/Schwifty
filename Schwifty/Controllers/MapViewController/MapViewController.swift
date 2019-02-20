@@ -37,21 +37,11 @@ class MapViewController: UIViewController {
             imageView.layer.cornerRadius = imageView.frame.height/2
             imageView.layer.masksToBounds = false
             
-            if let images = imageView.image {
-                marker2.icon = self.imageWithImage(image: images, scaledToSize: CGSize(width: 90.0, height: 60.0))
+            if let image = imageView.image {
+                marker2.icon = imageView.imageWithImage(image: image, scaledToSize: CGSize(width: 90.0, height: 60.0))
             }
             
         }
     }
-    
-    func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
-        image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
-        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return newImage
-    }
-    
-    
 
 }

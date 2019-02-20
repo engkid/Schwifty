@@ -37,9 +37,7 @@ class MapViewController: UIViewController {
             imageView.layer.cornerRadius = imageView.frame.height/2
             imageView.layer.masksToBounds = false
             
-            if let image = imageView.image {
-                marker2.icon = imageView.imageWithImage(image: image, scaledToSize: CGSize(width: 90.0, height: 60.0))
-            }
+            marker2.icon = imageView.imageWithImage(image: image, scaledToSize: CGSize(width: 90.0, height: 60.0))
             
         }
     }

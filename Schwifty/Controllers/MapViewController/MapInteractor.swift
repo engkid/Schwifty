@@ -31,7 +31,7 @@ class MapInteractor: IMapInteractor {
             
         }, failureBlock: { (error) in
           
-            failureBlock(error as NSError?)
+            failureBlock(error)
             
         })
         

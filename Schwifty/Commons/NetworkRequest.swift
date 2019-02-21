@@ -16,65 +16,32 @@ class NetworkRequest: INetworkRequest {
         
         Alamofire.request(URL).responseJSON { (response) in
             
-            if let data = response.data {
+            if response.result.isSuccess {
+                
+                guard let data = response.data else { return }
+            
                 successBlock(data)
+                
             } else {
+                
                 failureBlock(response.error)
+                
             }
+            
             
         }
         
     }
     
-    func requestWith(URL: String, method: HTTPMethod, parameter: [String : Any], successBlock: @escaping ([String : AnyObject]?) -> Void, failureBlock: @escaping (NSError?) -> Void) {
+    func requestWith(URL: String, method: HTTPMethod, parameter: [String : Any], successBlock: @escaping ([String : Any]?) -> Void, failureBlock: @escaping (NSError?) -> Void) {
         
         Alamofire.request(URL).responseJSON { (response) in
             
             if (response.result.isSuccess) {
                 
-                guard let data = response.data, let utf8Text = String(data: data, encoding: String.Encoding.utf8) else { return }
+                guard let responseObject = response.result.value as? [String:Any] else { return }
                 
-                do {
-                    
-                    let json = try JSON(data: data)
-                    
-                    let _ = try JSONDecoder().decode(UserModel.self, from: data)
-                    
-                    let dictionaryArray = json["data"].arrayValue
-                    
-                    let pageLimit = json["page"].intValue
-                    
-                    let perPage = json["per_page"].intValue
-                    
-                    let total = json["total"].intValue
-                    
-                    let totalPages = json["total_pages"].intValue
-                    
-                    for i in 0 ... dictionaryArray.count - 1  {
-                        
-                        let jsonAsData = try dictionaryArray[i].rawData()
-                        
-                        let _ = try JSONDecoder().decode(UserModel.self, from: jsonAsData)
-                        
-                    }
-                    
-                    let userLastName = json["data"][0]["last_name"].stringValue
-                    
-                    print("json => \(json["data"].count) user last name => \(userLastName) responseData => \(dictionaryArray) pagelimit => \(pageLimit), perPage => \(perPage), total => \(total), totalPages => \(totalPages)")
-                    
-                    if let responseUser = dictionaryArray[0].dictionaryValue as [String:AnyObject]? {
-                        successBlock(responseUser)
-                    }
-                    
-                } catch let error as NSError? {
-                    
-                    if let errorCallback = error {
-                        failureBlock(errorCallback)
-                    }
-                    
-                }
-                
-                print("Data => \(utf8Text) ")
+                successBlock(responseObject)
                 
             } else {
                 

@@ -38,6 +38,13 @@ class CinemaHomePresenter: ICinemaHomePresenter {
             self?.view?.showErrorAlert(title: "Error", message: "Failed to fetch data from server")
             
         })
+        
+        interactor?.getUsers(successBlock: { (users) in
+            
+        }, failureBlock: { (error) in
+            
+        })
+
     }
     
     func navigateToMapView() {

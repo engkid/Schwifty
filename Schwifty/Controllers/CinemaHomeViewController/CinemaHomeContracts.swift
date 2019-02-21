@@ -42,6 +42,8 @@ protocol ICinemaHomeInteractor: class {
     
     func getMovies(successBlock: @escaping ([UserModel]) -> Void, failureBlock: @escaping (Error) -> Void)
     
+    func getUsers(successBlock: @escaping ([Users]?) -> Void, failureBlock: @escaping (Error?) -> Void)
+    
 }
     
 

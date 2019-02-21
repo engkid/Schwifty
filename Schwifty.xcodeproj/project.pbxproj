@@ -17,6 +17,7 @@
 		1E6B0050221BAB9A0007789F /* MapContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B004F221BAB9A0007789F /* MapContracts.swift */; };
 		1E6B0052221BABA90007789F /* MapWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B0051221BABA90007789F /* MapWireframe.swift */; };
 		1E6B0054221BABB50007789F /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B0053221BABB50007789F /* MapPresenter.swift */; };
+		1E6B0056221E4D3D0007789F /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B0055221E4D3D0007789F /* Users.swift */; };
 		1EE8F0092213CC52008AC105 /* CinemaHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */; };
 		1EE8F00A2213CC52008AC105 /* CinemaHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */; };
 		1EE8F00F2213DFBC008AC105 /* MoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F00D2213DFBC008AC105 /* MoviesCollectionViewCell.swift */; };
@@ -61,6 +62,7 @@
 		1E6B004F221BAB9A0007789F /* MapContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContracts.swift; sourceTree = "<group>"; };
 		1E6B0051221BABA90007789F /* MapWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWireframe.swift; sourceTree = "<group>"; };
 		1E6B0053221BABB50007789F /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		1E6B0055221E4D3D0007789F /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaHomeViewController.swift; sourceTree = "<group>"; };
 		1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CinemaHomeViewController.xib; sourceTree = "<group>"; };
 		1EE8F00D2213DFBC008AC105 /* MoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				1EE8F02622151015008AC105 /* UserModel.swift */,
+				1E6B0055221E4D3D0007789F /* Users.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				1EE8F0152213FEA5008AC105 /* CinemaHomePresenter.swift in Sources */,
 				1EE8F02E22169CCC008AC105 /* AppConstants.swift in Sources */,
 				1E6B0050221BAB9A0007789F /* MapContracts.swift in Sources */,
+				1E6B0056221E4D3D0007789F /* Users.swift in Sources */,
 				1EE8F0172213FECF008AC105 /* CinemaHomeWireframe.swift in Sources */,
 				1EE8F0132213FDE2008AC105 /* CinemaHomeContracts.swift in Sources */,
 				1E6B0052221BABA90007789F /* MapWireframe.swift in Sources */,

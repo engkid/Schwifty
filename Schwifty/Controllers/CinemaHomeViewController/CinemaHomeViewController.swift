@@ -12,7 +12,7 @@ class CinemaHomeViewController: UIViewController {
     
     var presenter: ICinemaHomePresenter?
     
-    var response: [UserModel]? {
+    var response: [Families]? {
         
         didSet {
             
@@ -23,6 +23,7 @@ class CinemaHomeViewController: UIViewController {
     }
 
     @IBOutlet weak var movieCollectionView: UICollectionView?
+    @IBOutlet weak var titleLabel: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,16 +68,6 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.movieImage?.image = UIImage(named: "searchIcon", in: Bundle.main, compatibleWith: nil)
         cell.ratingLabel?.textColor = UIColor.white
         
-//        if let firstName = self.response?["first_name"], let lastName = self.response?["last_name"], let avatarUrl = self.response?["avatar"] {
-//
-//            let firstNameString: String = String(describing: firstName), lastNameString: String = String(describing: lastName), avatarUrlString: String = String(describing: avatarUrl)
-//
-//            cell.titleLabel?.text = firstNameString
-//            cell.ratingLabel?.text = lastNameString
-//            cell.movieImage?.setImageWithUrl(url: avatarUrlString)
-//
-//        }
-        
         if let response = self.response {
             
             let selectedItem: Int = indexPath.item
@@ -89,10 +80,9 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
             
             guard let avatarUrl = response[itemIndexPath].avatarUrl else { return UICollectionViewCell() }
             cell.movieImage?.setImageWithUrl(url: avatarUrl)
-            cell.titleLabel?.text = response[itemIndexPath].firstName
-            cell.ratingLabel?.text = response[itemIndexPath].lastName
+            cell.titleLabel?.text = response[itemIndexPath].name
+            cell.ratingLabel?.text = response[itemIndexPath].status
             
-
         }
         
         return cell
@@ -130,6 +120,7 @@ extension CinemaHomeViewController: ICinemaHomeView {
     func setupView() {
         
         collectionViewInitialize()
+        self.titleLabel?.text = "Our Little Family"
         
         let barButtonItem = UIBarButtonItem(title: "Our Journeys", style: .plain, target: self, action: #selector(goToHome))
         
@@ -137,7 +128,7 @@ extension CinemaHomeViewController: ICinemaHomeView {
         
     }
     
-    func populateWithResponses(response: [UserModel]) {
+    func populateWithResponses(response: [Families]) {
         
         self.response = response
         

@@ -29,7 +29,7 @@
 		1EE8F01C2214FBA0008AC105 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F01B2214FBA0008AC105 /* NetworkRequest.swift */; };
 		1EE8F0222214FC68008AC105 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE8F0212214FC68008AC105 /* Alamofire.framework */; };
 		1EE8F0242214FF48008AC105 /* NetworkRequestContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F0232214FF48008AC105 /* NetworkRequestContracts.swift */; };
-		1EE8F02722151015008AC105 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F02622151015008AC105 /* UserModel.swift */; };
+		1EE8F02722151015008AC105 /* Families.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F02622151015008AC105 /* Families.swift */; };
 		1EE8F02C221690ED008AC105 /* UIImageView+ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F02B221690ED008AC105 /* UIImageView+ImageExtensions.swift */; };
 		1EE8F02E22169CCC008AC105 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F02D22169CCC008AC105 /* AppConstants.swift */; };
 		1EE8F034221A5C73008AC105 /* UIViewController+AlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F033221A5C73008AC105 /* UIViewController+AlertControllerExtension.swift */; };
@@ -74,7 +74,7 @@
 		1EE8F01B2214FBA0008AC105 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		1EE8F0212214FC68008AC105 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE8F0232214FF48008AC105 /* NetworkRequestContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestContracts.swift; sourceTree = "<group>"; };
-		1EE8F02622151015008AC105 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		1EE8F02622151015008AC105 /* Families.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Families.swift; sourceTree = "<group>"; };
 		1EE8F02B221690ED008AC105 /* UIImageView+ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageExtensions.swift"; sourceTree = "<group>"; };
 		1EE8F02D22169CCC008AC105 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		1EE8F033221A5C73008AC105 /* UIViewController+AlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertControllerExtension.swift"; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 		1EE8F02522150FF4008AC105 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1EE8F02622151015008AC105 /* UserModel.swift */,
+				1EE8F02622151015008AC105 /* Families.swift */,
 				1E6B0055221E4D3D0007789F /* Users.swift */,
 			);
 			path = Models;
@@ -397,7 +397,7 @@
 				1EE8F0172213FECF008AC105 /* CinemaHomeWireframe.swift in Sources */,
 				1EE8F0132213FDE2008AC105 /* CinemaHomeContracts.swift in Sources */,
 				1E6B0052221BABA90007789F /* MapWireframe.swift in Sources */,
-				1EE8F02722151015008AC105 /* UserModel.swift in Sources */,
+				1EE8F02722151015008AC105 /* Families.swift in Sources */,
 				1EE8F0192213FF1D008AC105 /* CinemaHomeInteractor.swift in Sources */,
 				1E6B004B221B9F5C0007789F /* MapViewController.swift in Sources */,
 				1E6B0047221A95F80007789F /* ErrorFactory.swift in Sources */,

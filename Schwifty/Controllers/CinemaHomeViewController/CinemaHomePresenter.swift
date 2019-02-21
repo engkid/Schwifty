@@ -29,19 +29,13 @@ class CinemaHomePresenter: ICinemaHomePresenter {
     func viewDidloaded() {
         view?.setupView()
     
-        interactor?.getMovies(successBlock: { [weak self] response in
+        interactor?.getFamilies(successBlock: { [weak self] response in
             
             self?.view?.populateWithResponses(response: response)
             
         }, failureBlock: { [weak self] error in
             
             self?.view?.showErrorAlert(title: "Error", message: "Failed to fetch data from server")
-            
-        })
-        
-        interactor?.getUsers(successBlock: { (users) in
-            
-        }, failureBlock: { (error) in
             
         })
 

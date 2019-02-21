@@ -12,26 +12,39 @@ class MapInteractor: IMapInteractor {
     
     var networkService: INetworkRequest?
     
-    func getMapData(successBlock: @escaping ([MapModel]?) -> Void, failureBlock: @escaping (Error?) -> Void) {
+    func getUsers(successBlock: @escaping ([Users]?) -> Void, failureBlock: @escaping (Error?) -> Void) {
         
-        let mapUrl: String = "this is a url"
-        var mapModels: [MapModel] = []
+        let baseURL: String = EngkitCinemaAPI.baseUrl
+        let userPath: String = EngkitCinemaAPI.userPath
+        let url: String = "\(baseURL)\(userPath)"
         
-        networkService?.makeRequestWith(URL: mapUrl, method: .get, parameter: [:], successBlock: { (response) in
+        var users = [Users]()
+        
+        networkService?.requestWith(URL: url, method: .get, parameter: [:], successBlock: { (response) in
             
-            //TODO: mapping Data goes here
-            var mapModel = MapModel()
-            mapModel.initialize(data: ["latitude": -6.1255634 as AnyObject,
-                                        "longitude": 107.9283124 as AnyObject
-                                        ])
+            for user in response?["data"] as! [Any] {
+                
+                do {
+                    
+                    let jsonData = try JSONSerialization.data(withJSONObject: user, options: JSONSerialization.WritingOptions.prettyPrinted)
+                    let jsonString = String(data: jsonData, encoding: String.Encoding.utf8)
+                    let data = jsonString?.data(using: String.Encoding.utf8)
+                    let jsonDecoder = JSONDecoder()
+                    let user = try jsonDecoder.decode(Users.self, from: data!)
+                    
+                    users.append(user)
+                    
+                } catch {
+                    
+                }
+                
+            }
             
-            mapModels.append(mapModel)
-            
-            successBlock(mapModels)
+            successBlock(users)
             
         }, failureBlock: { (error) in
-          
-            failureBlock(error)
+            
+            
             
         })
         

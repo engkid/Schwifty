@@ -15,7 +15,7 @@ protocol ICinemaHomeView: class {
     
     func setupView()
     
-    func populateWithResponses(response: [UserModel])
+    func populateWithResponses(response: [Families])
     
     func showErrorAlert(title: String, message: String)
     
@@ -40,9 +40,7 @@ protocol ICinemaHomeInteractor: class {
     
     var networkRequest: INetworkRequest? { get set }
     
-    func getMovies(successBlock: @escaping ([UserModel]) -> Void, failureBlock: @escaping (Error) -> Void)
-    
-    func getUsers(successBlock: @escaping ([Users]?) -> Void, failureBlock: @escaping (Error?) -> Void)
+    func getFamilies(successBlock: @escaping ([Families]) -> Void, failureBlock: @escaping (Error) -> Void)
     
 }
     

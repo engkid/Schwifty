@@ -20,7 +20,7 @@ protocol IMapInteractor: class {
     
     var networkService: INetworkRequest? { get set }
     
-    func getMapData(successBlock: @escaping ([MapModel]?) -> Void, failureBlock: @escaping (Error?) -> Void)
+    func getUsers(successBlock: @escaping ([Users]?) -> Void, failureBlock: @escaping (Error?) -> Void)
     
 }
 

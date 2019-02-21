@@ -8,19 +8,19 @@
 
 import Foundation
 
-class UserModel: Codable {
+class Families: Codable {
     
     var id: Int?
-    var firstName: String?
-    var lastName: String?
+    var name: String?
+    var status: String?
     var avatarUrl: String?
     var latitude: Float?
     var longitude: Float?
     
-    init(id: Int, firstName: String, lastName: String, avatarUrl: String, latitude: Float, longitude: Float) {
+    init(id: Int, name: String, status: String, avatarUrl: String, latitude: Float, longitude: Float) {
         self.id = id
-        self.firstName = firstName
-        self.lastName = lastName
+        self.name = name
+        self.status = status
         self.avatarUrl = avatarUrl
         self.latitude = latitude
         self.longitude = longitude

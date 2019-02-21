@@ -17,7 +17,7 @@ class MapPresenter: IMapPresenter {
     func viewDidLoaded() {
         
         self.view?.setUpView()
-        interactor?.getMapData(successBlock: { (map) in
+        interactor?.getUsers(successBlock: { (users) in
             
         }, failureBlock: { (error) in
             

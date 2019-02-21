@@ -65,23 +65,13 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "moviesCollectionViewCell", for: indexPath) as? MoviesCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.movieImage?.image = UIImage(named: "searchIcon", in: Bundle.main, compatibleWith: nil)
-        cell.ratingLabel?.textColor = UIColor.white
+        let selectedItem: Int = indexPath.item
+        let selectedSection: Int = indexPath.section
+        let itemIndexPath: Int =  2 * selectedSection + selectedItem
         
         if let response = self.response {
             
-            let selectedItem: Int = indexPath.item
-            
-            let selectedSection: Int = indexPath.section
-            
-            //TODO: - change 2 to model dataSource width
-            //MARK: get item model indexPath sequenced
-            let itemIndexPath: Int =  2 * selectedSection + selectedItem
-            
-            guard let avatarUrl = response[itemIndexPath].avatarUrl else { return UICollectionViewCell() }
-            cell.movieImage?.setImageWithUrl(url: avatarUrl)
-            cell.titleLabel?.text = response[itemIndexPath].name
-            cell.ratingLabel?.text = response[itemIndexPath].status
+            cell.set(forFamily: response[itemIndexPath])
             
         }
         

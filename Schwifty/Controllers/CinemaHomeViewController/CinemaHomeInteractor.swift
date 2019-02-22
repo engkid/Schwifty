@@ -29,7 +29,10 @@ class CinemaHomeInteractor: ICinemaHomeInteractor {
         
         print("families count => \(families.count)")
         
-        successBlock(families)
+        let timeInterval = DispatchTime.now() + .seconds(5)
+        DispatchQueue.main.asyncAfter(deadline: timeInterval) {
+            successBlock(families)
+        }
         
     }
 

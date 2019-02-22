@@ -11,6 +11,7 @@ import UIKit
 class CinemaHomeViewController: UIViewController {
     
     var presenter: ICinemaHomePresenter?
+    let loading: LoadingIndicator = LoadingIndicator()
     
     var response: [Families]? {
         
@@ -133,6 +134,18 @@ extension CinemaHomeViewController: ICinemaHomeView {
     @objc private func goToHome() {
 
         presenter?.navigateToMapView()
+        
+    }
+    
+    func showLoading() {
+        
+        self.loading.showLoading(fromView: self.view)
+        
+    }
+    
+    func hideLoading() {
+        
+        self.loading.hideLoading(fromView: self.view)
         
     }
     

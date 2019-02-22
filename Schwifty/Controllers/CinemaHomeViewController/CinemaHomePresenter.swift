@@ -30,8 +30,10 @@ class CinemaHomePresenter: ICinemaHomePresenter {
     func viewDidloaded() {
         view?.setupView()
     
+        view?.showLoading()
         interactor?.getFamilies(successBlock: { [weak self] response in
             
+            self?.view?.hideLoading()
             self?.view?.populateWithResponses(response: response)
             
         }, failureBlock: { [weak self] error in

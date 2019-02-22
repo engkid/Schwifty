@@ -15,6 +15,10 @@ protocol ICinemaHomeView: class {
     
     func setupView()
     
+    func showLoading()
+    
+    func hideLoading()
+    
     func populateWithResponses(response: [Families])
     
     func showErrorAlert(title: String, message: String)

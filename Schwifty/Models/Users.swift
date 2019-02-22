@@ -10,15 +10,17 @@ import Foundation
 
 enum Job: String, Codable {
     
-    case iOS
-    case Android
-    case Fullstack
+    case ios
+    case android
+    case fullstack
+    case none
     
     enum CodingKeys: String, CodingKey {
         
         case iOS = "IOS"
         case Android = "ANDROID"
         case Fullstack = "FULLSTACK"
+        case None = ""
         
     }
     
@@ -50,7 +52,7 @@ class Users: Codable {
         self.avatar = try container.decode(String.self, forKey: .avatar)
         self.firstName = try container.decode(String.self, forKey: .firstName)
         self.lastName = try container.decode(String.self, forKey: .lastName)
-        self.job = try container.decodeIfPresent(Job.self, forKey: .job) ?? .iOS
+        self.job = try container.decodeIfPresent(Job.self, forKey: .job) ?? .none
         
     }
     

@@ -8,12 +8,29 @@
 
 import Foundation
 
-struct Users: Codable {
+enum Job: String, Codable {
+    
+    case iOS
+    case Android
+    case Fullstack
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case iOS = "IOS"
+        case Android = "ANDROID"
+        case Fullstack = "FULLSTACK"
+        
+    }
+    
+}
+
+class Users: Codable {
     
     var id: Int
     var firstName: String
     var lastName: String
     var avatar: String
+    var job: Job
     
     enum CodingKeys: String, CodingKey {
         
@@ -21,7 +38,21 @@ struct Users: Codable {
         case firstName = "first_name"
         case lastName = "last_name"
         case avatar
+        case job
         
     }
+    
+    required init(from decoder: Decoder) throws {
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.avatar = try container.decode(String.self, forKey: .avatar)
+        self.firstName = try container.decode(String.self, forKey: .firstName)
+        self.lastName = try container.decode(String.self, forKey: .lastName)
+        self.job = try container.decodeIfPresent(Job.self, forKey: .job) ?? .iOS
+        
+    }
+    
     
 }

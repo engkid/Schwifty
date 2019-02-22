@@ -11,7 +11,7 @@ import UIKit
 class CinemaHomeViewController: UIViewController {
     
     var presenter: ICinemaHomePresenter?
-    let loading: LoadingIndicator = LoadingIndicator()
+    var loading: LoadingIndicator?
     
     var response: [Families]? {
         
@@ -139,13 +139,13 @@ extension CinemaHomeViewController: ICinemaHomeView {
     
     func showLoading() {
         
-        self.loading.showLoading(fromView: self.view)
+        self.loading?.showLoading(fromView: self.view)
         
     }
     
     func hideLoading() {
         
-        self.loading.hideLoading(fromView: self.view)
+        self.loading?.hideLoading(fromView: self.view)
         
     }
     

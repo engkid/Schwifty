@@ -13,6 +13,8 @@ protocol ICinemaHomeView: class {
     
     var presenter: ICinemaHomePresenter? { get set }
     
+    var loading: LoadingIndicator? { get set }
+    
     func setupView()
     
     func showLoading()

@@ -12,6 +12,7 @@ class CinemaHomeViewController: UIViewController {
     
     var presenter: ICinemaHomePresenter?
     var loading: LoadingIndicator?
+    var load: UIActivityIndicatorView?
     
     var response: [Families]? {
         
@@ -113,7 +114,7 @@ extension CinemaHomeViewController: ICinemaHomeView {
         collectionViewInitialize()
         self.titleLabel?.text = "Our Little Family"
         
-        let barButtonItem = UIBarButtonItem(title: "Our Journeys", style: .plain, target: self, action: #selector(goToHome))
+        let barButtonItem = UIBarButtonItem(title: "Our Journeys", style: .plain, target: self, action: #selector(goToMapViewController))
         
         self.navigationItem.rightBarButtonItem = barButtonItem
         
@@ -131,7 +132,7 @@ extension CinemaHomeViewController: ICinemaHomeView {
         
     }
     
-    @objc private func goToHome() {
+    @objc private func goToMapViewController() {
 
         presenter?.navigateToMapView()
         
@@ -139,13 +140,16 @@ extension CinemaHomeViewController: ICinemaHomeView {
     
     func showLoading() {
         
-        self.loading?.showLoading(fromView: self.view)
+        self.load = self.showLoading(type: .indicator)
+//        self.showLoading(atView: self.view, type: .indicator)
         
     }
     
     func hideLoading() {
         
-        self.loading?.hideLoading(fromView: self.view)
+        self.hideLoading(loadingView: load)
+
+//        self.loading?.hideLoading(atView: self.view)
         
     }
     

@@ -20,6 +20,7 @@
 		1E6B0056221E4D3D0007789F /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B0055221E4D3D0007789F /* Users.swift */; };
 		1E6B0058221FA01C0007789F /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B0057221FA01C0007789F /* LoadingIndicator.swift */; };
 		1E6B005C221FD37C0007789F /* UIViewController+AlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B005B221FD37C0007789F /* UIViewController+AlertControllerExtension.swift */; };
+		1E6B005E2223882B0007789F /* UIViewController+LoadingViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B005D2223882B0007789F /* UIViewController+LoadingViewExtensions.swift */; };
 		1EE8F0092213CC52008AC105 /* CinemaHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */; };
 		1EE8F00A2213CC52008AC105 /* CinemaHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */; };
 		1EE8F00F2213DFBC008AC105 /* MoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F00D2213DFBC008AC105 /* MoviesCollectionViewCell.swift */; };
@@ -66,6 +67,7 @@
 		1E6B0055221E4D3D0007789F /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		1E6B0057221FA01C0007789F /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		1E6B005B221FD37C0007789F /* UIViewController+AlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertControllerExtension.swift"; sourceTree = "<group>"; };
+		1E6B005D2223882B0007789F /* UIViewController+LoadingViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoadingViewExtensions.swift"; sourceTree = "<group>"; };
 		1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaHomeViewController.swift; sourceTree = "<group>"; };
 		1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CinemaHomeViewController.xib; sourceTree = "<group>"; };
 		1EE8F00D2213DFBC008AC105 /* MoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			children = (
 				1E6B005B221FD37C0007789F /* UIViewController+AlertControllerExtension.swift */,
 				1EE8F02B221690ED008AC105 /* UIImageView+ImageExtensions.swift */,
+				1E6B005D2223882B0007789F /* UIViewController+LoadingViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 			files = (
 				1EE8F00F2213DFBC008AC105 /* MoviesCollectionViewCell.swift in Sources */,
 				1EE8F02C221690ED008AC105 /* UIImageView+ImageExtensions.swift in Sources */,
+				1E6B005E2223882B0007789F /* UIViewController+LoadingViewExtensions.swift in Sources */,
 				1EE8F0092213CC52008AC105 /* CinemaHomeViewController.swift in Sources */,
 				1E6B0058221FA01C0007789F /* LoadingIndicator.swift in Sources */,
 				1EE8F01C2214FBA0008AC105 /* NetworkRequest.swift in Sources */,

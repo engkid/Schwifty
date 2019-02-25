@@ -58,14 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let cinemaInteractor: ICinemaHomeInteractor = CinemaHomeInteractor()
         
-        let loading: LoadingIndicator = LoadingIndicator()
-        
         cinemaInteractor.networkRequest = NetworkRequest()
         
         let presenter: ICinemaHomePresenter = CinemaHomePresenter(interactor: cinemaInteractor, view: cinemaHome, wireframe: cinemaWireframe)
         
         cinemaHome.presenter = presenter
-        cinemaHome.loading = loading
         
         return cinemaHome as! CinemaHomeViewController
         

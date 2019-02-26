@@ -73,16 +73,6 @@ extension UIViewController {
         
         return true
         
-//        for viewController in viewControllers {
-//
-//            if !(viewController).isKind(of: viewController.classForCoder) {
-//
-//                viewControllers.removeLast()
-//
-//            }
-//
-//        }
-        
     }
     
 }

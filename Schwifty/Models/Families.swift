@@ -33,6 +33,13 @@ struct MapModel: Codable {
     var lat: Double?
     var long: Double?
     
+    enum CodingKeys: String, CodingKey {
+        
+        case lat = "latitude"
+        case long = "longitude"
+        
+    }
+    
     mutating func initialize(data:[String:AnyObject]) {
         
         self.lat = data["latitude"] as? Double

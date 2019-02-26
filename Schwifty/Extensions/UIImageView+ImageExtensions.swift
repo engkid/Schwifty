@@ -25,4 +25,10 @@ extension UIImageView {
         return newImage
     }
     
+    func setImage(withUrl url: String, placeholder: UIImage) {
+        
+        self.sd_setImage(with: URL(string: url), placeholderImage: placeholder, completed: nil)
+        
+    }
+    
 }

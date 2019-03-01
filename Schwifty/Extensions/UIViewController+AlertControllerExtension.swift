@@ -34,7 +34,7 @@ extension UIViewController {
             
         case .push:
             
-            if (self.checkPresentdViewController(viewController: sourceViewController)) {
+            if (self.checkPresentedViewController(viewController: sourceViewController)) {
                 
                 self.dismiss(animated: true) {
                     self.navigationController?.pushViewController(toNextViewController, animated: animated)
@@ -52,7 +52,7 @@ extension UIViewController {
             navigationController.navigationBar.barTintColor = UIColor.white
             navigationController.navigationBar.backgroundColor = UIColor.white
             
-            if (self.checkPresentdViewController(viewController: sourceViewController)) {
+            if (self.checkPresentedViewController(viewController: sourceViewController)) {
                 
                 self.dismiss(animated: true) {
                     self.navigationController?.present(navigationController, animated: animated, completion: completion)
@@ -67,7 +67,7 @@ extension UIViewController {
         
     }
     
-    private func checkPresentdViewController(viewController: UIViewController) -> Bool {
+    private func checkPresentedViewController(viewController: UIViewController) -> Bool {
 
         guard let _ = viewController.presentedViewController else { return false }
         

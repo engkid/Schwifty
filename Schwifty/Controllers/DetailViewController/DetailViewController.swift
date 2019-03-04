@@ -27,6 +27,8 @@ class DetailViewController: UIViewController, IDetailView {
     // MARK: - Helper components
     func setupView(withFamily family: Families) {
         
+        avatarImage.contentMode = .scaleAspectFit
+        
         guard let avatarUrl = family.avatarUrl else { return }
         
         title = family.name

@@ -106,7 +106,7 @@ extension CinemaHomeViewController: ICinemaHomeView {
     func setupView() {
         
         collectionViewInitialize()
-        self.titleLabel?.text = "Our Little Family"
+        self.titleLabel?.text = "Favourite Fiction Characters"
         
         let barButtonItem = UIBarButtonItem(title: "Our Journeys", style: .plain, target: self, action: #selector(goToMapViewController))
         

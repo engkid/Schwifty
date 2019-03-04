@@ -20,6 +20,7 @@ class MoviesCollectionViewCell: UICollectionViewCell {
         self.ratingLabel?.layer.cornerRadius = 5
         self.movieImage?.layer.masksToBounds = true
         self.ratingLabel?.layer.masksToBounds = true
+        self.movieImage?.contentMode = .scaleAspectFit
         
         guard let avatar = family.avatarUrl else { return }
         

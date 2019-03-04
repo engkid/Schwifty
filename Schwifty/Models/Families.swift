@@ -40,11 +40,11 @@ struct MapModel: Codable {
         
     }
     
-    mutating func initialize(data:[String:AnyObject]) {
-        
-        self.lat = data["latitude"] as? Double
-        self.long = data["longitude"] as? Double
-        
-    }
+//    mutating func initialize(data:[String:AnyObject]) {
+//
+//        self.lat = data["latitude"] as? Double
+//        self.long = data["longitude"] as? Double
+//
+//    }
     
 }

@@ -45,8 +45,10 @@ extension UIViewController {
         
         if let loading = loadingView {
             
-            loading.stopAnimating()
-            loading.isHidden = true
+            DispatchQueue.main.async {
+                loading.stopAnimating()
+                loading.isHidden = true
+            }
             
         }
         

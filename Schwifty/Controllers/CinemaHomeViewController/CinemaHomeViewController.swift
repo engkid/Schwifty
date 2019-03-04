@@ -14,11 +14,13 @@ class CinemaHomeViewController: UIViewController {
     var loading: LoadingIndicator?
     var load: UIActivityIndicatorView?
     
-    var response: [Families]? {
+    var families: [Families]? {
         
         didSet {
             
-            movieCollectionView?.reloadData()
+            DispatchQueue.main.async {
+                self.movieCollectionView?.reloadData()
+            }
             
         }
         
@@ -47,20 +49,13 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //TODO: - change it to model dataSource width
-        return 2
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 32, left: 8, bottom: 8, right: 8)
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        //TODO: - change it to model dataSource height
-        if let response = self.response {
-            
-            return response.count / 2
-
-        }
-        
-        return 0
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //TODO: - change it to model dataSource width
+        return families?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,7 +66,7 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         let selectedSection: Int = indexPath.section
         let itemIndexPath: Int =  2 * selectedSection + selectedItem
         
-        if let response = self.response {
+        if let response = self.families {
             
             cell.set(forFamily: response[itemIndexPath])
             
@@ -101,7 +96,9 @@ extension CinemaHomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: ((self.view.frame.width / 2) - 8), height: (((self.view.frame.width / 2) - 8) * 1.5))
+        let width = (view.frame.width - 36) / 2
+        
+        return CGSize(width: width, height: width * 1.5)
     }
     
 }
@@ -122,7 +119,7 @@ extension CinemaHomeViewController: ICinemaHomeView {
     
     func populateWithResponses(response: [Families]) {
         
-        self.response = response
+        self.families = response
         
     }
     

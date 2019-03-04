@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E1ED65F222CC57E000A1E1A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1ED65D222CC57E000A1E1A /* DetailViewController.swift */; };
+		1E1ED660222CC57E000A1E1A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E1ED65E222CC57E000A1E1A /* DetailViewController.xib */; };
+		1E1ED663222CC67F000A1E1A /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1ED662222CC67F000A1E1A /* DetailPresenter.swift */; };
+		1E1ED665222CC689000A1E1A /* DetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1ED664222CC689000A1E1A /* DetailWireframe.swift */; };
+		1E1ED667222CC691000A1E1A /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1ED666222CC691000A1E1A /* DetailInteractor.swift */; };
+		1E1ED669222CC69B000A1E1A /* DetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1ED668222CC69B000A1E1A /* DetailContracts.swift */; };
+		1E1ED66B222CC835000A1E1A /* UIView+ConstraintsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1ED66A222CC835000A1E1A /* UIView+ConstraintsExtensions.swift */; };
 		1E3EAE7F2203619900E074DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3EAE7E2203619900E074DE /* AppDelegate.swift */; };
 		1E3EAE862203619B00E074DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E3EAE852203619B00E074DE /* Assets.xcassets */; };
 		1E3EAE892203619B00E074DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3EAE872203619B00E074DE /* LaunchScreen.storyboard */; };
@@ -52,6 +59,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E1ED65D222CC57E000A1E1A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1E1ED65E222CC57E000A1E1A /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		1E1ED662222CC67F000A1E1A /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		1E1ED664222CC689000A1E1A /* DetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWireframe.swift; sourceTree = "<group>"; };
+		1E1ED666222CC691000A1E1A /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		1E1ED668222CC69B000A1E1A /* DetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContracts.swift; sourceTree = "<group>"; };
+		1E1ED66A222CC835000A1E1A /* UIView+ConstraintsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstraintsExtensions.swift"; sourceTree = "<group>"; };
 		1E3EAE7B2203619900E074DE /* Schwifty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schwifty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3EAE7E2203619900E074DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E3EAE852203619B00E074DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +121,19 @@
 				E8C4B7B0188C733B784C3BE9 /* Pods-Schwifty.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		1E1ED661222CC58E000A1E1A /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E1ED65D222CC57E000A1E1A /* DetailViewController.swift */,
+				1E1ED65E222CC57E000A1E1A /* DetailViewController.xib */,
+				1E1ED662222CC67F000A1E1A /* DetailPresenter.swift */,
+				1E1ED664222CC689000A1E1A /* DetailWireframe.swift */,
+				1E1ED666222CC691000A1E1A /* DetailInteractor.swift */,
+				1E1ED668222CC69B000A1E1A /* DetailContracts.swift */,
+			);
+			path = DetailViewController;
 			sourceTree = "<group>";
 		};
 		1E3EAE722203619900E074DE = {
@@ -167,6 +194,7 @@
 		1EE8F00B2213D200008AC105 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1E1ED661222CC58E000A1E1A /* DetailViewController */,
 				1E6B0048221B9F3C0007789F /* MapViewController */,
 				1EE8F0112213FDC4008AC105 /* CinemaHomeViewController */,
 			);
@@ -222,6 +250,7 @@
 				1E6B005B221FD37C0007789F /* UIViewController+AlertControllerExtension.swift */,
 				1EE8F02B221690ED008AC105 /* UIImageView+ImageExtensions.swift */,
 				1E6B005D2223882B0007789F /* UIViewController+LoadingViewExtensions.swift */,
+				1E1ED66A222CC835000A1E1A /* UIView+ConstraintsExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -298,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E3EAE892203619B00E074DE /* LaunchScreen.storyboard in Resources */,
+				1E1ED660222CC57E000A1E1A /* DetailViewController.xib in Resources */,
 				1E3EAE862203619B00E074DE /* Assets.xcassets in Resources */,
 				1EE8F00A2213CC52008AC105 /* CinemaHomeViewController.xib in Resources */,
 				1E6B004C221B9F5C0007789F /* MapViewController.xib in Resources */,
@@ -388,7 +418,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EE8F00F2213DFBC008AC105 /* MoviesCollectionViewCell.swift in Sources */,
+				1E1ED665222CC689000A1E1A /* DetailWireframe.swift in Sources */,
 				1EE8F02C221690ED008AC105 /* UIImageView+ImageExtensions.swift in Sources */,
+				1E1ED65F222CC57E000A1E1A /* DetailViewController.swift in Sources */,
 				1E6B005E2223882B0007789F /* UIViewController+LoadingViewExtensions.swift in Sources */,
 				1EE8F0092213CC52008AC105 /* CinemaHomeViewController.swift in Sources */,
 				1E6B0058221FA01C0007789F /* LoadingIndicator.swift in Sources */,
@@ -397,6 +429,7 @@
 				1E3EAE7F2203619900E074DE /* AppDelegate.swift in Sources */,
 				1E6B004E221BAB8C0007789F /* MapInteractor.swift in Sources */,
 				1E6B0054221BABB50007789F /* MapPresenter.swift in Sources */,
+				1E1ED663222CC67F000A1E1A /* DetailPresenter.swift in Sources */,
 				1EE8F0152213FEA5008AC105 /* CinemaHomePresenter.swift in Sources */,
 				1EE8F02E22169CCC008AC105 /* AppConstants.swift in Sources */,
 				1E6B0050221BAB9A0007789F /* MapContracts.swift in Sources */,
@@ -404,9 +437,12 @@
 				1EE8F0172213FECF008AC105 /* CinemaHomeWireframe.swift in Sources */,
 				1EE8F0132213FDE2008AC105 /* CinemaHomeContracts.swift in Sources */,
 				1E6B005C221FD37C0007789F /* UIViewController+AlertControllerExtension.swift in Sources */,
+				1E1ED669222CC69B000A1E1A /* DetailContracts.swift in Sources */,
 				1E6B0052221BABA90007789F /* MapWireframe.swift in Sources */,
+				1E1ED667222CC691000A1E1A /* DetailInteractor.swift in Sources */,
 				1EE8F02722151015008AC105 /* Families.swift in Sources */,
 				1EE8F0192213FF1D008AC105 /* CinemaHomeInteractor.swift in Sources */,
+				1E1ED66B222CC835000A1E1A /* UIView+ConstraintsExtensions.swift in Sources */,
 				1E6B004B221B9F5C0007789F /* MapViewController.swift in Sources */,
 				1E6B0047221A95F80007789F /* ErrorFactory.swift in Sources */,
 			);

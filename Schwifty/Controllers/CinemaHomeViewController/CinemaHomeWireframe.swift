@@ -36,4 +36,15 @@ class CinemaHomeWireframe: ICinemaHomeWireframe {
         
     }
     
+    func createModuleToDetailView() -> UIViewController {
+        
+        
+        
+        return UIViewController()
+    }
+    
+    func navigateToDetail(withFamily family: Families) {
+        
+    }
+    
 }

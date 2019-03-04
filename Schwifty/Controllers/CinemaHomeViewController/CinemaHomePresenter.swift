@@ -31,7 +31,7 @@ class CinemaHomePresenter: ICinemaHomePresenter {
         view?.setupView()
     
         view?.showLoading()
-        interactor?.getFamilies(successBlock: { [weak self] response in
+        interactor?.getFamilies(successBlock: { [weak self] (response) in
             
             self?.view?.hideLoading()
             self?.view?.populateWithResponses(response: response)
@@ -48,6 +48,12 @@ class CinemaHomePresenter: ICinemaHomePresenter {
         guard let cinemaView = self.view else { return }
         
         wireframe?.navigateToMapView(from: cinemaView)
+        
+    }
+    
+    func didSelectItem(withFamily family: Families) {
+        
+        wireframe?.navigateToDetail(withFamily: family)
         
     }
     

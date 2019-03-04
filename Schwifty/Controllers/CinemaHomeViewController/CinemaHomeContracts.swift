@@ -31,7 +31,11 @@ protocol ICinemaHomeWireframe: class {
     
     func createModuleToMapView() -> UIViewController
     
+    func createModuleToDetailView() -> UIViewController
+    
     func navigateToMapView(from view: ICinemaHomeView)
+    
+    func navigateToDetail(withFamily family: Families)
     
 }
 
@@ -40,6 +44,8 @@ protocol ICinemaHomePresenter: class {
     func viewDidloaded()
     
     func navigateToMapView()
+    
+    func didSelectItem(withFamily family: Families)
 }
 
 protocol ICinemaHomeInteractor: class {

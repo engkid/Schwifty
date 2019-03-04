@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum networkEnvironment {
+enum NetworkEnvironment {
     
     case production
     case staging
@@ -19,4 +19,5 @@ struct EngkitCinemaAPI {
     
     static let baseUrl: String = "https://reqres.in"
     static let userPath: String = "/api/users?page=2"
+    
 }

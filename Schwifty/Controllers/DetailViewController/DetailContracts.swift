@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+protocol IDetailPresenter: class {
+
+}
+
+protocol IDetailWireframe: class {
+    
+}
+
+protocol IDetailInteractor: class {
+    
+}
+
+protocol IDetailView: class {
+    
+    func setupView()
+    
+}

@@ -65,9 +65,9 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         let selectedSection: Int = indexPath.section
         let itemIndexPath: Int =  2 * selectedSection + selectedItem
         
-        if let response = self.families {
+        if let family = self.families?[itemIndexPath] {
             
-            cell.set(forFamily: response[itemIndexPath])
+            cell.set(forFamily: family)
             
         }
         

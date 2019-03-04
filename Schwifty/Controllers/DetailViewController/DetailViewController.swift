@@ -10,13 +10,13 @@ import UIKit
 
 class DetailViewController: UIViewController, IDetailView, UIScrollViewDelegate {
 
+    // MARK: - Properties
     var presenter: DetailPresenter?
     
     var imageView: UIImageView = {
         
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.backgroundColor = .gray
         iv.layer.cornerRadius = 10
         
         return iv
@@ -50,12 +50,14 @@ class DetailViewController: UIViewController, IDetailView, UIScrollViewDelegate 
         return scroll
     }()
     
+    // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
 
         presenter?.viewDidloaded()
     }
     
+    // MARK: - Helper components
     func setupView(withFamily family: Families) {
         
         let topBarHeight = UIApplication.shared.statusBarFrame.size.height +

@@ -10,6 +10,7 @@ import UIKit
 
 class CinemaHomeViewController: UIViewController {
     
+    // MARK: - Properties
     var presenter: ICinemaHomePresenter?
     var loading: LoadingIndicator?
     var load: UIActivityIndicatorView?
@@ -29,6 +30,7 @@ class CinemaHomeViewController: UIViewController {
     @IBOutlet weak var movieCollectionView: UICollectionView?
     @IBOutlet weak var titleLabel: UILabel?
     
+    // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -78,15 +80,7 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let selectedItem: Int = indexPath.item
         
-        let selectedSection: Int = indexPath.section
-        
-        //TODO: - change 2 to model dataSource width
-        //MARK: get item model indexPath sequenced
-        let itemIndexPath: Int =  2 * selectedSection + selectedItem
-        
-        print("selected item at indexPath \(indexPath.item) section \(indexPath.section), index row \(indexPath.row) itemIndexPath \(itemIndexPath)")
-        
-        guard let familySelected = families?[itemIndexPath] else { return }
+        guard let familySelected = families?[selectedItem] else { return }
         
         presenter?.didSelectItem(withFamily: familySelected)
         

@@ -11,8 +11,10 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
     
+    // MARK: - Properties
     var presenter: IMapPresenter?
     
+    // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +25,7 @@ class MapViewController: UIViewController {
 
 extension MapViewController: IMapView {
     
+    // MARK: - Helper functions
     func setUpView() {
             
         let camera = GMSCameraPosition.camera(withLatitude: -6.9383029, longitude: 107.6663636, zoom: 17.0)

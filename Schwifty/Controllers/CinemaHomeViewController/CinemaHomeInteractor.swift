@@ -27,7 +27,7 @@ class CinemaHomeInteractor: ICinemaHomeInteractor {
 //            
 //        ]
         
-        guard let url = URL(string:"https://www.mocky.io/v2/5c7c8a641000005100760ac9") else { return }
+        guard let url = URL(string:"https://www.mocky.io/v2/5c7cc27c1000001b11760b96") else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             

@@ -15,7 +15,11 @@ class MoviesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ratingLabel: UILabel?
     
     func set(forFamily family: Families) {
-        self.ratingLabel?.textColor = UIColor.white
+        
+        self.movieImage?.layer.cornerRadius = 10
+        self.ratingLabel?.layer.cornerRadius = 5
+        self.movieImage?.layer.masksToBounds = true
+        self.ratingLabel?.layer.masksToBounds = true
         
         guard let avatar = family.avatarUrl else { return }
         

@@ -54,7 +54,6 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //TODO: - change it to model dataSource width
         return families?.count ?? 0
     }
     
@@ -86,6 +85,10 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         let itemIndexPath: Int =  2 * selectedSection + selectedItem
         
         print("selected item at indexPath \(indexPath.item) section \(indexPath.section), index row \(indexPath.row) itemIndexPath \(itemIndexPath)")
+        
+        guard let familySelected = families?[itemIndexPath] else { return }
+        
+        presenter?.didSelectItem(withFamily: familySelected)
         
     }
     

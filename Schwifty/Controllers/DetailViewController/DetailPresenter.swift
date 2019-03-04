@@ -8,8 +8,17 @@
 
 import Foundation
 
-class DetailPresenter {
+class DetailPresenter: IDetailPresenter {
     
+    weak var families: Families?
+    weak var view: IDetailView?
     
+    func viewDidloaded() {
+        
+        if let family = self.families {
+            view?.setupView(withFamily: family)
+        }
+        
+    }
     
 }

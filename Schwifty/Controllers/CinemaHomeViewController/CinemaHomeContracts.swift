@@ -31,11 +31,11 @@ protocol ICinemaHomeWireframe: class {
     
     func createModuleToMapView() -> UIViewController
     
-    func createModuleToDetailView() -> UIViewController
+    func createModuleToDetailView(withFamily family: Families) -> UIViewController
     
     func navigateToMapView(from view: ICinemaHomeView)
     
-    func navigateToDetail(withFamily family: Families)
+    func navigateToDetail(fromView view: ICinemaHomeView, withFamily family: Families)
     
 }
 

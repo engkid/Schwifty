@@ -31,10 +31,10 @@ class CinemaHomePresenter: ICinemaHomePresenter {
         view?.setupView()
     
         view?.showLoading()
-        interactor?.getFamilies(successBlock: { [weak self] (response) in
+        interactor?.getFamilies(successBlock: { [weak self] (families) in
             
             self?.view?.hideLoading()
-            self?.view?.populateWithResponses(response: response)
+            self?.view?.populateWithResponses(response: families)
             
         }, failureBlock: { [weak self] error in
             
@@ -52,8 +52,9 @@ class CinemaHomePresenter: ICinemaHomePresenter {
     }
     
     func didSelectItem(withFamily family: Families) {
+        guard let cinemaView = self.view else { return }
         
-        wireframe?.navigateToDetail(withFamily: family)
+        wireframe?.navigateToDetail(fromView: cinemaView, withFamily: family)
         
     }
     

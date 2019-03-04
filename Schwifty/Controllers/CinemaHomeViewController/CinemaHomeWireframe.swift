@@ -36,14 +36,24 @@ class CinemaHomeWireframe: ICinemaHomeWireframe {
         
     }
     
-    func createModuleToDetailView() -> UIViewController {
+    func createModuleToDetailView(withFamily family: Families) -> UIViewController {
         
+        guard let detailViewController = DetailViewController() as DetailViewController?, let detailPresenter = DetailPresenter() as DetailPresenter? else { return UIViewController() }
         
+        detailViewController.presenter = detailPresenter
+        detailPresenter.families = family
+        detailPresenter.view = detailViewController
         
-        return UIViewController()
+        return detailViewController
     }
     
-    func navigateToDetail(withFamily family: Families) {
+    func navigateToDetail(fromView view: ICinemaHomeView, withFamily family: Families) {
+        
+        let detailVC = self.createModuleToDetailView(withFamily: family)
+        
+        if let sourceView = view as? UIViewController {
+            sourceView.navigationController?.pushViewController(detailVC, animated: true)
+        }
         
     }
     

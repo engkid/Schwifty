@@ -10,6 +10,12 @@ import Foundation
 
 protocol IDetailPresenter: class {
 
+    var families: Families? { get set }
+    
+    var view: IDetailView? { get }
+    
+    func viewDidloaded()
+    
 }
 
 protocol IDetailWireframe: class {
@@ -22,6 +28,6 @@ protocol IDetailInteractor: class {
 
 protocol IDetailView: class {
     
-    func setupView()
+    func setupView(withFamily: Families)
     
 }

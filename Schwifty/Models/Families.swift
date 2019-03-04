@@ -13,14 +13,16 @@ class Families: Codable {
     var id: Int?
     var name: String?
     var status: String?
+    var description: String?
     var avatarUrl: String?
     var latitude: Float?
     var longitude: Float?
     
-    init(id: Int, name: String, status: String, avatarUrl: String, latitude: Float, longitude: Float) {
+    init(id: Int, name: String, status: String, description: String, avatarUrl: String, latitude: Float, longitude: Float) {
         self.id = id
         self.name = name
         self.status = status
+        self.description = description
         self.avatarUrl = avatarUrl
         self.latitude = latitude
         self.longitude = longitude

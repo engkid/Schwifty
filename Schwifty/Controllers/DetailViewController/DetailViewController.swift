@@ -10,11 +10,14 @@ import UIKit
 import YouTubePlayer
 
 class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate {
+    
 
     // MARK: - Properties
     var presenter: DetailPresenter?
     var videoId: String?
+    var isExpanded: Bool = false
     
+    @IBOutlet weak var showMoreButton: UIButton!
     @IBOutlet weak var playerView: YouTubePlayerView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -27,12 +30,14 @@ class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate
         presenter?.viewDidloaded()
     }
     
-    // MARK: - Helper components
+    // MARK: - IDetailView methods
     func setupView(withFamily family: Families) {
         
         avatarImage.contentMode = .scaleAspectFit
         
         guard let avatarUrl = family.avatarUrl else { return }
+        
+        self.showMoreButton.setTitle("Show more", for: .normal)
         
         title = family.name
         statusLabel.text = family.status
@@ -45,9 +50,45 @@ class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate
         
         setBackgroundImage(withUrl: avatarUrl)
         
+        showMoreButton.addTarget(self, action: #selector(expand), for: .touchUpInside)
+        
     }
     
-    func setBackgroundImage(withUrl url: String) {
+    func showMore() {
+        
+        UIView.animate(withDuration: 0.5) {
+            self.descriptionLabel.numberOfLines = 0
+            self.descriptionLabel.lineBreakMode = .byWordWrapping
+            self.descriptionLabel.sizeToFit()
+            self.showMoreButton.setTitle("Show less", for: .normal)
+            self.view.layoutIfNeeded()
+        }
+        
+        isExpanded.toggle()
+        
+    }
+    
+    func showLess() {
+        
+        UIView.animate(withDuration: 0.5) {
+            self.descriptionLabel.numberOfLines = 5
+            self.descriptionLabel.sizeToFit()
+            self.showMoreButton.setTitle("Show more", for: .normal)
+            self.view.layoutIfNeeded()
+        }
+        
+        isExpanded.toggle()
+        
+    }
+    
+    @objc func expand(expanded: Bool) {
+        
+        presenter?.expandDidTapped(expanded: self.isExpanded)
+        
+    }
+    
+    // MARK: - Helper methods
+    private func setBackgroundImage(withUrl url: String) {
         
         let bgImage = UIImageView(frame: UIScreen.main.bounds)
         bgImage.setImageWithUrl(url: url)
@@ -57,24 +98,16 @@ class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate
         
     }
     
+    // MARK: - YouTubePlayerDelegate methods
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         
-        videoPlayer.loadVideoID(videoId ?? "")
+        presenter?.loadVideo(videoPlayer: videoPlayer, withId: videoId)
         
     }
     
     func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
         
-        switch playerState {
-        case .Ended:
-            
-            let orientation = UIInterfaceOrientation.portrait.rawValue
-            UIDevice.current.setValue(orientation, forKey: "orientation")
-            
-            return
-        default:
-            break
-        }
+        presenter?.playerStateChanged(videoPlayer: videoPlayer, playerState: playerState)
         
     }
 

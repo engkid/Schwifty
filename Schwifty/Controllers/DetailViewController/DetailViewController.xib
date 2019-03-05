@@ -15,6 +15,7 @@
                 <outlet property="avatarImage" destination="sVq-cS-odx" id="ufe-Ws-mFh"/>
                 <outlet property="descriptionLabel" destination="Ufp-zZ-QtJ" id="VOy-so-X9k"/>
                 <outlet property="playerView" destination="F3u-f3-4u0" id="0Jy-dQ-CWJ"/>
+                <outlet property="showMoreButton" destination="sdl-6a-Lw0" id="j4O-wp-NoS"/>
                 <outlet property="statusLabel" destination="oYP-50-O0o" id="1fx-lB-sqb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -37,12 +38,17 @@
                                         <constraint firstAttribute="width" constant="102" id="gEF-tw-JvY"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufp-zZ-QtJ">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufp-zZ-QtJ">
                                     <rect key="frame" x="8" y="166" width="359" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdl-6a-Lw0">
+                                    <rect key="frame" x="146.5" y="191" width="82" height="30"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" title="Show more"/>
+                                </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMM-2t-jVO">
                                     <rect key="frame" x="118" y="8" width="249" height="150"/>
                                     <subviews>
@@ -73,14 +79,16 @@
                                 <constraint firstItem="Ufp-zZ-QtJ" firstAttribute="top" secondItem="YMM-2t-jVO" secondAttribute="bottom" constant="8" id="0gm-lU-nmd"/>
                                 <constraint firstAttribute="trailing" secondItem="Ufp-zZ-QtJ" secondAttribute="trailing" constant="8" id="1wc-Si-Q94"/>
                                 <constraint firstItem="sVq-cS-odx" firstAttribute="top" secondItem="t6I-zK-QIM" secondAttribute="top" constant="8" id="1zD-8K-Dje"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="sdl-6a-Lw0" secondAttribute="bottom" constant="20" id="405-gF-sTw"/>
                                 <constraint firstItem="Ufp-zZ-QtJ" firstAttribute="leading" secondItem="t6I-zK-QIM" secondAttribute="leading" constant="8" id="9Dk-AI-vOb"/>
                                 <constraint firstItem="YMM-2t-jVO" firstAttribute="leading" secondItem="sVq-cS-odx" secondAttribute="trailing" constant="8" id="9Ul-dS-0m1"/>
                                 <constraint firstItem="sVq-cS-odx" firstAttribute="leading" secondItem="t6I-zK-QIM" secondAttribute="leading" constant="8" id="KyN-lB-Dz5"/>
                                 <constraint firstAttribute="trailing" secondItem="YMM-2t-jVO" secondAttribute="trailing" constant="8" id="MFw-g0-hWb"/>
-                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ufp-zZ-QtJ" secondAttribute="bottom" constant="20" id="XGo-6G-kPX"/>
+                                <constraint firstItem="sdl-6a-Lw0" firstAttribute="top" secondItem="Ufp-zZ-QtJ" secondAttribute="bottom" constant="8" id="TBm-Sq-a8z"/>
                                 <constraint firstItem="Ufp-zZ-QtJ" firstAttribute="top" secondItem="sVq-cS-odx" secondAttribute="bottom" constant="8" id="dh1-RX-qwr"/>
                                 <constraint firstItem="Ufp-zZ-QtJ" firstAttribute="centerX" secondItem="t6I-zK-QIM" secondAttribute="centerX" id="qQ3-1O-cSg"/>
                                 <constraint firstItem="YMM-2t-jVO" firstAttribute="height" secondItem="sVq-cS-odx" secondAttribute="height" id="utW-Q5-ZQ7"/>
+                                <constraint firstItem="sdl-6a-Lw0" firstAttribute="centerX" secondItem="t6I-zK-QIM" secondAttribute="centerX" id="vBK-hb-jMW"/>
                             </constraints>
                         </view>
                     </subviews>

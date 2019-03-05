@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import YouTubePlayer
 
 protocol IDetailPresenter: class {
 
@@ -15,6 +16,12 @@ protocol IDetailPresenter: class {
     var view: IDetailView? { get }
     
     func viewDidloaded()
+    
+    func expandDidTapped(expanded: Bool)
+    
+    func loadVideo(videoPlayer: YouTubePlayerView, withId id: String?)
+    
+    func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState)
     
 }
 
@@ -29,5 +36,11 @@ protocol IDetailInteractor: class {
 protocol IDetailView: class {
     
     func setupView(withFamily: Families)
+    
+    func expand(expanded: Bool)
+    
+    func showMore()
+    
+    func showLess()
     
 }

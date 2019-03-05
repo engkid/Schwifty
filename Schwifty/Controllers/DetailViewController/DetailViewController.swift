@@ -56,5 +56,20 @@ class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate
         videoPlayer.loadVideoID(videoId ?? "")
         
     }
+    
+    func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
+        
+        switch playerState {
+        case .Ended:
+            
+            let orientation = UIInterfaceOrientation.portrait.rawValue
+            UIDevice.current.setValue(orientation, forKey: "orientation")
+            
+            return
+        default:
+            break
+        }
+        
+    }
 
 }

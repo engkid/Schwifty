@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="avatarImage" destination="sVq-cS-odx" id="ufe-Ws-mFh"/>
                 <outlet property="descriptionLabel" destination="Ufp-zZ-QtJ" id="VOy-so-X9k"/>
+                <outlet property="playerView" destination="F3u-f3-4u0" id="0Jy-dQ-CWJ"/>
                 <outlet property="statusLabel" destination="oYP-50-O0o" id="1fx-lB-sqb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -51,14 +52,23 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3u-f3-4u0" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                            <rect key="frame" x="0.0" y="40" width="249" height="110"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="110" id="Yhi-8c-dK2"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="oYP-50-O0o" firstAttribute="leading" secondItem="YMM-2t-jVO" secondAttribute="leading" id="AXe-Yd-x68"/>
+                                        <constraint firstAttribute="bottom" secondItem="F3u-f3-4u0" secondAttribute="bottom" id="BaT-e5-u9G"/>
                                         <constraint firstItem="oYP-50-O0o" firstAttribute="top" secondItem="YMM-2t-jVO" secondAttribute="top" id="I0p-Dt-Rdu"/>
+                                        <constraint firstAttribute="trailing" secondItem="F3u-f3-4u0" secondAttribute="trailing" id="Lta-ce-mGq"/>
+                                        <constraint firstItem="F3u-f3-4u0" firstAttribute="leading" secondItem="YMM-2t-jVO" secondAttribute="leading" id="yeu-HK-Kzc"/>
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="Ufp-zZ-QtJ" firstAttribute="top" secondItem="YMM-2t-jVO" secondAttribute="bottom" constant="8" id="0gm-lU-nmd"/>
                                 <constraint firstAttribute="trailing" secondItem="Ufp-zZ-QtJ" secondAttribute="trailing" constant="8" id="1wc-Si-Q94"/>

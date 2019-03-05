@@ -13,6 +13,7 @@ class Families: Codable {
     var id: Int?
     var name: String?
     var status: String?
+    var videoId: String?
     var description: String?
     var avatarUrl: String?
     var latitude: Float?

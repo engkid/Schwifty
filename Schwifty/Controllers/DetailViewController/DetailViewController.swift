@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import YouTubePlayer
 
-class DetailViewController: UIViewController, IDetailView {
+class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate {
 
     // MARK: - Properties
     var presenter: DetailPresenter?
+    var videoId: String?
     
+    @IBOutlet weak var playerView: YouTubePlayerView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
@@ -35,6 +38,22 @@ class DetailViewController: UIViewController, IDetailView {
         statusLabel.text = family.status
         avatarImage.setImageWithUrl(url: avatarUrl)
         descriptionLabel.text = family.description
+        
+        videoId = family.videoId
+        
+        playerReady(playerView)
+        
+        let bgImage = UIImageView(frame: UIScreen.main.bounds)
+        bgImage.setImageWithUrl(url: avatarUrl)
+        bgImage.contentMode = .scaleAspectFit
+        bgImage.alpha = 0.25
+        self.view.insertSubview(bgImage, at: 0)
+        
+    }
+    
+    func playerReady(_ videoPlayer: YouTubePlayerView) {
+        
+        videoPlayer.loadVideoID(videoId ?? "")
         
     }
 

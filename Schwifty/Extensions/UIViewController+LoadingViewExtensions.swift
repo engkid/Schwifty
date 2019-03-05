@@ -27,8 +27,7 @@ extension UIViewController {
         case .indicator:
             let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
             activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-            activityIndicator.center.x = (self.view.frame.width / 2) - activityIndicator.bounds.width + 12
-            activityIndicator.center.y = self.view.frame.height / 2
+            activityIndicator.center = self.view.center
             activityIndicator.hidesWhenStopped = true
             activityIndicator.style = UIActivityIndicatorView.Style.gray
             self.view.addSubview(activityIndicator)

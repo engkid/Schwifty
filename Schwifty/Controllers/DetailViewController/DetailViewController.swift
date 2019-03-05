@@ -43,8 +43,14 @@ class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate
         
         playerReady(playerView)
         
+        setBackgroundImage(withUrl: avatarUrl)
+        
+    }
+    
+    func setBackgroundImage(withUrl url: String) {
+        
         let bgImage = UIImageView(frame: UIScreen.main.bounds)
-        bgImage.setImageWithUrl(url: avatarUrl)
+        bgImage.setImageWithUrl(url: url)
         bgImage.contentMode = .scaleAspectFit
         bgImage.alpha = 0.25
         self.view.insertSubview(bgImage, at: 0)

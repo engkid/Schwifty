@@ -133,7 +133,7 @@ class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate
     
     override func viewWillDisappear(_ animated: Bool) {
         
-        DispatchQueue.global().async { [weak self] in
+        DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.dispatchWorkItem?.cancel()
         }

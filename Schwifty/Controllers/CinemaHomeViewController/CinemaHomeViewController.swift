@@ -30,6 +30,19 @@ class CinemaHomeViewController: UIViewController {
     @IBOutlet weak var movieCollectionView: UICollectionView?
     @IBOutlet weak var titleLabel: UILabel?
     
+    let infoView: InfoView = {
+        
+        let view = InfoView()
+        return view
+    }()
+    
+    let visualEffectView: UIVisualEffectView = {
+        
+        let blurEffect = UIBlurEffect(style: .dark)
+        let view = UIVisualEffectView(effect: blurEffect)
+        return view
+    }()
+    
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +83,7 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         if let family = self.families?[itemIndexPath] {
             
             cell.set(forFamily: family)
+            cell.delegate = self
             
         }
         
@@ -105,12 +119,32 @@ extension CinemaHomeViewController: ICinemaHomeView {
     
     func setupView() {
         
+        view.addSubview(visualEffectView)
+        visualEffectView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        visualEffectView.alpha = 0
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(handleDismissal))
+        visualEffectView.addGestureRecognizer(gesture)
+        
         collectionViewInitialize()
         self.titleLabel?.text = "Favourite Fiction Characters"
         
         let barButtonItem = UIBarButtonItem(title: "Our Journeys", style: .plain, target: self, action: #selector(goToMapViewController))
         
         self.navigationItem.rightBarButtonItem = barButtonItem
+        
+    }
+    
+    @objc private func handleDismissal() {
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.visualEffectView.alpha = 0
+            self.infoView.alpha = 0
+            self.infoView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        }) { (_) in
+            self.infoView.removeFromSuperview()
+            
+        }
         
     }
     
@@ -144,6 +178,32 @@ extension CinemaHomeViewController: ICinemaHomeView {
         self.hideLoading(loadingView: load)
 
 //        self.loading?.hideLoading(atView: self.view)
+        
+    }
+    
+}
+
+
+extension CinemaHomeViewController: MoviesCollectionCellDelegate {
+    
+    func handleLongPress(withFamily family: Families?) {
+        
+        view.addSubview(infoView)
+        infoView.configureView()
+        infoView.families = family
+        
+        infoView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 64, height: 350)
+        infoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        infoView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        infoView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        infoView.alpha = 0
+        
+        UIView.animate(withDuration: 0.5) {
+            self.visualEffectView.alpha = 1
+            self.infoView.alpha = 1
+            self.infoView.transform = .identity
+        }
         
     }
     

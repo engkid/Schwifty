@@ -8,11 +8,21 @@
 
 import UIKit
 
+protocol MoviesCollectionCellDelegate {
+    
+    func handleLongPress(withFamily family: Families?)
+    
+}
+
 class MoviesCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var movieImage: UIImageView?
     @IBOutlet weak var titleLabel: UILabel?
     @IBOutlet weak var ratingLabel: UILabel?
+    
+    var delegate: MoviesCollectionCellDelegate?
+    
+    var family: Families?
     
     func set(forFamily family: Families) {
         
@@ -27,6 +37,27 @@ class MoviesCollectionViewCell: UICollectionViewCell {
         self.movieImage?.setImageWithUrl(url: avatar)
         self.titleLabel?.text = family.name
         self.ratingLabel?.text = family.status
+        
+        self.family = family
+        
+        assignLongPress()
+        
+    }
+    
+    func assignLongPress() {
+        
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        
+        self.addGestureRecognizer(longPressGestureRecognizer)
+        
+    }
+    
+    @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
+        
+        if sender.state == .began {
+            guard let family = self.family else { return }
+            delegate?.handleLongPress(withFamily: family)
+        }
         
     }
 

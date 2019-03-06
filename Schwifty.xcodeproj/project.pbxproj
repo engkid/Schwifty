@@ -29,6 +29,7 @@
 		1E6B005C221FD37C0007789F /* UIViewController+AlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B005B221FD37C0007789F /* UIViewController+AlertControllerExtension.swift */; };
 		1E6B005E2223882B0007789F /* UIViewController+LoadingViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B005D2223882B0007789F /* UIViewController+LoadingViewExtensions.swift */; };
 		1ED491A0222E123000FABC2D /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED4919F222E123000FABC2D /* YouTubePlayer.framework */; };
+		1ED491B0222F731300FABC2D /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED491AF222F731300FABC2D /* InfoView.swift */; };
 		1EE8F0092213CC52008AC105 /* CinemaHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */; };
 		1EE8F00A2213CC52008AC105 /* CinemaHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */; };
 		1EE8F00F2213DFBC008AC105 /* MoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F00D2213DFBC008AC105 /* MoviesCollectionViewCell.swift */; };
@@ -84,6 +85,7 @@
 		1E6B005B221FD37C0007789F /* UIViewController+AlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertControllerExtension.swift"; sourceTree = "<group>"; };
 		1E6B005D2223882B0007789F /* UIViewController+LoadingViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoadingViewExtensions.swift"; sourceTree = "<group>"; };
 		1ED4919F222E123000FABC2D /* YouTubePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YouTubePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ED491AF222F731300FABC2D /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaHomeViewController.swift; sourceTree = "<group>"; };
 		1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CinemaHomeViewController.xib; sourceTree = "<group>"; };
 		1EE8F00D2213DFBC008AC105 /* MoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				1EE8F02D22169CCC008AC105 /* AppConstants.swift */,
 				1E6B0046221A95F80007789F /* ErrorFactory.swift */,
 				1E6B0057221FA01C0007789F /* LoadingIndicator.swift */,
+				1ED491AF222F731300FABC2D /* InfoView.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				1E6B0058221FA01C0007789F /* LoadingIndicator.swift in Sources */,
 				1EE8F01C2214FBA0008AC105 /* NetworkRequest.swift in Sources */,
 				1EE8F0242214FF48008AC105 /* NetworkRequestContracts.swift in Sources */,
+				1ED491B0222F731300FABC2D /* InfoView.swift in Sources */,
 				1E3EAE7F2203619900E074DE /* AppDelegate.swift in Sources */,
 				1E6B004E221BAB8C0007789F /* MapInteractor.swift in Sources */,
 				1E6B0054221BABB50007789F /* MapPresenter.swift in Sources */,

@@ -169,15 +169,12 @@ extension CinemaHomeViewController: ICinemaHomeView {
     func showLoading() {
         
         self.load = self.showLoading(type: .indicator)
-//        self.showLoading(atView: self.view, type: .indicator)
         
     }
     
     func hideLoading() {
         
         self.hideLoading(loadingView: load)
-
-//        self.loading?.hideLoading(atView: self.view)
         
     }
     
@@ -192,7 +189,7 @@ extension CinemaHomeViewController: MoviesCollectionCellDelegate {
         infoView.configureView()
         infoView.families = family
         
-        infoView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 64, height: 350)
+        infoView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 64, height: view.frame.height / 1.5)
         infoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         infoView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         

@@ -27,10 +27,12 @@ extension UIViewController {
         case .indicator:
             let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
             activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-            activityIndicator.center = self.view.center
+            view.addSubview(activityIndicator)
+            activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
             activityIndicator.hidesWhenStopped = true
             activityIndicator.style = UIActivityIndicatorView.Style.gray
-            self.view.addSubview(activityIndicator)
             activityIndicator.startAnimating()
             return activityIndicator
         case .message:

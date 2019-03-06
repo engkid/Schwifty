@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E1ED65F222CC57E000A1E1A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1ED65D222CC57E000A1E1A /* DetailViewController.swift */; };
+		1E1ED660222CC57E000A1E1A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E1ED65E222CC57E000A1E1A /* DetailViewController.xib */; };
+		1E1ED663222CC67F000A1E1A /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1ED662222CC67F000A1E1A /* DetailPresenter.swift */; };
+		1E1ED665222CC689000A1E1A /* DetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1ED664222CC689000A1E1A /* DetailWireframe.swift */; };
+		1E1ED667222CC691000A1E1A /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1ED666222CC691000A1E1A /* DetailInteractor.swift */; };
+		1E1ED669222CC69B000A1E1A /* DetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1ED668222CC69B000A1E1A /* DetailContracts.swift */; };
+		1E1ED66B222CC835000A1E1A /* UIView+ConstraintsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1ED66A222CC835000A1E1A /* UIView+ConstraintsExtensions.swift */; };
 		1E3EAE7F2203619900E074DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3EAE7E2203619900E074DE /* AppDelegate.swift */; };
 		1E3EAE862203619B00E074DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E3EAE852203619B00E074DE /* Assets.xcassets */; };
 		1E3EAE892203619B00E074DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3EAE872203619B00E074DE /* LaunchScreen.storyboard */; };
@@ -17,6 +24,11 @@
 		1E6B0050221BAB9A0007789F /* MapContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B004F221BAB9A0007789F /* MapContracts.swift */; };
 		1E6B0052221BABA90007789F /* MapWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B0051221BABA90007789F /* MapWireframe.swift */; };
 		1E6B0054221BABB50007789F /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B0053221BABB50007789F /* MapPresenter.swift */; };
+		1E6B0056221E4D3D0007789F /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B0055221E4D3D0007789F /* Users.swift */; };
+		1E6B0058221FA01C0007789F /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B0057221FA01C0007789F /* LoadingIndicator.swift */; };
+		1E6B005C221FD37C0007789F /* UIViewController+AlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B005B221FD37C0007789F /* UIViewController+AlertControllerExtension.swift */; };
+		1E6B005E2223882B0007789F /* UIViewController+LoadingViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B005D2223882B0007789F /* UIViewController+LoadingViewExtensions.swift */; };
+		1ED491A0222E123000FABC2D /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED4919F222E123000FABC2D /* YouTubePlayer.framework */; };
 		1EE8F0092213CC52008AC105 /* CinemaHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */; };
 		1EE8F00A2213CC52008AC105 /* CinemaHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */; };
 		1EE8F00F2213DFBC008AC105 /* MoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F00D2213DFBC008AC105 /* MoviesCollectionViewCell.swift */; };
@@ -28,10 +40,9 @@
 		1EE8F01C2214FBA0008AC105 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F01B2214FBA0008AC105 /* NetworkRequest.swift */; };
 		1EE8F0222214FC68008AC105 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE8F0212214FC68008AC105 /* Alamofire.framework */; };
 		1EE8F0242214FF48008AC105 /* NetworkRequestContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F0232214FF48008AC105 /* NetworkRequestContracts.swift */; };
-		1EE8F02722151015008AC105 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F02622151015008AC105 /* UserModel.swift */; };
+		1EE8F02722151015008AC105 /* Families.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F02622151015008AC105 /* Families.swift */; };
 		1EE8F02C221690ED008AC105 /* UIImageView+ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F02B221690ED008AC105 /* UIImageView+ImageExtensions.swift */; };
 		1EE8F02E22169CCC008AC105 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F02D22169CCC008AC105 /* AppConstants.swift */; };
-		1EE8F034221A5C73008AC105 /* UIViewController+AlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F033221A5C73008AC105 /* UIViewController+AlertControllerExtension.swift */; };
 		A16431603538DF16AE3B1D12 /* Pods_Schwifty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CAB446CE0F09CCA8FB2FEF /* Pods_Schwifty.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +60,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E1ED65D222CC57E000A1E1A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1E1ED65E222CC57E000A1E1A /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		1E1ED662222CC67F000A1E1A /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		1E1ED664222CC689000A1E1A /* DetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWireframe.swift; sourceTree = "<group>"; };
+		1E1ED666222CC691000A1E1A /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		1E1ED668222CC69B000A1E1A /* DetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContracts.swift; sourceTree = "<group>"; };
+		1E1ED66A222CC835000A1E1A /* UIView+ConstraintsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstraintsExtensions.swift"; sourceTree = "<group>"; };
 		1E3EAE7B2203619900E074DE /* Schwifty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schwifty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3EAE7E2203619900E074DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E3EAE852203619B00E074DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +79,11 @@
 		1E6B004F221BAB9A0007789F /* MapContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContracts.swift; sourceTree = "<group>"; };
 		1E6B0051221BABA90007789F /* MapWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWireframe.swift; sourceTree = "<group>"; };
 		1E6B0053221BABB50007789F /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		1E6B0055221E4D3D0007789F /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		1E6B0057221FA01C0007789F /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		1E6B005B221FD37C0007789F /* UIViewController+AlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertControllerExtension.swift"; sourceTree = "<group>"; };
+		1E6B005D2223882B0007789F /* UIViewController+LoadingViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoadingViewExtensions.swift"; sourceTree = "<group>"; };
+		1ED4919F222E123000FABC2D /* YouTubePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YouTubePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaHomeViewController.swift; sourceTree = "<group>"; };
 		1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CinemaHomeViewController.xib; sourceTree = "<group>"; };
 		1EE8F00D2213DFBC008AC105 /* MoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -72,10 +95,9 @@
 		1EE8F01B2214FBA0008AC105 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		1EE8F0212214FC68008AC105 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE8F0232214FF48008AC105 /* NetworkRequestContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestContracts.swift; sourceTree = "<group>"; };
-		1EE8F02622151015008AC105 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		1EE8F02622151015008AC105 /* Families.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Families.swift; sourceTree = "<group>"; };
 		1EE8F02B221690ED008AC105 /* UIImageView+ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageExtensions.swift"; sourceTree = "<group>"; };
 		1EE8F02D22169CCC008AC105 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		1EE8F033221A5C73008AC105 /* UIViewController+AlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertControllerExtension.swift"; sourceTree = "<group>"; };
 		761E7FAB409404C7AA636144 /* Pods-Schwifty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schwifty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Schwifty/Pods-Schwifty.debug.xcconfig"; sourceTree = "<group>"; };
 		E6CAB446CE0F09CCA8FB2FEF /* Pods_Schwifty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Schwifty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C4B7B0188C733B784C3BE9 /* Pods-Schwifty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schwifty.release.xcconfig"; path = "Pods/Target Support Files/Pods-Schwifty/Pods-Schwifty.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ED491A0222E123000FABC2D /* YouTubePlayer.framework in Frameworks */,
 				1EE8F0222214FC68008AC105 /* Alamofire.framework in Frameworks */,
 				A16431603538DF16AE3B1D12 /* Pods_Schwifty.framework in Frameworks */,
 			);
@@ -101,6 +124,19 @@
 				E8C4B7B0188C733B784C3BE9 /* Pods-Schwifty.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		1E1ED661222CC58E000A1E1A /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E1ED65D222CC57E000A1E1A /* DetailViewController.swift */,
+				1E1ED65E222CC57E000A1E1A /* DetailViewController.xib */,
+				1E1ED662222CC67F000A1E1A /* DetailPresenter.swift */,
+				1E1ED664222CC689000A1E1A /* DetailWireframe.swift */,
+				1E1ED666222CC691000A1E1A /* DetailInteractor.swift */,
+				1E1ED668222CC69B000A1E1A /* DetailContracts.swift */,
+			);
+			path = DetailViewController;
 			sourceTree = "<group>";
 		};
 		1E3EAE722203619900E074DE = {
@@ -161,6 +197,7 @@
 		1EE8F00B2213D200008AC105 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1E1ED661222CC58E000A1E1A /* DetailViewController */,
 				1E6B0048221B9F3C0007789F /* MapViewController */,
 				1EE8F0112213FDC4008AC105 /* CinemaHomeViewController */,
 			);
@@ -196,6 +233,7 @@
 				1EE8F0232214FF48008AC105 /* NetworkRequestContracts.swift */,
 				1EE8F02D22169CCC008AC105 /* AppConstants.swift */,
 				1E6B0046221A95F80007789F /* ErrorFactory.swift */,
+				1E6B0057221FA01C0007789F /* LoadingIndicator.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -203,7 +241,8 @@
 		1EE8F02522150FF4008AC105 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1EE8F02622151015008AC105 /* UserModel.swift */,
+				1EE8F02622151015008AC105 /* Families.swift */,
+				1E6B0055221E4D3D0007789F /* Users.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -211,8 +250,10 @@
 		1EE8F02A221690CC008AC105 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1E6B005B221FD37C0007789F /* UIViewController+AlertControllerExtension.swift */,
 				1EE8F02B221690ED008AC105 /* UIImageView+ImageExtensions.swift */,
-				1EE8F033221A5C73008AC105 /* UIViewController+AlertControllerExtension.swift */,
+				1E6B005D2223882B0007789F /* UIViewController+LoadingViewExtensions.swift */,
+				1E1ED66A222CC835000A1E1A /* UIView+ConstraintsExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -220,6 +261,7 @@
 		9A89B3AD5CEE25100198AFB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1ED4919F222E123000FABC2D /* YouTubePlayer.framework */,
 				1EE8F0212214FC68008AC105 /* Alamofire.framework */,
 				E6CAB446CE0F09CCA8FB2FEF /* Pods_Schwifty.framework */,
 			);
@@ -239,6 +281,7 @@
 				1E3EAE792203619900E074DE /* Resources */,
 				CE6FD1E529C5C4F62E30A45D /* [CP] Embed Pods Frameworks */,
 				1EE8F0202214FC5A008AC105 /* Embed Frameworks */,
+				D8F18188651AC1B4FDF2CF93 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -288,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E3EAE892203619B00E074DE /* LaunchScreen.storyboard in Resources */,
+				1E1ED660222CC57E000A1E1A /* DetailViewController.xib in Resources */,
 				1E3EAE862203619B00E074DE /* Assets.xcassets in Resources */,
 				1EE8F00A2213CC52008AC105 /* CinemaHomeViewController.xib in Resources */,
 				1E6B004C221B9F5C0007789F /* MapViewController.xib in Resources */,
@@ -332,6 +376,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/YouTubePlayer/YouTubePlayer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -340,10 +385,35 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Schwifty/Pods-Schwifty-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8F18188651AC1B4FDF2CF93 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Schwifty/Pods-Schwifty-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Schwifty/Pods-Schwifty-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -354,22 +424,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EE8F00F2213DFBC008AC105 /* MoviesCollectionViewCell.swift in Sources */,
+				1E1ED665222CC689000A1E1A /* DetailWireframe.swift in Sources */,
 				1EE8F02C221690ED008AC105 /* UIImageView+ImageExtensions.swift in Sources */,
+				1E1ED65F222CC57E000A1E1A /* DetailViewController.swift in Sources */,
+				1E6B005E2223882B0007789F /* UIViewController+LoadingViewExtensions.swift in Sources */,
 				1EE8F0092213CC52008AC105 /* CinemaHomeViewController.swift in Sources */,
+				1E6B0058221FA01C0007789F /* LoadingIndicator.swift in Sources */,
 				1EE8F01C2214FBA0008AC105 /* NetworkRequest.swift in Sources */,
 				1EE8F0242214FF48008AC105 /* NetworkRequestContracts.swift in Sources */,
-				1EE8F034221A5C73008AC105 /* UIViewController+AlertControllerExtension.swift in Sources */,
 				1E3EAE7F2203619900E074DE /* AppDelegate.swift in Sources */,
 				1E6B004E221BAB8C0007789F /* MapInteractor.swift in Sources */,
 				1E6B0054221BABB50007789F /* MapPresenter.swift in Sources */,
+				1E1ED663222CC67F000A1E1A /* DetailPresenter.swift in Sources */,
 				1EE8F0152213FEA5008AC105 /* CinemaHomePresenter.swift in Sources */,
 				1EE8F02E22169CCC008AC105 /* AppConstants.swift in Sources */,
 				1E6B0050221BAB9A0007789F /* MapContracts.swift in Sources */,
+				1E6B0056221E4D3D0007789F /* Users.swift in Sources */,
 				1EE8F0172213FECF008AC105 /* CinemaHomeWireframe.swift in Sources */,
 				1EE8F0132213FDE2008AC105 /* CinemaHomeContracts.swift in Sources */,
+				1E6B005C221FD37C0007789F /* UIViewController+AlertControllerExtension.swift in Sources */,
+				1E1ED669222CC69B000A1E1A /* DetailContracts.swift in Sources */,
 				1E6B0052221BABA90007789F /* MapWireframe.swift in Sources */,
-				1EE8F02722151015008AC105 /* UserModel.swift in Sources */,
+				1E1ED667222CC691000A1E1A /* DetailInteractor.swift in Sources */,
+				1EE8F02722151015008AC105 /* Families.swift in Sources */,
 				1EE8F0192213FF1D008AC105 /* CinemaHomeInteractor.swift in Sources */,
+				1E1ED66B222CC835000A1E1A /* UIView+ConstraintsExtensions.swift in Sources */,
 				1E6B004B221B9F5C0007789F /* MapViewController.swift in Sources */,
 				1E6B0047221A95F80007789F /* ErrorFactory.swift in Sources */,
 			);
@@ -440,7 +519,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -495,7 +574,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -513,6 +592,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 589BZKMNT9;
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -532,6 +612,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 589BZKMNT9;
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -13,9 +13,15 @@ protocol ICinemaHomeView: class {
     
     var presenter: ICinemaHomePresenter? { get set }
     
+    var loading: LoadingIndicator? { get set }
+    
     func setupView()
     
-    func populateWithResponses(response: [String:AnyObject])
+    func showLoading()
+    
+    func hideLoading()
+    
+    func populateWithResponses(response: [Families])
     
     func showErrorAlert(title: String, message: String)
     
@@ -25,7 +31,11 @@ protocol ICinemaHomeWireframe: class {
     
     func createModuleToMapView() -> UIViewController
     
+    func createModuleToDetailView(withFamily family: Families) -> UIViewController
+    
     func navigateToMapView(from view: ICinemaHomeView)
+    
+    func navigateToDetail(fromView view: ICinemaHomeView, withFamily family: Families)
     
 }
 
@@ -34,13 +44,15 @@ protocol ICinemaHomePresenter: class {
     func viewDidloaded()
     
     func navigateToMapView()
+    
+    func didSelectItem(withFamily family: Families)
 }
 
 protocol ICinemaHomeInteractor: class {
     
     var networkRequest: INetworkRequest? { get set }
     
-    func getMovies(successBlock: @escaping ([String:AnyObject]) -> Void, failureBlock: @escaping (Error) -> Void)
+    func getFamilies(successBlock: @escaping ([Families]) -> Void, failureBlock: @escaping (Error) -> Void)
     
 }
     

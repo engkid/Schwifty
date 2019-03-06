@@ -10,20 +10,27 @@ import UIKit
 
 class CinemaHomeViewController: UIViewController {
     
+    // MARK: - Properties
     var presenter: ICinemaHomePresenter?
+    var loading: LoadingIndicator?
+    var load: UIActivityIndicatorView?
     
-    var response: [String:AnyObject]? {
+    var families: [Families]? {
         
         didSet {
             
-            movieCollectionView?.reloadData()
+            DispatchQueue.main.async {
+                self.movieCollectionView?.reloadData()
+            }
             
         }
         
     }
 
     @IBOutlet weak var movieCollectionView: UICollectionView?
+    @IBOutlet weak var titleLabel: UILabel?
     
+    // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,29 +51,25 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //TODO: - change it to model dataSource width
-        return 2
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 32, left: 8, bottom: 8, right: 8)
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        //TODO: - change it to model dataSource height
-        return 4
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return families?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "moviesCollectionViewCell", for: indexPath) as? MoviesCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.movieImage?.image = UIImage(named: "searchIcon", in: Bundle.main, compatibleWith: nil)
+        let selectedItem: Int = indexPath.item
+        let selectedSection: Int = indexPath.section
+        let itemIndexPath: Int =  2 * selectedSection + selectedItem
         
-        if let firstName = self.response?["first_name"], let lastName = self.response?["last_name"], let avatarUrl = self.response?["avatar"] {
+        if let family = self.families?[itemIndexPath] {
             
-            let firstNameString: String = String(describing: firstName), lastNameString: String = String(describing: lastName), avatarUrlString: String = String(describing: avatarUrl)
-            
-            cell.titleLabel?.text = firstNameString
-            cell.ratingLabel?.text = lastNameString
-            cell.movieImage?.setImageWithUrl(url: avatarUrlString)
+            cell.set(forFamily: family)
             
         }
         
@@ -77,13 +80,9 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let selectedItem: Int = indexPath.item
         
-        let selectedSection: Int = indexPath.section
+        guard let familySelected = families?[selectedItem] else { return }
         
-        //TODO: - change 2 to model dataSource width
-        //MARK: get item model indexPath sequenced
-        let itemIndexPath: Int =  2 * selectedSection + selectedItem
-        
-        print("selected item at indexPath \(indexPath.item) section \(indexPath.section), index row \(indexPath.row) itemIndexPath \(itemIndexPath)")
+        presenter?.didSelectItem(withFamily: familySelected)
         
     }
     
@@ -94,7 +93,9 @@ extension CinemaHomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: ((self.view.frame.width / 2) - 8), height: (((self.view.frame.width / 2) - 8) * 1.5))
+        let width = (view.frame.width - 36) / 2
+        
+        return CGSize(width: width, height: width * 1.5)
     }
     
 }
@@ -105,16 +106,17 @@ extension CinemaHomeViewController: ICinemaHomeView {
     func setupView() {
         
         collectionViewInitialize()
+        self.titleLabel?.text = "Favourite Fiction Characters"
         
-        let barButtonItem = UIBarButtonItem(title: "View Map", style: .plain, target: self, action: #selector(goToHome))
+        let barButtonItem = UIBarButtonItem(title: "Our Journeys", style: .plain, target: self, action: #selector(goToMapViewController))
         
         self.navigationItem.rightBarButtonItem = barButtonItem
         
     }
     
-    func populateWithResponses(response: [String:AnyObject]) {
+    func populateWithResponses(response: [Families]) {
         
-        self.response = response
+        self.families = response
         
     }
     
@@ -124,9 +126,24 @@ extension CinemaHomeViewController: ICinemaHomeView {
         
     }
     
-    @objc private func goToHome() {
+    @objc private func goToMapViewController() {
 
         presenter?.navigateToMapView()
+        
+    }
+    
+    func showLoading() {
+        
+        self.load = self.showLoading(type: .indicator)
+//        self.showLoading(atView: self.view, type: .indicator)
+        
+    }
+    
+    func hideLoading() {
+        
+        self.hideLoading(loadingView: load)
+
+//        self.loading?.hideLoading(atView: self.view)
         
     }
     

@@ -12,9 +12,18 @@ class CinemaHomeWireframe: ICinemaHomeWireframe {
     
     func createModuleToMapView() -> UIViewController {
         
-        let mapViewController = MapViewController()
+        guard let mapViewController: IMapView = MapViewController() as IMapView?,
+            let mapPresenter: IMapPresenter = MapPresenter() as IMapPresenter?,
+            let mapInteractor: IMapInteractor = MapInteractor() as IMapInteractor?,
+            let networkService: INetworkRequest = NetworkRequest() as INetworkRequest?
+            else { return UIViewController() }
         
-        return mapViewController
+        mapInteractor.networkService = networkService
+        mapPresenter.view = mapViewController
+        mapPresenter.interactor = mapInteractor
+        mapViewController.presenter = mapPresenter
+        
+        return mapViewController as! UIViewController
     }
     
     func navigateToMapView(from view: ICinemaHomeView) {
@@ -23,6 +32,27 @@ class CinemaHomeWireframe: ICinemaHomeWireframe {
         
         if let sourceView = view as? UIViewController {
             sourceView.navigationController?.pushViewController(mapViewController, animated: true)
+        }
+        
+    }
+    
+    func createModuleToDetailView(withFamily family: Families) -> UIViewController {
+        
+        guard let detailViewController = DetailViewController() as DetailViewController?, let detailPresenter = DetailPresenter() as DetailPresenter? else { return UIViewController() }
+        
+        detailViewController.presenter = detailPresenter
+        detailPresenter.families = family
+        detailPresenter.view = detailViewController
+        
+        return detailViewController
+    }
+    
+    func navigateToDetail(fromView view: ICinemaHomeView, withFamily family: Families) {
+        
+        let detailVC = self.createModuleToDetailView(withFamily: family)
+        
+        if let sourceView = view as? UIViewController {
+            sourceView.navigationController?.pushViewController(detailVC, animated: true)
         }
         
     }

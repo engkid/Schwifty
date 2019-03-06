@@ -14,67 +14,43 @@ class CinemaHomeInteractor: ICinemaHomeInteractor {
     
     var networkRequest: INetworkRequest?
     
-    func getMovies(successBlock: @escaping ([String:AnyObject]) -> Void, failureBlock: @escaping (Error) -> Void) {
+    func getFamilies(successBlock: @escaping ([Families]) -> Void, failureBlock: @escaping (Error) -> Void) {
         
-        let baseURL: String = EngkitCinemaAPI.baseUrl
-        let userPath: String = EngkitCinemaAPI.userPath
-        let url: String = "\(baseURL)\(userPath)"
+        var families = [Families]()
         
-        networkRequest?.makeRequestWith(URL: url, method: HTTPMethod.get, parameter: [:], successBlock: { (responseData) in
+//        families = [
+//            
+//            Families(id: 1, name: "Engkit", status: "Papa", avatarUrl: "https://i.imgur.com/dbucqYG.jpg", latitude: -6.9383029, longitude: 107.6663636),
+//            Families(id: 2, name: "Windy", status: "Mama", avatarUrl: "https://i.imgur.com/hdtTObG.jpg", latitude: -6.9383029, longitude: 107.6663636),
+//            Families(id: 3, name: "Windy & Engkit Jr", status: "Junior", avatarUrl: "https://i.imgur.com/ts5wsXj.jpg", latitude: -6.9383029, longitude: 107.6663636),
+//            Families(id: 4, name: "", status: "", avatarUrl: "", latitude: 0.0, longitude: 0.0)
+//            
+//        ]
+        
+        guard let url = URL(string:"https://www.mocky.io/v2/5c7e20003100007b003760f5") else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             
-            let data = responseData
+            guard let data = data else { return }
             
             do {
                 
-                let json = try JSON(data: data)
+                let family = try JSONDecoder().decode([Families].self, from: data)
                 
-                let _ = try JSONDecoder().decode(UserModel.self, from: data)
+                family.forEach({ (fam) in
+                    families.append(fam)
+                })
                 
-                let dictionaryArray = json["data"].arrayValue
+                successBlock(families)
                 
-                let pageLimit = json["page"].intValue
-                
-                let perPage = json["per_page"].intValue
-                
-                let total = json["total"].intValue
-                
-                let totalPages = json["total_pages"].intValue
-                
-                for i in 0 ... dictionaryArray.count - 1  {
-                    
-                    let jsonAsData = try dictionaryArray[i].rawData()
-                    
-                    let _ = try JSONDecoder().decode(UserModel.self, from: jsonAsData)
-                    
-                }
-                
-                let userLastName = json["data"][0]["last_name"].stringValue
-                
-                print("json => \(json["data"].count) user last name => \(userLastName) responseData => \(dictionaryArray) pagelimit => \(pageLimit), perPage => \(perPage), total => \(total), totalPages => \(totalPages)")
-                
-                if let responseUser = dictionaryArray[0].dictionaryValue as [String:AnyObject]? {
-                    successBlock(responseUser)
-                }
-                
-            } catch let error as NSError? {
-                
-                if let errorCallback = error {
-                    failureBlock(errorCallback)
-                }
-                
+            } catch let error {
+                print("Failed to decode json response with error: ", error.localizedDescription)
             }
             
-        }, failureBlock: { (error) in
-            
-            if let errorRes = error {
-                
-                failureBlock(errorRes)
-                
-            }
-            
-        })
+        }.resume()
+        
+//        successBlock(families)
         
     }
 
-    
 }

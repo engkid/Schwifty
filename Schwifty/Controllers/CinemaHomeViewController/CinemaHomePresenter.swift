@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class CinemaHomePresenter: ICinemaHomePresenter {
     
@@ -29,21 +30,31 @@ class CinemaHomePresenter: ICinemaHomePresenter {
     func viewDidloaded() {
         view?.setupView()
     
-        interactor?.getMovies(successBlock: { [weak self] response in
+        view?.showLoading()
+        interactor?.getFamilies(successBlock: { [weak self] (families) in
             
-            self?.view?.populateWithResponses(response: response)
+            self?.view?.hideLoading()
+            self?.view?.populateWithResponses(response: families)
             
         }, failureBlock: { [weak self] error in
             
             self?.view?.showErrorAlert(title: "Error", message: "Failed to fetch data from server")
             
         })
+
     }
     
     func navigateToMapView() {
         guard let cinemaView = self.view else { return }
         
         wireframe?.navigateToMapView(from: cinemaView)
+        
+    }
+    
+    func didSelectItem(withFamily family: Families) {
+        guard let cinemaView = self.view else { return }
+        
+        wireframe?.navigateToDetail(fromView: cinemaView, withFamily: family)
         
     }
     

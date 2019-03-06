@@ -16,6 +16,7 @@ class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate
     var presenter: DetailPresenter?
     var videoId: String?
     var isExpanded: Bool = false
+    var dispatchWorkItem: DispatchWorkItem?
     
     @IBOutlet weak var showMoreButton: UIButton!
     @IBOutlet weak var playerView: YouTubePlayerView!
@@ -112,13 +113,30 @@ class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate
     // MARK: - YouTubePlayerDelegate methods
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         
-        presenter?.loadVideo(videoPlayer: videoPlayer, withId: videoId)
+        dispatchWorkItem = DispatchWorkItem { [weak self] in
+            guard let self = self else { return }
+            self.presenter?.loadVideo(videoPlayer: videoPlayer, withId: self.videoId)
+            
+        }
+        
+        if let dispatchWork = self.dispatchWorkItem {
+            DispatchQueue.global(qos: .background).async(execute: dispatchWork)
+        }
         
     }
     
     func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
         
         presenter?.playerStateChanged(videoPlayer: videoPlayer, playerState: playerState)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        DispatchQueue.global().async { [weak self] in
+            guard let self = self else { return }
+            self.dispatchWorkItem?.cancel()
+        }
         
     }
 

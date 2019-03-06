@@ -31,6 +31,12 @@ class CinemaHomeInteractor: ICinemaHomeInteractor {
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             
+            if let errors = error {
+                
+                failureBlock(errors)
+                return
+            }
+            
             guard let data = data else { return }
             
             do {
@@ -44,7 +50,9 @@ class CinemaHomeInteractor: ICinemaHomeInteractor {
                 successBlock(families)
                 
             } catch let error {
+                
                 print("Failed to decode json response with error: ", error.localizedDescription)
+                failureBlock(error)
             }
             
         }.resume()

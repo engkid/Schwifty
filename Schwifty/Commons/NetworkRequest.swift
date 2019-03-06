@@ -14,23 +14,22 @@ class NetworkRequest: INetworkRequest {
     
     func makeRequestWith(URL: String, method: HTTPMethod, parameter: [String:Any], successBlock: @escaping (Data) -> Void, failureBlock: @escaping(Error?) -> Void) {
         
-        Alamofire.request(URL).responseJSON { (response) in
+        Alamofire.request(URL, method: method, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response: DataResponse<Any>) in
             
             if response.result.isSuccess {
                 
-                guard let data = response.data else { return }
-            
+                guard let _ = response.response?.allHeaderFields, let data = response.data else { return }
+                
                 successBlock(data)
                 
             } else {
                 
-                failureBlock(response.error)
+                guard let error = response.error else { return }
+                
+                failureBlock(error)
                 
             }
-            
-            
         }
-        
     }
     
     func requestWith(URL: String, method: HTTPMethod, parameter: [String : Any], successBlock: @escaping ([String : Any]?) -> Void, failureBlock: @escaping (NSError?) -> Void) {

@@ -52,6 +52,10 @@ class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate
         
         showMoreButton.addTarget(self, action: #selector(expand), for: .touchUpInside)
         
+        let barButton = UIBarButtonItem(title: "To home", style: .plain, target: self, action: #selector(homeDidTap))
+        
+        navigationItem.rightBarButtonItem = barButton
+        
     }
     
     func showMore() {
@@ -81,9 +85,16 @@ class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate
         
     }
     
+    // MARK: - Selectors
     @objc func expand(expanded: Bool) {
         
         presenter?.expandDidTapped(expanded: self.isExpanded)
+        
+    }
+    
+    @objc func homeDidTap() {
+        
+        presenter?.popToRoot(sourceView: self)
         
     }
     

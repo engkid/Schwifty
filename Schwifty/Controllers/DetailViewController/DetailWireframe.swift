@@ -6,8 +6,18 @@
 //  Copyright © 2019 Engkit Satia Riswara. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class DetailWireframe {
+class DetailWireframe: IDetailWireframe {
+    
+    func popToRoot(sourceView: IDetailView) {
+        
+        if let view = sourceView as? UIViewController {
+            
+            view.navigationController?.popToRootViewController(animated: true)
+            
+        }
+        
+    }
     
 }

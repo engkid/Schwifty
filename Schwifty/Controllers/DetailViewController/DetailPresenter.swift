@@ -13,6 +13,7 @@ class DetailPresenter: IDetailPresenter {
     
     weak var families: Families?
     weak var view: IDetailView?
+    var wireframe: IDetailWireframe?
     
     func viewDidloaded() {
         
@@ -56,6 +57,12 @@ class DetailPresenter: IDetailPresenter {
         default:
             break
         }
+        
+    }
+    
+    func popToRoot(sourceView: IDetailView) {
+        
+        wireframe?.popToRoot(sourceView: sourceView)
         
     }
     

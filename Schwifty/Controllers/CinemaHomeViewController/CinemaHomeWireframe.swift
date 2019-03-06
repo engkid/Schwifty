@@ -38,11 +38,12 @@ class CinemaHomeWireframe: ICinemaHomeWireframe {
     
     func createModuleToDetailView(withFamily family: Families) -> UIViewController {
         
-        guard let detailViewController = DetailViewController() as DetailViewController?, let detailPresenter = DetailPresenter() as DetailPresenter? else { return UIViewController() }
+        guard let detailViewController = DetailViewController() as DetailViewController?, let detailPresenter = DetailPresenter() as DetailPresenter?, let wireframe = DetailWireframe() as? DetailWireframe else { return UIViewController() }
         
         detailViewController.presenter = detailPresenter
         detailPresenter.families = family
         detailPresenter.view = detailViewController
+        detailPresenter.wireframe = wireframe
         
         return detailViewController
     }

@@ -15,6 +15,8 @@ protocol IDetailPresenter: class {
     
     var view: IDetailView? { get }
     
+    var wireframe: IDetailWireframe? { get }
+    
     func viewDidloaded()
     
     func expandDidTapped(expanded: Bool)
@@ -23,9 +25,13 @@ protocol IDetailPresenter: class {
     
     func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState)
     
+    func popToRoot(sourceView: IDetailView)
+    
 }
 
 protocol IDetailWireframe: class {
+    
+    func popToRoot(sourceView: IDetailView)
     
 }
 

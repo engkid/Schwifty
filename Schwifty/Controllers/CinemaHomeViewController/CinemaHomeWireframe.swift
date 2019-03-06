@@ -31,14 +31,14 @@ class CinemaHomeWireframe: ICinemaHomeWireframe {
         let mapViewController = self.createModuleToMapView()
         
         if let sourceView = view as? UIViewController {
-            sourceView.navigationController?.pushViewController(mapViewController, animated: true)
+            sourceView.navigateFrom(sourceView, toNextViewController: mapViewController, transition: .push, animated: true, completion: nil)
         }
         
     }
     
     func createModuleToDetailView(withFamily family: Families) -> UIViewController {
         
-        guard let detailViewController = DetailViewController() as DetailViewController?, let detailPresenter = DetailPresenter() as DetailPresenter?, let wireframe = DetailWireframe() as? DetailWireframe else { return UIViewController() }
+        guard let detailViewController = DetailViewController() as DetailViewController?, let detailPresenter = DetailPresenter() as DetailPresenter?, let wireframe = DetailWireframe() as DetailWireframe? else { return UIViewController() }
         
         detailViewController.presenter = detailPresenter
         detailPresenter.families = family
@@ -53,7 +53,7 @@ class CinemaHomeWireframe: ICinemaHomeWireframe {
         let detailVC = self.createModuleToDetailView(withFamily: family)
         
         if let sourceView = view as? UIViewController {
-            sourceView.navigationController?.pushViewController(detailVC, animated: true)
+            sourceView.navigateFrom(sourceView, toNextViewController: detailVC, transition: .push, animated: true, completion: nil)
         }
         
     }

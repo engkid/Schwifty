@@ -35,15 +35,23 @@ protocol ICinemaHomeWireframe: class {
     
     func navigateToDetail(fromView view: ICinemaHomeView, withFamily family: Families)
     
+    func createModuleToServiceView(withSetting setting: SettingComponents) -> UIViewController
+    
+    func pushToServiceView(fromView view: ICinemaHomeView, withSetting setting: SettingComponents)
+    
 }
 
 protocol ICinemaHomePresenter: class {
+    
+    var family: [Families]? { get set }
     
     func viewDidloaded()
     
     func navigateToMapView()
     
     func didSelectItem(withFamily family: Families)
+    
+    func pushToServiceView(withSetting setting: SettingComponents)
 }
 
 protocol ICinemaHomeInteractor: class {

@@ -58,4 +58,26 @@ class CinemaHomeWireframe: ICinemaHomeWireframe {
         
     }
     
+    func createModuleToServiceView(withSetting setting: SettingComponents) -> UIViewController {
+        
+        let vc = ServiceViewController()
+        vc.setting = setting
+        
+        return vc
+    }
+    
+    func pushToServiceView(fromView view: ICinemaHomeView, withSetting setting: SettingComponents) {
+        
+        let serviceVC = self.createModuleToServiceView(withSetting: setting)
+        
+        if let sourceView = view as? UIViewController {
+            
+            sourceView.navigationController?.pushViewController(serviceVC, animated: true)
+            
+        }
+        
+        
+        
+    }
+    
 }

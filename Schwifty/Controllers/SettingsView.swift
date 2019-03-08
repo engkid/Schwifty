@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol SettinsViewDelegate: class {
+protocol SettingsViewDelegate: class {
     
-    func navigateToViewController(withService service: SettingComponents, animated: Bool)
+    func navigateToViewController(withSetting setting: SettingComponents, animated: Bool)
     
 }
 
@@ -18,7 +18,7 @@ class SettingsView: NSObject, UICollectionViewDelegate, UICollectionViewDataSour
     
     let blackView: UIView = UIView()
     
-    var delegate: SettinsViewDelegate?
+    var delegate: SettingsViewDelegate?
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -128,7 +128,7 @@ class SettingsView: NSObject, UICollectionViewDelegate, UICollectionViewDataSour
             
             self.handleSettingDismissal { [weak self] (completion: Bool) in
                 
-                self?.delegate?.navigateToViewController(withService: setting, animated: true)
+                self?.delegate?.navigateToViewController(withSetting: setting, animated: true)
                 
             }
             

@@ -75,7 +75,7 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return families?.count ?? 0
+        return presenter?.family?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -225,14 +225,12 @@ extension CinemaHomeViewController: MoviesCollectionCellDelegate {
     
 }
 
-extension CinemaHomeViewController: SettinsViewDelegate {
+extension CinemaHomeViewController: SettingsViewDelegate {
     
-    func navigateToViewController(withService service: SettingComponents, animated: Bool) {
+    func navigateToViewController(withSetting setting: SettingComponents, animated: Bool) {
         
-        let vc = ServiceViewController()
-        vc.setting = service
+        presenter?.pushToServiceView(withSetting: setting)
         
-        navigationController?.pushViewController(vc, animated: true)
     }
     
     

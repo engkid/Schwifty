@@ -11,15 +11,21 @@ import UIKit
 
 class CinemaHomePresenter: ICinemaHomePresenter {
     
-    /*MARK:
-     
-     this is interesting, I deallocate the presenter with 3 weak properties (view, interactor, wireframe) to move it to the homeViewController (view)... somehow got
-     nil class for interactor and wireframe fixed it by changing weak to strong reference *still have no idea whats wrong... need to figure out
-     
-     */
     var interactor: ICinemaHomeInteractor?
     weak var view: ICinemaHomeView?
     var wireframe: ICinemaHomeWireframe?
+    
+    var family: [Families]? {
+        
+        didSet {
+            
+            guard let families = self.family else { return }
+            
+            self.view?.populateWithResponses(response: families)
+            
+        }
+        
+    }
     
     init(interactor: ICinemaHomeInteractor, view: ICinemaHomeView, wireframe: ICinemaHomeWireframe) {
         self.interactor = interactor
@@ -33,8 +39,8 @@ class CinemaHomePresenter: ICinemaHomePresenter {
         view?.showLoading()
         interactor?.getFamilies(successBlock: { [weak self] (families) in
             
+            self?.family = families
             self?.view?.hideLoading()
-            self?.view?.populateWithResponses(response: families)
             
         }, failureBlock: { [weak self] error in
             
@@ -55,6 +61,13 @@ class CinemaHomePresenter: ICinemaHomePresenter {
         guard let cinemaView = self.view else { return }
         
         wireframe?.navigateToDetail(fromView: cinemaView, withFamily: family)
+        
+    }
+    
+    func pushToServiceView(withSetting setting: SettingComponents) {
+        guard let cinemaView = self.view else { return }
+        
+        wireframe?.pushToServiceView(fromView: cinemaView, withSetting: setting)
         
     }
     

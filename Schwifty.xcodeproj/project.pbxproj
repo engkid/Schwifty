@@ -29,6 +29,8 @@
 		1E6B005C221FD37C0007789F /* UIViewController+AlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B005B221FD37C0007789F /* UIViewController+AlertControllerExtension.swift */; };
 		1E6B005E2223882B0007789F /* UIViewController+LoadingViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B005D2223882B0007789F /* UIViewController+LoadingViewExtensions.swift */; };
 		1E89345722323970007B6CB1 /* SettingComponentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E89345522323970007B6CB1 /* SettingComponentCell.swift */; };
+		1E89345C22324DB6007B6CB1 /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E89345A22324DB6007B6CB1 /* ServiceViewController.swift */; };
+		1E89345D22324DB6007B6CB1 /* ServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E89345B22324DB6007B6CB1 /* ServiceViewController.xib */; };
 		1ED491A0222E123000FABC2D /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED4919F222E123000FABC2D /* YouTubePlayer.framework */; };
 		1ED491B0222F731300FABC2D /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED491AF222F731300FABC2D /* InfoView.swift */; };
 		1EE8F0092213CC52008AC105 /* CinemaHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */; };
@@ -88,6 +90,8 @@
 		1E6B005B221FD37C0007789F /* UIViewController+AlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertControllerExtension.swift"; sourceTree = "<group>"; };
 		1E6B005D2223882B0007789F /* UIViewController+LoadingViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoadingViewExtensions.swift"; sourceTree = "<group>"; };
 		1E89345522323970007B6CB1 /* SettingComponentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingComponentCell.swift; sourceTree = "<group>"; };
+		1E89345A22324DB6007B6CB1 /* ServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
+		1E89345B22324DB6007B6CB1 /* ServiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceViewController.xib; sourceTree = "<group>"; };
 		1ED4919F222E123000FABC2D /* YouTubePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YouTubePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED491AF222F731300FABC2D /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaHomeViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +196,15 @@
 			path = MapViewController;
 			sourceTree = "<group>";
 		};
+		1E89345922324D96007B6CB1 /* ServiceViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E89345A22324DB6007B6CB1 /* ServiceViewController.swift */,
+				1E89345B22324DB6007B6CB1 /* ServiceViewController.xib */,
+			);
+			path = ServiceViewController;
+			sourceTree = "<group>";
+		};
 		1EE8F0062213CC10008AC105 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				1EF534D222320EE7009CF228 /* SettingsView.swift */,
+				1E89345922324D96007B6CB1 /* ServiceViewController */,
 				1E1ED661222CC58E000A1E1A /* DetailViewController */,
 				1E6B0048221B9F3C0007789F /* MapViewController */,
 				1EE8F0112213FDC4008AC105 /* CinemaHomeViewController */,
@@ -343,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E3EAE892203619B00E074DE /* LaunchScreen.storyboard in Resources */,
+				1E89345D22324DB6007B6CB1 /* ServiceViewController.xib in Resources */,
 				1E1ED660222CC57E000A1E1A /* DetailViewController.xib in Resources */,
 				1E3EAE862203619B00E074DE /* Assets.xcassets in Resources */,
 				1EE8F00A2213CC52008AC105 /* CinemaHomeViewController.xib in Resources */,
@@ -452,6 +467,7 @@
 				1E1ED663222CC67F000A1E1A /* DetailPresenter.swift in Sources */,
 				1EE8F0152213FEA5008AC105 /* CinemaHomePresenter.swift in Sources */,
 				1EF534D322320EE7009CF228 /* SettingsView.swift in Sources */,
+				1E89345C22324DB6007B6CB1 /* ServiceViewController.swift in Sources */,
 				1EE8F02E22169CCC008AC105 /* AppConstants.swift in Sources */,
 				1E6B0050221BAB9A0007789F /* MapContracts.swift in Sources */,
 				1E6B0056221E4D3D0007789F /* Users.swift in Sources */,

@@ -229,7 +229,8 @@ extension CinemaHomeViewController: SettinsViewDelegate {
     
     func navigateToViewController(withService service: SettingComponents, animated: Bool) {
         
-        let vc = UIViewController()
+        let vc = ServiceViewController()
+        vc.setting = service
         
         navigationController?.pushViewController(vc, animated: true)
     }

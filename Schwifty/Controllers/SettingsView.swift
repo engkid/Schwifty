@@ -31,10 +31,10 @@ class SettingsView: NSObject, UICollectionViewDelegate, UICollectionViewDataSour
         
         let sc = [
         
-        SettingComponents(imageName: "setting", name: "Setting"),
-        SettingComponents(imageName: "profile", name: "Profile"),
-        SettingComponents(imageName: "feedback", name: "Feedback"),
-        SettingComponents(imageName: "cancel", name: "Cancel")
+        SettingComponents(imageName: "setting", type: .setting),
+        SettingComponents(imageName: "profile", type: .profile),
+        SettingComponents(imageName: "feedback", type: .feedback),
+        SettingComponents(imageName: "cancel", type: .cancel)
         
         ]
         
@@ -114,13 +114,27 @@ class SettingsView: NSObject, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let setting = settingsComponents[indexPath.item]
+        guard let serviceName = settingsComponents[indexPath.item].type else { return }
         
-        self.handleSettingDismissal { [weak self] (completion: Bool) in
+        switch serviceName {
+        case .cancel:
             
-            self?.delegate?.navigateToViewController(withService: setting, animated: true)
+            handleSettingDismissal(completion: nil)
             
+            return
+        default:
+            
+            let setting = settingsComponents[indexPath.item]
+            
+            self.handleSettingDismissal { [weak self] (completion: Bool) in
+                
+                self?.delegate?.navigateToViewController(withService: setting, animated: true)
+                
+            }
+            
+            return
         }
+        
     }
     
     override init() {

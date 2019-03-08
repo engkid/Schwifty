@@ -54,9 +54,9 @@ class SettingComponentCell: UICollectionViewCell {
         settingLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         settingLabel.anchor(top: nil, left: imageView.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
         
-        guard let settingName = setting.name, let settingImage = setting.imageName else { return }
+        guard let settingName = setting.type, let settingImage = setting.imageName else { return }
         
-        settingLabel.text = settingName
+        settingLabel.text = settingName.rawValue
         imageView.image = UIImage(named: settingImage)?.withRenderingMode(.alwaysTemplate)
         imageView.tintColor = UIColor.darkGray
     }

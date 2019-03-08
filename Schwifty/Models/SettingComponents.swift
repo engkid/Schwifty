@@ -8,14 +8,23 @@
 
 import Foundation
 
+enum SettingType: String {
+    
+    case setting = "Setting"
+    case profile = "Profile"
+    case feedback = "Feedback"
+    case cancel = "Cancel"
+    
+}
+
 class SettingComponents: NSObject {
     
     var imageName: String?
-    var name: String?
+    var type: SettingType?
     
-    init(imageName: String?, name: String?) {
+    init(imageName: String?, type: SettingType?) {
         self.imageName = imageName
-        self.name = name
+        self.type = type
     }
     
 }

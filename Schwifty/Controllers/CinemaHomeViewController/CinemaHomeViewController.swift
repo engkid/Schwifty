@@ -13,7 +13,6 @@ class CinemaHomeViewController: UIViewController {
     // MARK: - Properties
     var presenter: ICinemaHomePresenter?
     var load: UIActivityIndicatorView?
-    var settingsView: SettingsView?
     
     var families: [Families]? {
         
@@ -34,6 +33,13 @@ class CinemaHomeViewController: UIViewController {
         
         let view = InfoView()
         return view
+    }()
+    
+    let settingsView: SettingsView = {
+        
+        let sv = SettingsView()
+        return sv
+        
     }()
     
     let visualEffectView: UIVisualEffectView = {
@@ -140,7 +146,7 @@ extension CinemaHomeViewController: ICinemaHomeView {
     
     @objc private func handleMore() {
         
-        self.settingsView?.showSettings()
+        self.settingsView.showSettings()
         
     }
     

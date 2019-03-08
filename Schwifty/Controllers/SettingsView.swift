@@ -26,7 +26,7 @@ class SettingsView: NSObject, UICollectionViewDelegate, UICollectionViewDataSour
         SettingComponents(imageName: "setting", name: "Setting"),
         SettingComponents(imageName: "profile", name: "Profile"),
         SettingComponents(imageName: "feedback", name: "Feedback"),
-        SettingComponents(imageName: "", name: "Cancel")
+        SettingComponents(imageName: "cancel", name: "Cancel")
         
         ]
         

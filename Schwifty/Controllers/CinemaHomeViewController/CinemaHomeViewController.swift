@@ -12,8 +12,8 @@ class CinemaHomeViewController: UIViewController {
     
     // MARK: - Properties
     var presenter: ICinemaHomePresenter?
-    var loading: LoadingIndicator?
     var load: UIActivityIndicatorView?
+    var settingsView: SettingsView?
     
     var families: [Families]? {
         
@@ -129,11 +129,22 @@ extension CinemaHomeViewController: ICinemaHomeView {
         collectionViewInitialize()
         self.titleLabel?.text = "Favourite Fiction Characters"
         
-        let barButtonItem = UIBarButtonItem(title: "Our Journeys", style: .plain, target: self, action: #selector(goToMapViewController))
+        let barButtonItem = UIBarButtonItem(title: "Map", style: .plain, target: self, action: #selector(goToMapViewController))
+        let barButtonItem2 = UIBarButtonItem(title: "More", style: .plain, target: self, action: #selector(handleMore))
         
-        self.navigationItem.rightBarButtonItem = barButtonItem
+        let barButtonItems: [UIBarButtonItem] = [barButtonItem2, barButtonItem]
+        
+        navigationItem.setRightBarButtonItems(barButtonItems, animated: true)
         
     }
+    
+    @objc private func handleMore() {
+        
+        self.settingsView?.showSettings()
+        
+    }
+    
+    
     
     @objc private func handleDismissal() {
         

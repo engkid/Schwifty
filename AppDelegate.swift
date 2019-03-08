@@ -54,6 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let cinemaHome: ICinemaHomeView = CinemaHomeViewController()
         
+        cinemaHome.settingsView = SettingsView()
+        
         let cinemaWireframe: ICinemaHomeWireframe = CinemaHomeWireframe()
         
         let cinemaInteractor: ICinemaHomeInteractor = CinemaHomeInteractor()

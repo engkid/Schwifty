@@ -129,6 +129,8 @@ extension CinemaHomeViewController: ICinemaHomeView {
         visualEffectView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         visualEffectView.alpha = 0
         
+        settingsView.delegate = self
+        
         let gesture = UITapGestureRecognizer(target: self, action: #selector(handleDismissal))
         visualEffectView.addGestureRecognizer(gesture)
         
@@ -220,5 +222,17 @@ extension CinemaHomeViewController: MoviesCollectionCellDelegate {
         }
         
     }
+    
+}
+
+extension CinemaHomeViewController: SettinsViewDelegate {
+    
+    func navigateToViewController(withService service: SettingComponents, animated: Bool) {
+        
+        let vc = UIViewController()
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
 }

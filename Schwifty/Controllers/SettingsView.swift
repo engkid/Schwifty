@@ -8,9 +8,17 @@
 
 import UIKit
 
+protocol SettinsViewDelegate: class {
+    
+    func navigateToViewController(withService service: SettingComponents, animated: Bool)
+    
+}
+
 class SettingsView: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     let blackView: UIView = UIView()
+    
+    var delegate: SettinsViewDelegate?
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -69,16 +77,17 @@ class SettingsView: NSObject, UICollectionViewDelegate, UICollectionViewDataSour
         
     }
     
-    @objc private func handleSettingDismissal() {
+    @objc private func handleSettingDismissal(completion: ((Bool) -> Void)?) {
         
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            
             self.blackView.alpha = 0
             
             if let window = UIApplication.shared.keyWindow {
                 self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
             }
             
-        }
+        }, completion: completion)
         
     }
     
@@ -107,17 +116,11 @@ class SettingsView: NSObject, UICollectionViewDelegate, UICollectionViewDataSour
         
         let setting = settingsComponents[indexPath.item]
         
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+        self.handleSettingDismissal { [weak self] (completion: Bool) in
             
-            self.handleSettingDismissal()
-            
-        }) { (completed: Bool) in
-            
-            
+            self?.delegate?.navigateToViewController(withService: setting, animated: true)
             
         }
-        
-        
     }
     
     override init() {

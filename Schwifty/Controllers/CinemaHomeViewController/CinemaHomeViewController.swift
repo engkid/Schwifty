@@ -71,10 +71,8 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "moviesCollectionViewCell", for: indexPath) as? MoviesCollectionViewCell else { return UICollectionViewCell() }
         
         let selectedItem: Int = indexPath.item
-        let selectedSection: Int = indexPath.section
-        let itemIndexPath: Int =  2 * selectedSection + selectedItem
         
-        if let family = presenter?.family?[itemIndexPath] {
+        if let family = presenter?.family?[selectedItem] {
             
             cell.set(forFamily: family)
             cell.delegate = self

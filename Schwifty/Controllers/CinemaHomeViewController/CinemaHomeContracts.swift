@@ -6,8 +6,7 @@
 //  Copyright © 2019 Engkit Satia Riswara. All rights reserved.
 //
 
-import Foundation
-import Alamofire
+import UIKit
 
 protocol ICinemaHomeView: class {
     

@@ -13,18 +13,6 @@ class CinemaHomeViewController: UIViewController {
     // MARK: - Properties
     var presenter: ICinemaHomePresenter?
     var load: UIActivityIndicatorView?
-    
-    var families: [Families]? {
-        
-        didSet {
-            
-            DispatchQueue.main.async {
-                self.movieCollectionView?.reloadData()
-            }
-            
-        }
-        
-    }
 
     @IBOutlet weak var movieCollectionView: UICollectionView?
     @IBOutlet weak var titleLabel: UILabel?
@@ -86,7 +74,7 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         let selectedSection: Int = indexPath.section
         let itemIndexPath: Int =  2 * selectedSection + selectedItem
         
-        if let family = self.families?[itemIndexPath] {
+        if let family = presenter?.family?[itemIndexPath] {
             
             cell.set(forFamily: family)
             cell.delegate = self
@@ -100,7 +88,7 @@ extension CinemaHomeViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let selectedItem: Int = indexPath.item
         
-        guard let familySelected = families?[selectedItem] else { return }
+        guard let familySelected = presenter?.family?[selectedItem] else { return }
         
         presenter?.didSelectItem(withFamily: familySelected)
         
@@ -169,7 +157,9 @@ extension CinemaHomeViewController: ICinemaHomeView {
     
     func populateWithResponses(response: [Families]) {
         
-        self.families = response
+        DispatchQueue.main.async {
+            self.movieCollectionView?.reloadData()
+        }
         
     }
     

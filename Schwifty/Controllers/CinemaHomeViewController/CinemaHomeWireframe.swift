@@ -75,9 +75,6 @@ class CinemaHomeWireframe: ICinemaHomeWireframe {
             sourceView.navigationController?.pushViewController(serviceVC, animated: true)
             
         }
-        
-        
-        
     }
     
 }

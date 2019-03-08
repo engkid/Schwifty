@@ -19,9 +19,7 @@ class CinemaHomePresenter: ICinemaHomePresenter {
         
         didSet {
             
-            guard let families = self.family else { return }
-            
-            self.view?.populateWithResponses(response: families)
+            self.view?.refreshViewWithFetchedData()
             
         }
         

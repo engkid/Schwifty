@@ -140,8 +140,6 @@ extension CinemaHomeViewController: ICinemaHomeView {
         
     }
     
-    
-    
     @objc private func handleDismissal() {
         
         UIView.animate(withDuration: 0.5, animations: {
@@ -155,7 +153,7 @@ extension CinemaHomeViewController: ICinemaHomeView {
         
     }
     
-    func populateWithResponses(response: [Families]) {
+    func refreshViewWithFetchedData() {
         
         DispatchQueue.main.async {
             self.movieCollectionView?.reloadData()

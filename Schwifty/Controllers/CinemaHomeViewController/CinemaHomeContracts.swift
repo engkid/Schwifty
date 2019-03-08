@@ -18,7 +18,7 @@ protocol ICinemaHomeView: class {
     
     func hideLoading()
     
-    func populateWithResponses(response: [Families])
+    func refreshViewWithFetchedData()
     
     func showErrorAlert(title: String, message: String)
     

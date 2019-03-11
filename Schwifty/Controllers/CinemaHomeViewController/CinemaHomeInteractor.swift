@@ -16,7 +16,7 @@ class CinemaHomeInteractor: ICinemaHomeInteractor {
     
     func getFamilies(successBlock: @escaping ([Families]) -> Void, failureBlock: @escaping (Error) -> Void) {
         
-        guard let url = URL(string:"https://www.mocky.io/v2/5c7e20003100007b003760f5") else { return }
+        guard let url = URL(string:"https://www.mocky.io/v2/5c85dd76340000550689bd03") else { return }
         
 //        networkRequest?.makeRequestWith(URL: "https://www.mocky.io/v2/5c7e20003100007b003760f5", method: .post, parameter: [:], successBlock: { (data) in
 //

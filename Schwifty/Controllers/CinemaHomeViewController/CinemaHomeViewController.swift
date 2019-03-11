@@ -27,7 +27,6 @@ class CinemaHomeViewController: UIViewController {
         
         let sv = SettingsView()
         return sv
-        
     }()
     
     let visualEffectView: UIVisualEffectView = {

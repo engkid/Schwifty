@@ -91,7 +91,6 @@
 		1E89345522323970007B6CB1 /* SettingComponentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingComponentCell.swift; sourceTree = "<group>"; };
 		1E89345A22324DB6007B6CB1 /* ServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
 		1E89345B22324DB6007B6CB1 /* ServiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceViewController.xib; sourceTree = "<group>"; };
-		1ED4919F222E123000FABC2D /* YouTubePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YouTubePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED491AF222F731300FABC2D /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaHomeViewController.swift; sourceTree = "<group>"; };
 		1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CinemaHomeViewController.xib; sourceTree = "<group>"; };
@@ -285,7 +284,6 @@
 		9A89B3AD5CEE25100198AFB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1ED4919F222E123000FABC2D /* YouTubePlayer.framework */,
 				1EE8F0212214FC68008AC105 /* Alamofire.framework */,
 				E6CAB446CE0F09CCA8FB2FEF /* Pods_Schwifty.framework */,
 			);

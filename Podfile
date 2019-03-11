@@ -10,7 +10,6 @@ target 'Schwifty' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  pod 'YouTubePlayer'
   
   platform :ios, '8.0'
   pod 'SDWebImage', '~> 4.0'

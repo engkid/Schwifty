@@ -31,7 +31,6 @@
 		1E89345722323970007B6CB1 /* SettingComponentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E89345522323970007B6CB1 /* SettingComponentCell.swift */; };
 		1E89345C22324DB6007B6CB1 /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E89345A22324DB6007B6CB1 /* ServiceViewController.swift */; };
 		1E89345D22324DB6007B6CB1 /* ServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E89345B22324DB6007B6CB1 /* ServiceViewController.xib */; };
-		1ED491A0222E123000FABC2D /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED4919F222E123000FABC2D /* YouTubePlayer.framework */; };
 		1ED491B0222F731300FABC2D /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED491AF222F731300FABC2D /* InfoView.swift */; };
 		1EE8F0092213CC52008AC105 /* CinemaHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */; };
 		1EE8F00A2213CC52008AC105 /* CinemaHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */; };
@@ -120,7 +119,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ED491A0222E123000FABC2D /* YouTubePlayer.framework in Frameworks */,
 				1EE8F0222214FC68008AC105 /* Alamofire.framework in Frameworks */,
 				A16431603538DF16AE3B1D12 /* Pods_Schwifty.framework in Frameworks */,
 			);
@@ -403,7 +401,6 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/YouTubePlayer/YouTubePlayer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -412,7 +409,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

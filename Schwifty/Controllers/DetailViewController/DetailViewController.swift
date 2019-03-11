@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import YouTubePlayer
+import WebKit
 
-class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate {
+class DetailViewController: UIViewController, IDetailView {
     
 
     // MARK: - Properties
@@ -18,8 +18,16 @@ class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate
     var isExpanded: Bool = false
     var dispatchWorkItem: DispatchWorkItem?
     
+    let webView: WKWebView = {
+        
+        let wv = WKWebView()
+        
+        return wv
+        
+    }()
+    
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var showMoreButton: UIButton!
-    @IBOutlet weak var playerView: YouTubePlayerView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
@@ -34,6 +42,10 @@ class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate
     // MARK: - IDetailView methods
     func setupView(withFamily family: Families) {
         
+        view.addSubview(webView)
+        
+        webView.anchor(top: statusLabel.bottomAnchor, left: containerView.leftAnchor, bottom: containerView.bottomAnchor, right: containerView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
         avatarImage.contentMode = .scaleAspectFit
         
         guard let avatarUrl = family.avatarUrl else { return }
@@ -45,9 +57,7 @@ class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate
         avatarImage.setImageWithUrl(url: avatarUrl)
         descriptionLabel.text = family.description
         
-        videoId = family.videoId
-        
-        playerReady(playerView)
+        loadVideo(webView: webView, withId: family.videoId)
         
         setBackgroundImage(withUrl: avatarUrl)
         
@@ -110,24 +120,9 @@ class DetailViewController: UIViewController, IDetailView, YouTubePlayerDelegate
         
     }
     
-    // MARK: - YouTubePlayerDelegate methods
-    func playerReady(_ videoPlayer: YouTubePlayerView) {
+    private func loadVideo(webView: WKWebView, withId videoId: String?) {
         
-        dispatchWorkItem = DispatchWorkItem { [weak self] in
-            guard let self = self else { return }
-            self.presenter?.loadVideo(videoPlayer: videoPlayer, withId: self.videoId)
-            
-        }
-        
-        if let dispatchWork = self.dispatchWorkItem {
-            DispatchQueue.global(qos: .background).async(execute: dispatchWork)
-        }
-        
-    }
-    
-    func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
-        
-        presenter?.playerStateChanged(videoPlayer: videoPlayer, playerState: playerState)
+        presenter?.loadVideo(webView: webView, withId: videoId)
         
     }
     

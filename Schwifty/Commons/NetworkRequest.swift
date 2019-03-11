@@ -48,7 +48,6 @@ class NetworkRequest: INetworkRequest {
                 
             }
             
-            
         }
         
     }

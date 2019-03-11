@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import YouTubePlayer
+import WebKit
 
 class DetailPresenter: IDetailPresenter {
     
@@ -37,26 +37,11 @@ class DetailPresenter: IDetailPresenter {
         
     }
     
-    func loadVideo(videoPlayer: YouTubePlayerView, withId id: String?) {
+    func loadVideo(webView: WKWebView, withId id: String?) {
         
-        guard let videoId = id else { return }
+        guard let vidId = id, let url = URL(string: "https://www.youtube.com/embed/\(vidId)") else { return }
         
-        videoPlayer.loadVideoID(videoId)
-        
-    }
-    
-    func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
-        
-        switch playerState {
-        case .Ended:
-            
-            let orientation = UIInterfaceOrientation.portrait.rawValue
-            UIDevice.current.setValue(orientation, forKey: "orientation")
-            
-            return
-        default:
-            break
-        }
+        webView.load(URLRequest(url: url))
         
     }
     

@@ -51,7 +51,7 @@ class SettingsView: NSObject, UICollectionViewDelegate, UICollectionViewDataSour
             
             blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
             
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleSettingDismissal))
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleSettingDismiss))
             
             blackView.addGestureRecognizer(tapGesture)
             
@@ -74,6 +74,21 @@ class SettingsView: NSObject, UICollectionViewDelegate, UICollectionViewDataSour
             }, completion: nil)
             
         }
+        
+    }
+    
+    @objc private func handleSettingDismiss() {
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            
+            self.blackView.alpha = 0
+            
+            if let window = UIApplication.shared.keyWindow {
+                self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+            }
+            
+            
+        }, completion: nil)
         
     }
     

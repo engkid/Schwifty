@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import YouTubePlayer
+import WebKit
 
 protocol IDetailPresenter: class {
 
@@ -21,9 +21,7 @@ protocol IDetailPresenter: class {
     
     func expandDidTapped(expanded: Bool)
     
-    func loadVideo(videoPlayer: YouTubePlayerView, withId id: String?)
-    
-    func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState)
+    func loadVideo(webView: WKWebView, withId id: String?)
     
     func popToRoot(sourceView: IDetailView)
     

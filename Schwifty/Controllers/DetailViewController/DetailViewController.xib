@@ -13,8 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="Schwifty" customModuleProvider="target">
             <connections>
                 <outlet property="avatarImage" destination="sVq-cS-odx" id="ufe-Ws-mFh"/>
+                <outlet property="containerView" destination="YMM-2t-jVO" id="ZX1-4N-JzO"/>
                 <outlet property="descriptionLabel" destination="Ufp-zZ-QtJ" id="VOy-so-X9k"/>
-                <outlet property="playerView" destination="F3u-f3-4u0" id="0Jy-dQ-CWJ"/>
                 <outlet property="showMoreButton" destination="sdl-6a-Lw0" id="j4O-wp-NoS"/>
                 <outlet property="statusLabel" destination="oYP-50-O0o" id="1fx-lB-sqb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -52,26 +52,16 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMM-2t-jVO">
                                     <rect key="frame" x="118" y="8" width="249" height="150"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYP-50-O0o">
-                                            <rect key="frame" x="0.0" y="0.0" width="44.5" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYP-50-O0o">
+                                            <rect key="frame" x="0.0" y="0.0" width="44.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3u-f3-4u0" customClass="YouTubePlayerView" customModule="YouTubePlayer">
-                                            <rect key="frame" x="0.0" y="40" width="249" height="110"/>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="110" id="Yhi-8c-dK2"/>
-                                            </constraints>
-                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="oYP-50-O0o" firstAttribute="leading" secondItem="YMM-2t-jVO" secondAttribute="leading" id="AXe-Yd-x68"/>
-                                        <constraint firstAttribute="bottom" secondItem="F3u-f3-4u0" secondAttribute="bottom" id="BaT-e5-u9G"/>
                                         <constraint firstItem="oYP-50-O0o" firstAttribute="top" secondItem="YMM-2t-jVO" secondAttribute="top" id="I0p-Dt-Rdu"/>
-                                        <constraint firstAttribute="trailing" secondItem="F3u-f3-4u0" secondAttribute="trailing" id="Lta-ce-mGq"/>
-                                        <constraint firstItem="F3u-f3-4u0" firstAttribute="leading" secondItem="YMM-2t-jVO" secondAttribute="leading" id="yeu-HK-Kzc"/>
                                     </constraints>
                                 </view>
                             </subviews>

@@ -31,6 +31,7 @@
 		1E89345722323970007B6CB1 /* SettingComponentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E89345522323970007B6CB1 /* SettingComponentCell.swift */; };
 		1E89345C22324DB6007B6CB1 /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E89345A22324DB6007B6CB1 /* ServiceViewController.swift */; };
 		1E89345D22324DB6007B6CB1 /* ServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E89345B22324DB6007B6CB1 /* ServiceViewController.xib */; };
+		1EBBBA9F223B8FD20090733C /* SchwiftyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBBBA9E223B8FD20090733C /* SchwiftyTests.swift */; };
 		1ED491B0222F731300FABC2D /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED491AF222F731300FABC2D /* InfoView.swift */; };
 		1EE8F0092213CC52008AC105 /* CinemaHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */; };
 		1EE8F00A2213CC52008AC105 /* CinemaHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */; };
@@ -41,7 +42,6 @@
 		1EE8F0172213FECF008AC105 /* CinemaHomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F0162213FECF008AC105 /* CinemaHomeWireframe.swift */; };
 		1EE8F0192213FF1D008AC105 /* CinemaHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F0182213FF1D008AC105 /* CinemaHomeInteractor.swift */; };
 		1EE8F01C2214FBA0008AC105 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F01B2214FBA0008AC105 /* NetworkRequest.swift */; };
-		1EE8F0222214FC68008AC105 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE8F0212214FC68008AC105 /* Alamofire.framework */; };
 		1EE8F0242214FF48008AC105 /* NetworkRequestContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F0232214FF48008AC105 /* NetworkRequestContracts.swift */; };
 		1EE8F02722151015008AC105 /* Families.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F02622151015008AC105 /* Families.swift */; };
 		1EE8F02C221690ED008AC105 /* UIImageView+ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F02B221690ED008AC105 /* UIImageView+ImageExtensions.swift */; };
@@ -50,6 +50,16 @@
 		1EF534DB22321AF4009CF228 /* SettingComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF534DA22321AF4009CF228 /* SettingComponents.swift */; };
 		A16431603538DF16AE3B1D12 /* Pods_Schwifty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CAB446CE0F09CCA8FB2FEF /* Pods_Schwifty.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1EBBBAA1223B8FD20090733C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E3EAE732203619900E074DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E3EAE7A2203619900E074DE;
+			remoteInfo = Schwifty;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		1EE8F0202214FC5A008AC105 /* Embed Frameworks */ = {
@@ -91,6 +101,9 @@
 		1E89345522323970007B6CB1 /* SettingComponentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingComponentCell.swift; sourceTree = "<group>"; };
 		1E89345A22324DB6007B6CB1 /* ServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
 		1E89345B22324DB6007B6CB1 /* ServiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceViewController.xib; sourceTree = "<group>"; };
+		1EBBBA9C223B8FD20090733C /* SchwiftyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SchwiftyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EBBBA9E223B8FD20090733C /* SchwiftyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchwiftyTests.swift; sourceTree = "<group>"; };
+		1EBBBAA0223B8FD20090733C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1ED491AF222F731300FABC2D /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaHomeViewController.swift; sourceTree = "<group>"; };
 		1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CinemaHomeViewController.xib; sourceTree = "<group>"; };
@@ -101,7 +114,6 @@
 		1EE8F0162213FECF008AC105 /* CinemaHomeWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaHomeWireframe.swift; sourceTree = "<group>"; };
 		1EE8F0182213FF1D008AC105 /* CinemaHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaHomeInteractor.swift; sourceTree = "<group>"; };
 		1EE8F01B2214FBA0008AC105 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
-		1EE8F0212214FC68008AC105 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE8F0232214FF48008AC105 /* NetworkRequestContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestContracts.swift; sourceTree = "<group>"; };
 		1EE8F02622151015008AC105 /* Families.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Families.swift; sourceTree = "<group>"; };
 		1EE8F02B221690ED008AC105 /* UIImageView+ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageExtensions.swift"; sourceTree = "<group>"; };
@@ -118,8 +130,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EE8F0222214FC68008AC105 /* Alamofire.framework in Frameworks */,
 				A16431603538DF16AE3B1D12 /* Pods_Schwifty.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EBBBA99223B8FD20090733C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +172,7 @@
 				1E3EAE7E2203619900E074DE /* AppDelegate.swift */,
 				1EE8F0062213CC10008AC105 /* Resources */,
 				1E3EAE7D2203619900E074DE /* Schwifty */,
+				1EBBBA9D223B8FD20090733C /* SchwiftyTests */,
 				1E3EAE7C2203619900E074DE /* Products */,
 				0D5A8E8C0998351313DC2AC2 /* Pods */,
 				9A89B3AD5CEE25100198AFB8 /* Frameworks */,
@@ -164,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				1E3EAE7B2203619900E074DE /* Schwifty.app */,
+				1EBBBA9C223B8FD20090733C /* SchwiftyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,6 +220,15 @@
 				1E89345B22324DB6007B6CB1 /* ServiceViewController.xib */,
 			);
 			path = ServiceViewController;
+			sourceTree = "<group>";
+		};
+		1EBBBA9D223B8FD20090733C /* SchwiftyTests */ = {
+			isa = PBXGroup;
+			children = (
+				1EBBBA9E223B8FD20090733C /* SchwiftyTests.swift */,
+				1EBBBAA0223B8FD20090733C /* Info.plist */,
+			);
+			path = SchwiftyTests;
 			sourceTree = "<group>";
 		};
 		1EE8F0062213CC10008AC105 /* Resources */ = {
@@ -284,7 +313,6 @@
 		9A89B3AD5CEE25100198AFB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1EE8F0212214FC68008AC105 /* Alamofire.framework */,
 				E6CAB446CE0F09CCA8FB2FEF /* Pods_Schwifty.framework */,
 			);
 			name = Frameworks;
@@ -314,6 +342,24 @@
 			productReference = 1E3EAE7B2203619900E074DE /* Schwifty.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1EBBBA9B223B8FD20090733C /* SchwiftyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EBBBAA3223B8FD20090733C /* Build configuration list for PBXNativeTarget "SchwiftyTests" */;
+			buildPhases = (
+				1EBBBA98223B8FD20090733C /* Sources */,
+				1EBBBA99223B8FD20090733C /* Frameworks */,
+				1EBBBA9A223B8FD20090733C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1EBBBAA2223B8FD20090733C /* PBXTargetDependency */,
+			);
+			name = SchwiftyTests;
+			productName = SchwiftyTests;
+			productReference = 1EBBBA9C223B8FD20090733C /* SchwiftyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -326,6 +372,10 @@
 				TargetAttributes = {
 					1E3EAE7A2203619900E074DE = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					1EBBBA9B223B8FD20090733C = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 1E3EAE7A2203619900E074DE;
 					};
 				};
 			};
@@ -343,6 +393,7 @@
 			projectRoot = "";
 			targets = (
 				1E3EAE7A2203619900E074DE /* Schwifty */,
+				1EBBBA9B223B8FD20090733C /* SchwiftyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -359,6 +410,13 @@
 				1EE8F00A2213CC52008AC105 /* CinemaHomeViewController.xib in Resources */,
 				1E6B004C221B9F5C0007789F /* MapViewController.xib in Resources */,
 				1EE8F0102213DFBC008AC105 /* MoviesCollectionViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EBBBA9A223B8FD20090733C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +538,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1EBBBA98223B8FD20090733C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EBBBA9F223B8FD20090733C /* SchwiftyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1EBBBAA2223B8FD20090733C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E3EAE7A2203619900E074DE /* Schwifty */;
+			targetProxy = 1EBBBAA1223B8FD20090733C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1E3EAE872203619B00E074DE /* LaunchScreen.storyboard */ = {
@@ -650,6 +724,48 @@
 			};
 			name = Release;
 		};
+		1EBBBAA4223B8FD20090733C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 589BZKMNT9;
+				INFOPLIST_FILE = SchwiftyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mitrais.EngkitModularProject.-LatianEngkitFirstApp.SchwiftyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Schwifty.app/Schwifty";
+			};
+			name = Debug;
+		};
+		1EBBBAA5223B8FD20090733C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 589BZKMNT9;
+				INFOPLIST_FILE = SchwiftyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mitrais.EngkitModularProject.-LatianEngkitFirstApp.SchwiftyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Schwifty.app/Schwifty";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -667,6 +783,15 @@
 			buildConfigurations = (
 				1E3EAE8E2203619B00E074DE /* Debug */,
 				1E3EAE8F2203619B00E074DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1EBBBAA3223B8FD20090733C /* Build configuration list for PBXNativeTarget "SchwiftyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EBBBAA4223B8FD20090733C /* Debug */,
+				1EBBBAA5223B8FD20090733C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -12,17 +12,16 @@ import XCTest
 class SchwiftyTests: XCTestCase {
     
     var presenter: ICinemaHomePresenter?
-    var interactor: testInte!
+    var interactor: CinemaHomeInteractorMock!
     var wireframe: ICinemaHomeWireframe?
     var view: ICinemaHomeView?
     
     override func setUp() {
         super.setUp()
         
-        
         wireframe = CinemaHomeWireframe()
         view = CinemaHomeViewController()
-        interactor = testInte()
+        interactor = CinemaHomeInteractorMock()
         
         interactor?.networkRequest = NetworkRequest()
         
@@ -32,9 +31,7 @@ class SchwiftyTests: XCTestCase {
         
     }
     
-    class testInte: ICinemaHomeInteractor {
-        
-        var presenter: ICinemaHomePresenter?
+    class CinemaHomeInteractorMock: ICinemaHomeInteractor {
         
         var networkRequest: INetworkRequest?
         
@@ -49,12 +46,12 @@ class SchwiftyTests: XCTestCase {
     func testIntera() {
         let testExpectation = expectation(description: #function)
         
-        let fam = [Families(id: 0, name: "Engkit", status: "Married", description: "description", avatarUrl: "someavatarurl", latitude: -6.123123123, longitude: 2.123041239)]
+        let fam = [Families(id: 0, name: "Engkit", status: "Married", description: "description", avatarUrl: "someavatarurl", latitude: -6.123123123, longitude: 2.123041239), Families(id: 0, name: "Engkit", status: "Married", description: "description", avatarUrl: "someavatarurl", latitude: -6.123123123, longitude: 2.123041239)]
         
         interactor.families = fam
         
         let callBack = { (_ fam: [Families]?) -> Void in
-            XCTAssertEqual(fam?.count, 1)
+            XCTAssertEqual(fam?.count, 2)
             XCTAssertEqual(fam?.first?.name, "Engkit")
             XCTAssertEqual(fam?.first?.status, "Married")
             testExpectation.fulfill()
@@ -68,8 +65,6 @@ class SchwiftyTests: XCTestCase {
         interactor.getFamilies(successBlock: callBack, failureBlock: errorCallback)
         
         waitForExpectations(timeout: 3.0, handler: nil)
-        
-        
         
     }
 

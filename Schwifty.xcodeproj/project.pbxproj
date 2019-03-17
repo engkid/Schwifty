@@ -32,6 +32,7 @@
 		1E89345C22324DB6007B6CB1 /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E89345A22324DB6007B6CB1 /* ServiceViewController.swift */; };
 		1E89345D22324DB6007B6CB1 /* ServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E89345B22324DB6007B6CB1 /* ServiceViewController.xib */; };
 		1EBBBA9F223B8FD20090733C /* SchwiftyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBBBA9E223B8FD20090733C /* SchwiftyTests.swift */; };
+		1EBBBAA8223B9C720090733C /* CinemaHomeInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBBBAA7223B9C720090733C /* CinemaHomeInteractorMock.swift */; };
 		1ED491B0222F731300FABC2D /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED491AF222F731300FABC2D /* InfoView.swift */; };
 		1EE8F0092213CC52008AC105 /* CinemaHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */; };
 		1EE8F00A2213CC52008AC105 /* CinemaHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */; };
@@ -104,6 +105,7 @@
 		1EBBBA9C223B8FD20090733C /* SchwiftyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SchwiftyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EBBBA9E223B8FD20090733C /* SchwiftyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchwiftyTests.swift; sourceTree = "<group>"; };
 		1EBBBAA0223B8FD20090733C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EBBBAA7223B9C720090733C /* CinemaHomeInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaHomeInteractorMock.swift; sourceTree = "<group>"; };
 		1ED491AF222F731300FABC2D /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		1EE8F0072213CC52008AC105 /* CinemaHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaHomeViewController.swift; sourceTree = "<group>"; };
 		1EE8F0082213CC52008AC105 /* CinemaHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CinemaHomeViewController.xib; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 		1EBBBA9D223B8FD20090733C /* SchwiftyTests */ = {
 			isa = PBXGroup;
 			children = (
+				1EBBBAA7223B9C720090733C /* CinemaHomeInteractorMock.swift */,
 				1EBBBA9E223B8FD20090733C /* SchwiftyTests.swift */,
 				1EBBBAA0223B8FD20090733C /* Info.plist */,
 			);
@@ -542,6 +545,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EBBBAA8223B9C720090733C /* CinemaHomeInteractorMock.swift in Sources */,
 				1EBBBA9F223B8FD20090733C /* SchwiftyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

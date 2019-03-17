@@ -35,10 +35,35 @@ class SchwiftyTests: XCTestCase {
         
         var networkRequest: INetworkRequest?
         
-        var families: [Families]?
-        
         func getFamilies(successBlock: @escaping ([Families]) -> Void, failureBlock: @escaping (Error) -> Void) {
-            successBlock((families ?? nil)!)
+            
+            guard let url = URL(string:"https://www.mocky.io/v2/5c85dd76340000550689bd03") else { return }
+            
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                
+                if let errors = error {
+                    
+                    failureBlock(errors)
+                    return
+                }
+                
+                guard let data = data else { return }
+                
+                do {
+                    
+                    let family = try JSONDecoder().decode([Families].self, from: data)
+                    
+                    successBlock(family)
+                    
+                } catch let error {
+                    
+                    print("Failed to decode json response with error: ", error.localizedDescription)
+                    failureBlock(error)
+                }
+                
+                }.resume()
+            
+            
         }
         
     }
@@ -46,14 +71,10 @@ class SchwiftyTests: XCTestCase {
     func testIntera() {
         let testExpectation = expectation(description: #function)
         
-        let fam = [Families(id: 0, name: "Engkit", status: "Married", description: "description", avatarUrl: "someavatarurl", latitude: -6.123123123, longitude: 2.123041239), Families(id: 0, name: "Engkit", status: "Married", description: "description", avatarUrl: "someavatarurl", latitude: -6.123123123, longitude: 2.123041239)]
-        
-        interactor.families = fam
-        
         let callBack = { (_ fam: [Families]?) -> Void in
-            XCTAssertEqual(fam?.count, 2)
-            XCTAssertEqual(fam?.first?.name, "Engkit")
-            XCTAssertEqual(fam?.first?.status, "Married")
+            XCTAssertEqual(fam?.count, 6)
+            XCTAssertEqual(fam?.first?.name, "Iron Man")
+            XCTAssertEqual(fam?.first?.status, "Imron Man")
             testExpectation.fulfill()
         }
         
@@ -70,18 +91,6 @@ class SchwiftyTests: XCTestCase {
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }
